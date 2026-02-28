@@ -42,6 +42,9 @@ theme:
     - toc.follow
     - announce.dismiss
 
+hooks:
+  - hooks/sitemap.py
+
 plugins:
   - search
   - i18n:
