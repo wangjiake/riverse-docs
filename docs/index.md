@@ -183,7 +183,7 @@ Processes conversations after they end — extracts insights, resolves contradic
 
 ### Multi-Modal Input
 
-Text, voice, images, files — all understood natively via Whisper, GPT-4 Vision, and LLaVA.
+Text, voice, images — all understood natively via Whisper, GPT-4 Vision, and LLaVA.
 
 </div>
 

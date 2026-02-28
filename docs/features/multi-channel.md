@@ -7,15 +7,15 @@ Riverse supports multiple communication channels. All channels share the same me
 | Channel | Command | Description |
 |---|---|---|
 | CLI | `python -m agent.main` | Terminal-based interactive mode |
-| Telegram Bot | `python -m agent.telegram_bot` | Supports text, voice, images, files |
-| Discord Bot | `python -m agent.discord_bot` | Text-based chat |
+| Telegram Bot | `python -m agent.telegram_bot` | Supports text, voice, images |
+| Discord Bot | `python -m agent.discord_bot` | Supports text, voice, images |
 | REST API | `uvicorn agent.api:app --host 0.0.0.0 --port 8400` | HTTP endpoints |
 | WebSocket | Included with REST API | Real-time bidirectional chat |
 | Web Dashboard | `python web.py` | Profile viewer and memory management |
 
 ## Telegram Bot
 
-The recommended primary interface — supports multi-modal input (text, voice, images, files).
+The recommended primary interface — supports multi-modal input (text, voice, images).
 
 Setup:
 

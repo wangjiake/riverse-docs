@@ -22,11 +22,21 @@
 ```yaml
 - name: home_lights
   type: http
-  enabled: true
-  url: "http://your-home-assistant:8123/api/services/light/toggle"
-  headers:
-    Authorization: "Bearer YOUR_TOKEN"
   description: "Home Assistant で照明を制御"
+  parameters:
+    entity_id: "照明のエンティティ ID"
+    action: "toggle / turn_on / turn_off"
+  examples:
+    - "リビングの照明をつけて"
+  enabled: true
+  http:
+    url: "http://your-home-assistant:8123/api/services/light/{action}"
+    method: POST
+    headers:
+      Authorization: "Bearer YOUR_TOKEN"
+    body_template:
+      entity_id: "{entity_id}"
+    timeout: 10
 ```
 
 ## エージェントタイプ

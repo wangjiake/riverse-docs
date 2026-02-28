@@ -22,11 +22,21 @@
 ```yaml
 - name: home_lights
   type: http
-  enabled: true
-  url: "http://your-home-assistant:8123/api/services/light/toggle"
-  headers:
-    Authorization: "Bearer YOUR_TOKEN"
   description: "通过 Home Assistant 控制灯光"
+  parameters:
+    entity_id: "灯的实体 ID"
+    action: "toggle / turn_on / turn_off"
+  examples:
+    - "打开客厅的灯"
+  enabled: true
+  http:
+    url: "http://your-home-assistant:8123/api/services/light/{action}"
+    method: POST
+    headers:
+      Authorization: "Bearer YOUR_TOKEN"
+    body_template:
+      entity_id: "{entity_id}"
+    timeout: 10
 ```
 
 ## Agent 类型

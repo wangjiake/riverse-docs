@@ -24,9 +24,8 @@ Open your Telegram bot and start chatting. Supports:
 - Text messages
 - Voice messages (transcribed via Whisper)
 - Images (analyzed via GPT-4 Vision / LLaVA)
-- Files
 
-Send `/new` to start a new session and trigger Sleep. Send `/sleep` to manually trigger memory consolidation without starting a new session.
+Send `/new` to start a new session and trigger Sleep.
 
 ## Discord Bot
 
@@ -67,7 +66,7 @@ Visit `http://localhost:1234` to view:
 ## Tips
 
 !!! tip "Recommended: Telegram Bot"
-    Since Riverse handles images, voice, and files, Telegram Bot is the recommended primary interface. Set your unique Telegram User ID in `settings.yaml`.
+    Since Riverse handles text, voice, and images, Telegram Bot is the recommended primary interface. Set your unique Telegram User ID in `settings.yaml`.
 
 !!! info "On accuracy"
     No LLM today is specifically trained for personal profile extraction, so results may occasionally be off. When you spot something inaccurate, you can **reject** incorrect memories or **close** outdated ones in the Web Dashboard. Riverse intentionally does not allow manual editing — wrong memories are like sediment in a river, meant to be washed away by the current, not sculpted by hand. As conversations accumulate, the River Algorithm continuously self-corrects.

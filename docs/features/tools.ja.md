@@ -9,11 +9,17 @@ Riverse にはプラガブルなツールシステムが含まれています。
 | Web 検索 | 最新情報を Web で検索（cloud LLM の `search: true` モデルを使用） |
 | 画像認識 | GPT-4 Vision / Ollama LLaVA で画像分析 |
 | 音声認識 | OpenAI Whisper-1 で音声をテキストに変換 |
-| TTS | Edge TTS でテキストを音声に変換 |
 | ファイル読み取り | ローカルテキストファイル（.txt, .py, .yaml, .json, .md）を読み取り |
 | Shell コマンド | 安全なシェルコマンドを実行（ホワイトリスト制、デフォルト無効） |
 | 財務追跡 | 財務データの追跡と分析 |
 | 健康同期 | Withings デバイスから健康データを同期 |
+
+また、**テキスト読み上げ (TTS)** 機能は Edge TTS を通じて Telegram と Discord Bot で利用可能です。TTS はレジストリツールではなく、Bot の応答パイプラインに直接統合されています。`settings.yaml` で有効化：
+
+```yaml
+tts:
+  enabled: true
+```
 
 ## 設定
 

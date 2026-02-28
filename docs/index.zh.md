@@ -183,7 +183,7 @@ Sleep 像河流的自净能力 — 冲走过时的信息，解决矛盾的认知
 
 ### 多模态输入
 
-文本、语音、图片、文件 — 通过 Whisper、GPT-4 Vision、LLaVA 原生理解。
+文本、语音、图片 — 通过 Whisper、GPT-4 Vision、LLaVA 原生理解。
 
 </div>
 

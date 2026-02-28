@@ -7,15 +7,15 @@ Riverse は複数の通信チャネルをサポートしています。すべて
 | チャネル | コマンド | 説明 |
 |---|---|---|
 | CLI | `python -m agent.main` | ターミナル対話モード |
-| Telegram Bot | `python -m agent.telegram_bot` | テキスト、音声、画像、ファイル対応 |
-| Discord Bot | `python -m agent.discord_bot` | テキストチャット |
+| Telegram Bot | `python -m agent.telegram_bot` | テキスト、音声、画像対応 |
+| Discord Bot | `python -m agent.discord_bot` | テキスト、音声、画像対応 |
 | REST API | `uvicorn agent.api:app --host 0.0.0.0 --port 8400` | HTTP エンドポイント |
 | WebSocket | REST API に含まれる | リアルタイム双方向チャット |
 | Web ダッシュボード | `python web.py` | プロフィール表示とメモリ管理 |
 
 ## Telegram Bot
 
-推奨メインインターフェース — マルチモーダル入力（テキスト、音声、画像、ファイル）をサポート。
+推奨メインインターフェース — マルチモーダル入力（テキスト、音声、画像）をサポート。
 
 設定：
 

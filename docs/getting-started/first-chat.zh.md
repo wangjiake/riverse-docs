@@ -24,9 +24,8 @@ python -m agent.telegram_bot
 - 文本消息
 - 语音消息（通过 Whisper 转写）
 - 图片（通过 GPT-4 Vision / LLaVA 分析）
-- 文件
 
-发送 `/new` 开始新会话并触发 Sleep。发送 `/sleep` 可手动触发记忆整理而不开始新会话。
+发送 `/new` 开始新会话并触发 Sleep。
 
 ## Discord Bot
 
@@ -67,7 +66,7 @@ python web.py --port 8401              # 指定端口
 ## 提示
 
 !!! tip "推荐：Telegram Bot"
-    由于 Riverse 需要处理图片、语音和文件，建议使用 Telegram Bot 作为主要聊天入口，在 `settings.yaml` 中填入你唯一的 Telegram User ID。
+    由于 Riverse 支持文本、语音和图片，建议使用 Telegram Bot 作为主要聊天入口，在 `settings.yaml` 中填入你唯一的 Telegram User ID。
 
 !!! info "关于准确性"
     目前没有任何 LLM 是专门为个人画像提取训练的，提取结果可能偶尔出现偏差。发现不准确的内容时，可以在 Web 面板中**拒绝**错误记忆或**关闭**不再适用的记忆。Riverse 不支持手动编辑记忆内容 — 错误的记忆就像河流中的泥沙，应该被水流冲走，而不是人工雕刻河床。随着对话积累，河流算法会不断自我修正。

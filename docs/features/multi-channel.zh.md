@@ -7,15 +7,15 @@ Riverse 支持多种通信渠道，所有渠道共享同一份记忆和画像。
 | 渠道 | 命令 | 说明 |
 |---|---|---|
 | CLI | `python -m agent.main` | 终端交互模式 |
-| Telegram Bot | `python -m agent.telegram_bot` | 支持文本、语音、图片、文件 |
-| Discord Bot | `python -m agent.discord_bot` | 文本聊天 |
+| Telegram Bot | `python -m agent.telegram_bot` | 支持文本、语音、图片 |
+| Discord Bot | `python -m agent.discord_bot` | 支持文本、语音、图片 |
 | REST API | `uvicorn agent.api:app --host 0.0.0.0 --port 8400` | HTTP 端点 |
 | WebSocket | 包含在 REST API 中 | 实时双向对话 |
 | Web 仪表盘 | `python web.py` | 画像查看和记忆管理 |
 
 ## Telegram Bot
 
-推荐的主要聊天入口 — 支持多模态输入（文本、语音、图片、文件）。
+推荐的主要聊天入口 — 支持多模态输入（文本、语音、图片）。
 
 设置：
 

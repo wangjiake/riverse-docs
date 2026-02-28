@@ -9,11 +9,17 @@ Riverse 包含可插拔的工具系统。LLM 会根据对话上下文自动判�
 | 网页搜索 | 搜索网页获取最新信息（使用 cloud LLM 中 `search: true` 的模型） |
 | 图像理解 | 通过 GPT-4 Vision / Ollama LLaVA 分析图片 |
 | 语音识别 | 通过 OpenAI Whisper-1 语音转文字 |
-| TTS | 通过 Edge TTS 文字转语音 |
 | 文件读取 | 读取本地文本文件（.txt, .py, .yaml, .json, .md） |
 | Shell 命令 | 执行安全的 Shell 命令（白名单机制，默认关闭） |
 | 财务追踪 | 追踪和分析财务数据 |
 | 健康同步 | 从 Withings 设备同步健康数据 |
+
+此外，**文字转语音 (TTS)** 功能通过 Edge TTS 在 Telegram 和 Discord Bot 中可用。TTS 不是注册工具，而是直接集成在 Bot 回复流程中。在 `settings.yaml` 中启用：
+
+```yaml
+tts:
+  enabled: true
+```
 
 ## 配置
 

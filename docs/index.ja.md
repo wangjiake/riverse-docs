@@ -183,7 +183,7 @@ Sleep は川の自浄能力 — 古い情報を洗い流し、矛盾を解消し
 
 ### マルチモーダル入力
 
-テキスト、音声、画像、ファイル — Whisper、GPT-4 Vision、LLaVA でネイティブに理解。
+テキスト、音声、画像 — Whisper、GPT-4 Vision、LLaVA でネイティブに理解。
 
 </div>
 

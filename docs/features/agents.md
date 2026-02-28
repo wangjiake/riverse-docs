@@ -22,11 +22,21 @@ Set `enabled: true` and fill in your URL/token:
 ```yaml
 - name: home_lights
   type: http
-  enabled: true
-  url: "http://your-home-assistant:8123/api/services/light/toggle"
-  headers:
-    Authorization: "Bearer YOUR_TOKEN"
   description: "Toggle lights via Home Assistant"
+  parameters:
+    entity_id: "Light entity ID"
+    action: "toggle / turn_on / turn_off"
+  examples:
+    - "Turn on the living room light"
+  enabled: true
+  http:
+    url: "http://your-home-assistant:8123/api/services/light/{action}"
+    method: POST
+    headers:
+      Authorization: "Bearer YOUR_TOKEN"
+    body_template:
+      entity_id: "{entity_id}"
+    timeout: 10
 ```
 
 ## Agent Types
