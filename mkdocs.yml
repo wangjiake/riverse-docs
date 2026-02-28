@@ -63,6 +63,7 @@ plugins:
             Getting Started: 快速开始
             Features: 功能
             Development: 开发
+            Python SDK (riverse): Python SDK (riverse)
             FAQ: 常见问题
             About: 关于
         - locale: ja
@@ -73,6 +74,7 @@ plugins:
             Getting Started: はじめに
             Features: 機能
             Development: 開発
+            Python SDK (riverse): Python SDK (riverse)
             FAQ: よくある質問
             About: について
 
@@ -92,6 +94,7 @@ nav:
     - features/mcp.md
     - features/proactive.md
   - Development:
+    - development/python-sdk.md
     - development/custom-tool.md
     - development/custom-skill.md
     - development/api.md
