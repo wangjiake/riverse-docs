@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/faq/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/faq/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/faq/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/faq/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/about/contact/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/about/contact/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/about/contact/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/about/contact/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/about/license/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/about/license/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/about/license/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/about/license/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/development/api/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/api/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/api/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/api/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/development/custom-skill/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-skill/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-skill/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-skill/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/development/custom-tool/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-tool/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-tool/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-tool/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/features/agents/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/agents/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/agents/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/agents/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/features/mcp/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/mcp/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/mcp/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/mcp/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/features/memory/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/memory/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/memory/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/memory/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/features/multi-channel/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/multi-channel/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/multi-channel/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/multi-channel/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/features/proactive/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/proactive/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/proactive/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/proactive/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/features/skills/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/skills/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/skills/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/skills/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/features/tools/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/tools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/tools/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/tools/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/getting-started/configuration/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/configuration/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/getting-started/docker/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/docker/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/docker/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/docker/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/getting-started/first-chat/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/first-chat/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/first-chat/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/first-chat/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/getting-started/installation/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/faq/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/faq/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/faq/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/about/contact/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/about/contact/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/about/contact/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/about/contact/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/about/license/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/about/license/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/about/license/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/about/license/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/development/api/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/api/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/api/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/development/custom-skill/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-skill/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-skill/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-skill/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/development/custom-tool/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-tool/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-tool/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-tool/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/features/agents/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/agents/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/agents/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/agents/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/features/mcp/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/mcp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/mcp/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/mcp/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/features/memory/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/memory/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/memory/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/memory/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/features/multi-channel/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/multi-channel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/multi-channel/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/multi-channel/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/features/proactive/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/proactive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/proactive/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/proactive/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/features/skills/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/skills/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/skills/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/skills/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/features/tools/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/tools/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/tools/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/getting-started/configuration/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/configuration/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/getting-started/docker/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/docker/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/docker/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/docker/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/getting-started/first-chat/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/first-chat/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/first-chat/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/first-chat/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/getting-started/installation/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/installation/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/faq/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/faq/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/faq/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/faq/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/about/contact/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/about/contact/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/about/contact/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/about/contact/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/about/license/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/about/license/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/about/license/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/about/license/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/development/api/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/api/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/api/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/api/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/development/custom-skill/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-skill/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-skill/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-skill/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/development/custom-tool/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-tool/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-tool/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-tool/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/features/agents/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/agents/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/agents/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/agents/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/features/mcp/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/mcp/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/mcp/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/mcp/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/features/memory/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/memory/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/memory/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/memory/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/features/multi-channel/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/multi-channel/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/multi-channel/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/multi-channel/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/features/proactive/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/proactive/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/proactive/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/proactive/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/features/skills/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/skills/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/skills/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/skills/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/features/tools/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/tools/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/tools/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/features/tools/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/configuration/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/configuration/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/configuration/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/docker/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/docker/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/docker/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/docker/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/first-chat/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/first-chat/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/first-chat/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/first-chat/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/installation/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/installation/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/getting-started/installation/"/>
+    </url>
+</urlset>
