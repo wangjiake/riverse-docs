@@ -132,7 +132,7 @@
         
           
         
-        <a href="../../development/custom-tool/" class="site-header__nav-link">
+        <a href="../../development/python-sdk/" class="site-header__nav-link">
           開発
         </a>
       
@@ -907,6 +907,8 @@
       
         
       
+        
+      
     
     
     
@@ -951,6 +953,34 @@
 
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/python-sdk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python SDK (riverse)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
             
               
                 
@@ -1305,10 +1335,6 @@
 <td>OpenAI Whisper-1 で音声をテキストに変換</td>
 </tr>
 <tr>
-<td>TTS</td>
-<td>Edge TTS でテキストを音声に変換</td>
-</tr>
-<tr>
 <td>ファイル読み取り</td>
 <td>ローカルテキストファイル（.txt, .py, .yaml, .json, .md）を読み取り</td>
 </tr>
@@ -1326,11 +1352,15 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_3">設定</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">tools</span><span class="p">:</span>
+<p>また、<strong>テキスト読み上げ (TTS)</strong> 機能は Edge TTS を通じて Telegram と Discord Bot で利用可能です。TTS はレジストリツールではなく、Bot の応答パイプラインに直接統合されています。<code>settings.yaml</code> で有効化：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">tts</span><span class="p">:</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">shell_exec</span><span class="p">:</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">               </span><span class="c1"># セキュリティのためデフォルト無効</span>
+</code></pre></div>
+<h2 id="_3">設定</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">tools</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">shell_exec</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">               </span><span class="c1"># セキュリティのためデフォルト無効</span>
 </code></pre></div>
 <h2 id="_4">仕組み</h2>
 <ol>

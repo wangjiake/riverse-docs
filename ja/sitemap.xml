@@ -56,6 +56,14 @@
         <html:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-tool/" />
     </ns0:url>
     <ns0:url>
+        <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/development/python-sdk/</ns0:loc>
+        <ns0:lastmod>2026-02-28</ns0:lastmod>
+        <ns0:changefreq>daily</ns0:changefreq>
+        <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/python-sdk/" />
+        <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/python-sdk/" />
+        <html:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/python-sdk/" />
+    </ns0:url>
+    <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/agents/</ns0:loc>
         <ns0:lastmod>2026-02-28</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>

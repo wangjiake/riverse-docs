@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="ja" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -10,37 +10,37 @@
       
       
       
-        <link rel="canonical" href="https://wangjiake.github.io/riverse-docs/ja/development/api/">
+        <link rel="canonical" href="https://wangjiake.github.io/riverse-docs/development/python-sdk/">
       
       
-        <link rel="prev" href="../custom-skill/">
+        <link rel="prev" href="../../features/proactive/">
       
       
-        <link rel="next" href="../../faq/">
+        <link rel="next" href="../custom-tool/">
       
       
         
-          <link rel="alternate" href="../../../development/api/" hreflang="en">
+          <link rel="alternate" href="./" hreflang="en">
         
-          <link rel="alternate" href="../../../zh/development/api/" hreflang="zh">
+          <link rel="alternate" href="../../zh/development/python-sdk/" hreflang="zh">
         
-          <link rel="alternate" href="./" hreflang="ja">
+          <link rel="alternate" href="../../ja/development/python-sdk/" hreflang="ja">
         
       
       
-      <link rel="icon" href="../../../assets/images/favicon.svg">
+      <link rel="icon" href="../../assets/images/favicon.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.3">
     
     
       
-        <title>REST API リファレンス - Riverse</title>
+        <title>Python SDK (riverse) - Riverse</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -59,9 +59,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/extra.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -86,8 +86,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#rest-api" class="md-skip">
-          コンテンツにスキップ
+        <a href="#python-sdk-riverse" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -100,8 +100,8 @@
   <div class="site-header__inner">
 
     <!-- left: logo + name -->
-    <a href="../../" class="site-header__brand">
-      <img src="../../../assets/images/favicon.svg" alt="logo" class="site-header__logo">
+    <a href="../.." class="site-header__brand">
+      <img src="../../assets/images/favicon.svg" alt="logo" class="site-header__logo">
       <span class="site-header__name">Riverse</span>
     </a>
 
@@ -111,43 +111,43 @@
         
           
         
-        <a href="../../" class="site-header__nav-link">
-          ホーム
+        <a href="../.." class="site-header__nav-link">
+          Home
         </a>
       
         
           
         
         <a href="../../getting-started/installation/" class="site-header__nav-link">
-          はじめに
+          Getting Started
         </a>
       
         
           
         
         <a href="../../features/memory/" class="site-header__nav-link">
-          機能
+          Features
         </a>
       
         
           
         
-        <a href="../python-sdk/" class="site-header__nav-link site-header__nav-link--active">
-          開発
+        <a href="./" class="site-header__nav-link site-header__nav-link--active">
+          Development
         </a>
       
         
           
         
         <a href="../../faq/" class="site-header__nav-link">
-          よくある質問
+          FAQ
         </a>
       
         
           
         
         <a href="../../about/license/" class="site-header__nav-link">
-          について
+          About
         </a>
       
     </nav>
@@ -165,15 +165,15 @@
           <ul class="md-select__list">
             
             <li class="md-select__item">
-              <a href="../../../development/api/" hreflang="en" class="md-select__link">English</a>
+              <a href="./" hreflang="en" class="md-select__link">English</a>
             </li>
             
             <li class="md-select__item">
-              <a href="../../../zh/development/api/" hreflang="zh" class="md-select__link">中文</a>
+              <a href="../../zh/development/python-sdk/" hreflang="zh" class="md-select__link">中文</a>
             </li>
             
             <li class="md-select__item">
-              <a href="./" hreflang="ja" class="md-select__link">日本語</a>
+              <a href="../../ja/development/python-sdk/" hreflang="ja" class="md-select__link">日本語</a>
             </li>
             
           </ul>
@@ -224,16 +224,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="検索">
+      <nav class="md-search__options" aria-label="Search">
         
-        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -246,7 +246,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            検索を初期化
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -293,18 +293,18 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../" title="Riverse" class="md-nav__button md-logo" aria-label="Riverse" data-md-component="logo">
+    <a href="../.." title="Riverse" class="md-nav__button md-logo" aria-label="Riverse" data-md-component="logo">
       
-  <img src="../../../assets/images/favicon.svg" alt="logo">
+  <img src="../../assets/images/favicon.svg" alt="logo">
 
     </a>
     Riverse
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/wangjiake/JKRiver" title="リポジトリへ" class="md-source" data-md-component="source">
+      <a href="https://github.com/wangjiake/JKRiver" title="Go to repository" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -324,14 +324,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../../" class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    ホーム
+    Home
   
 
     
@@ -384,7 +384,7 @@
   <span class="md-ellipsis">
     
   
-    はじめに
+    Getting Started
   
 
     
@@ -400,7 +400,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    はじめに
+    Getting Started
   
 
           </label>
@@ -420,7 +420,7 @@
   <span class="md-ellipsis">
     
   
-    インストール
+    Installation
   
 
     
@@ -448,7 +448,7 @@
   <span class="md-ellipsis">
     
   
-    設定
+    Configuration
   
 
     
@@ -476,7 +476,7 @@
   <span class="md-ellipsis">
     
   
-    Docker クイックスタート
+    Docker Quick Start
   
 
     
@@ -504,7 +504,7 @@
   <span class="md-ellipsis">
     
   
-    初めての会話
+    First Chat
   
 
     
@@ -571,7 +571,7 @@
   <span class="md-ellipsis">
     
   
-    機能
+    Features
   
 
     
@@ -587,7 +587,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    機能
+    Features
   
 
           </label>
@@ -607,7 +607,7 @@
   <span class="md-ellipsis">
     
   
-    メモリ &amp; Sleep
+    Memory &amp; Sleep
   
 
     
@@ -635,7 +635,7 @@
   <span class="md-ellipsis">
     
   
-    マルチチャネルアクセス
+    Multi-Channel Access
   
 
     
@@ -663,7 +663,7 @@
   <span class="md-ellipsis">
     
   
-    ビルトインツール
+    Built-in Tools
   
 
     
@@ -691,7 +691,7 @@
   <span class="md-ellipsis">
     
   
-    スキルシステム
+    Skill System
   
 
     
@@ -719,7 +719,7 @@
   <span class="md-ellipsis">
     
   
-    外部エージェント
+    External Agents
   
 
     
@@ -747,7 +747,7 @@
   <span class="md-ellipsis">
     
   
-    MCP プロトコル
+    MCP Protocol
   
 
     
@@ -775,7 +775,7 @@
   <span class="md-ellipsis">
     
   
-    プロアクティブ通知
+    Proactive Outreach
   
 
     
@@ -841,7 +841,7 @@
   <span class="md-ellipsis">
     
   
-    開発
+    Development
   
 
     
@@ -857,7 +857,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    開発
+    Development
   
 
           </label>
@@ -867,10 +867,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../python-sdk/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python SDK (riverse)
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -886,6 +913,192 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-start" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Start
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raddmessages-user_id-session_idnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.add(messages, user_id, session_id=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsleepuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.sleep(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rget_profileuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.get_profile(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rget_user_modeluser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.get_user_model(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsearchquery-user_id-top_k10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.search(query, user_id, top_k=10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language Parameter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contradiction-detection" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contradiction Detection
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#three-layer-confidence-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Three-Layer Confidence Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#difference-from-jkriver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Difference from JKRiver
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -905,7 +1118,7 @@
   <span class="md-ellipsis">
     
   
-    カスタムツール開発
+    Custom Tool Development
   
 
     
@@ -933,7 +1146,7 @@
   <span class="md-ellipsis">
     
   
-    カスタムスキル開発
+    Custom Skill Development
   
 
     
@@ -951,44 +1164,17 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    REST API リファレンス
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../api/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    REST API リファレンス
+    REST API Reference
   
 
     
@@ -997,114 +1183,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目次">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目次
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        エンドポイント
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post-chat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /chat
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post-sessionnew" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /session/new
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#post-sleep" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        POST /sleep
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-profile" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /profile
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-hypotheses" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /hypotheses
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-sessions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /sessions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#websocket-wschat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WebSocket /ws/chat
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1131,7 +1209,7 @@
   <span class="md-ellipsis">
     
   
-    よくある質問
+    FAQ
   
 
     
@@ -1180,7 +1258,7 @@
   <span class="md-ellipsis">
     
   
-    について
+    About
   
 
     
@@ -1196,7 +1274,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    について
+    About
   
 
           </label>
@@ -1216,7 +1294,7 @@
   <span class="md-ellipsis">
     
   
-    ライセンス
+    License
   
 
     
@@ -1244,7 +1322,7 @@
   <span class="md-ellipsis">
     
   
-    お問い合わせ
+    Contact
   
 
     
@@ -1278,7 +1356,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="目次">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -1287,15 +1365,15 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目次
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#installation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        エンドポイント
+        Installation
       
     </span>
   </a>
@@ -1303,10 +1381,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#post-chat" class="md-nav__link">
+  <a href="#quick-start" class="md-nav__link">
     <span class="md-ellipsis">
       
-        POST /chat
+        Quick Start
       
     </span>
   </a>
@@ -1314,10 +1392,110 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#post-sessionnew" class="md-nav__link">
+  <a href="#configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
-        POST /session/new
+        Configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supported-providers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Providers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#raddmessages-user_id-session_idnone" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.add(messages, user_id, session_id=None)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsleepuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.sleep(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rget_profileuser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.get_profile(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rget_user_modeluser_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.get_user_model(user_id)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rsearchquery-user_id-top_k10" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        r.search(query, user_id, top_k=10)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#language-parameter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Language Parameter
       
     </span>
   </a>
@@ -1325,10 +1503,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#post-sleep" class="md-nav__link">
+  <a href="#contradiction-detection" class="md-nav__link">
     <span class="md-ellipsis">
       
-        POST /sleep
+        Contradiction Detection
       
     </span>
   </a>
@@ -1336,10 +1514,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-profile" class="md-nav__link">
+  <a href="#three-layer-confidence-model" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GET /profile
+        Three-Layer Confidence Model
       
     </span>
   </a>
@@ -1347,32 +1525,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-hypotheses" class="md-nav__link">
+  <a href="#difference-from-jkriver" class="md-nav__link">
     <span class="md-ellipsis">
       
-        GET /hypotheses
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#get-sessions" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        GET /sessions
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#websocket-wschat" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        WebSocket /ws/chat
+        Difference from JKRiver
       
     </span>
   </a>
@@ -1399,89 +1555,207 @@
   
 
 
-<h1 id="rest-api">REST API リファレンス</h1>
-<p>API サーバーの起動：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>uvicorn<span class="w"> </span>agent.api:app<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8400</span>
+<h1 id="python-sdk-riverse">Python SDK (riverse)</h1>
+<p>Integrate River Algorithm memory into your own Python application.</p>
+<h2 id="installation">Installation</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip<span class="w"> </span>install<span class="w"> </span>riverse
 </code></pre></div>
-<h2 id="_1">エンドポイント</h2>
+<p>PyPI: <a href="https://pypi.org/project/riverse/">pypi.org/project/riverse</a> · GitHub: <a href="https://github.com/wangjiake/riverse">github.com/wangjiake/riverse</a></p>
+<h2 id="quick-start">Quick Start</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">riverse</span> <span class="kn">import</span> <span class="n">Riverse</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">r</span> <span class="o">=</span> <span class="n">Riverse</span><span class="p">(</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">api_base</span><span class="o">=</span><span class="s2">&quot;https://api.deepseek.com&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;deepseek-chat&quot;</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>           <span class="c1"># &quot;en&quot; | &quot;zh&quot; | &quot;ja&quot;</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1"># 1. Store conversations</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="n">r</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">messages</span><span class="o">=</span><span class="p">[</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;I just moved to Tokyo for a new job at Google.&quot;</span><span class="p">},</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="p">{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;assistant&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;That&#39;s exciting! How&#39;s the transition going?&quot;</span><span class="p">},</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">],</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="c1"># 2. Run Sleep consolidation (River Algorithm core)</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="n">result</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="c1"># {&#39;status&#39;: &#39;ok&#39;, &#39;processed&#39;: 2, &#39;new_facts&#39;: 3, &#39;contradictions&#39;: 0, ...}</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a><span class="c1"># 3. Get user profile</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a><span class="n">profile</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">get_profile</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a><span class="k">for</span> <span class="n">fact</span> <span class="ow">in</span> <span class="n">profile</span><span class="p">:</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;[</span><span class="si">{</span><span class="n">fact</span><span class="p">[</span><span class="s1">&#39;layer&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">] </span><span class="si">{</span><span class="n">fact</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">fact</span><span class="p">[</span><span class="s1">&#39;subject&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">fact</span><span class="p">[</span><span class="s1">&#39;value&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="c1"># 4. Search memory</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="n">results</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;Where does he live?&quot;</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a><span class="c1"># 5. Get user model (personality + trajectory)</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a><span class="n">model</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">get_user_model</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="configuration">Configuration</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">r</span> <span class="o">=</span> <span class="n">Riverse</span><span class="p">(</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">api_key</span><span class="o">=</span><span class="s2">&quot;sk-...&quot;</span><span class="p">,</span>                        <span class="c1"># API key</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">api_base</span><span class="o">=</span><span class="s2">&quot;https://api.openai.com&quot;</span><span class="p">,</span>       <span class="c1"># Or DeepSeek/Ollama/Groq URL</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">model</span><span class="o">=</span><span class="s2">&quot;gpt-4o-mini&quot;</span><span class="p">,</span>                     <span class="c1"># Model name</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">language</span><span class="o">=</span><span class="s2">&quot;en&quot;</span><span class="p">,</span>                           <span class="c1"># Prompt language: &quot;en&quot; | &quot;zh&quot; | &quot;ja&quot;</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">db_path</span><span class="o">=</span><span class="s2">&quot;~/.riverse/memory.db&quot;</span><span class="p">,</span>          <span class="c1"># SQLite path</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">temperature</span><span class="o">=</span><span class="mf">0.7</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">max_tokens</span><span class="o">=</span><span class="mi">4096</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="p">)</span>
+</code></pre></div>
+<h3 id="supported-providers">Supported Providers</h3>
 <table>
 <thead>
 <tr>
-<th>エンドポイント</th>
-<th>メソッド</th>
-<th>説明</th>
+<th>Provider</th>
+<th><code>api_base</code></th>
+<th><code>model</code></th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>/chat</code></td>
-<td>POST</td>
-<td>メッセージ送信、返信取得</td>
+<td><strong>OpenAI</strong></td>
+<td><code>https://api.openai.com</code></td>
+<td><code>gpt-4o-mini</code></td>
 </tr>
 <tr>
-<td><code>/session/new</code></td>
-<td>POST</td>
-<td>新規セッション作成</td>
+<td><strong>DeepSeek</strong></td>
+<td><code>https://api.deepseek.com</code></td>
+<td><code>deepseek-chat</code></td>
 </tr>
 <tr>
-<td><code>/sleep</code></td>
-<td>POST</td>
-<td>記憶整理をトリガー</td>
+<td><strong>Groq</strong></td>
+<td><code>https://api.groq.com</code></td>
+<td><code>llama-3.3-70b-versatile</code></td>
 </tr>
 <tr>
-<td><code>/profile</code></td>
-<td>GET</td>
-<td>現在のプロファイル取得</td>
-</tr>
-<tr>
-<td><code>/hypotheses</code></td>
-<td>GET</td>
-<td>全仮説取得</td>
-</tr>
-<tr>
-<td><code>/sessions</code></td>
-<td>GET</td>
-<td>アクティブセッション一覧</td>
-</tr>
-<tr>
-<td><code>/ws/chat</code></td>
-<td>WebSocket</td>
-<td>リアルタイムチャット</td>
+<td><strong>Ollama</strong></td>
+<td><code>http://localhost:11434</code></td>
+<td><code>llama3.1</code></td>
 </tr>
 </tbody>
 </table>
-<h2 id="post-chat">POST /chat</h2>
-<p>メッセージを送信して返信を受け取る。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8400/chat<span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span>-H<span class="w"> </span><span class="s2">&quot;Content-Type: application/json&quot;</span><span class="w"> </span><span class="se">\</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span>-d<span class="w"> </span><span class="s1">&#39;{&quot;message&quot;: &quot;こんにちは、初めまして！&quot;}&#39;</span>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="raddmessages-user_id-session_idnone"><code>r.add(messages, user_id, session_id=None)</code></h3>
+<p>Store conversation messages for later consolidation.</p>
+<ul>
+<li><code>messages</code> — List of <code>{"role": "user"|"assistant", "content": "..."}</code></li>
+<li><code>user_id</code> — User identifier</li>
+<li><code>session_id</code> — Optional session grouping (auto-generated if omitted)</li>
+</ul>
+<h3 id="rsleepuser_id"><code>r.sleep(user_id)</code></h3>
+<p>Run the full River Algorithm consolidation pipeline:</p>
+<ol>
+<li>Extract observations, events, and relationships</li>
+<li>Classify against existing profile</li>
+<li>Create new facts, detect contradictions</li>
+<li>Cross-verify suspected facts for promotion</li>
+<li>Resolve disputed fact pairs</li>
+<li>Update maturity decay and user model</li>
+<li>Generate trajectory summary</li>
+</ol>
+<p>Returns a summary dict with counts.</p>
+<h3 id="rget_profileuser_id"><code>r.get_profile(user_id)</code></h3>
+<p>Returns all active profile facts as a list of dicts.</p>
+<p>Each fact contains: <code>category</code>, <code>subject</code>, <code>value</code>, <code>layer</code> (<code>suspected</code>/<code>confirmed</code>/<code>closed</code>), <code>evidence</code>, <code>created_at</code>, etc.</p>
+<h3 id="rget_user_modeluser_id"><code>r.get_user_model(user_id)</code></h3>
+<p>Returns <code>{"dimensions": [...], "trajectory": {...}}</code>.</p>
+<ul>
+<li><strong>dimensions</strong> — Personality analysis (communication style, trust level, sensitivity, etc.)</li>
+<li><strong>trajectory</strong> — Life phase, direction, key anchors, volatile areas</li>
+</ul>
+<h3 id="rsearchquery-user_id-top_k10"><code>r.search(query, user_id, top_k=10)</code></h3>
+<p>Keyword search across profile facts, events, and observations.</p>
+<h2 id="language-parameter">Language Parameter</h2>
+<p>The <code>language</code> parameter controls all internal LLM prompts during consolidation.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"en"</code></td>
+<td>English (default)</td>
+</tr>
+<tr>
+<td><code>"zh"</code></td>
+<td>Chinese</td>
+</tr>
+<tr>
+<td><code>"ja"</code></td>
+<td>Japanese</td>
+</tr>
+</tbody>
+</table>
+<p>Choose the language that matches your users' conversations for best extraction quality.</p>
+<h2 id="contradiction-detection">Contradiction Detection</h2>
+<p>When conflicting information is detected across conversations, the River Algorithm:</p>
+<ol>
+<li>Creates a new fact with the updated value</li>
+<li>Marks the old fact as superseded</li>
+<li>Records the contradiction evidence chain</li>
+<li>Generates verification strategies for follow-up</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Session 1</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">r</span><span class="o">.</span><span class="n">add</span><span class="p">([{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;I work at Google.&quot;</span><span class="p">}],</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">,</span> <span class="n">session_id</span><span class="o">=</span><span class="s2">&quot;s1&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">r</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># Session 2 — contradicts session 1</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="n">r</span><span class="o">.</span><span class="n">add</span><span class="p">([{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;I just switched to Microsoft.&quot;</span><span class="p">}],</span> <span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">,</span> <span class="n">session_id</span><span class="o">=</span><span class="s2">&quot;s2&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="n">r</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Profile now shows Microsoft, Google fact is superseded</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a><span class="n">profile</span> <span class="o">=</span> <span class="n">r</span><span class="o">.</span><span class="n">get_profile</span><span class="p">(</span><span class="n">user_id</span><span class="o">=</span><span class="s2">&quot;alex&quot;</span><span class="p">)</span>
 </code></pre></div>
-<h2 id="post-sessionnew">POST /session/new</h2>
-<p>新しい会話セッションを作成。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8400/session/new
-</code></pre></div>
-<h2 id="post-sleep">POST /sleep</h2>
-<p>オフライン記憶統合（Sleep）をトリガー。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8400/sleep
-</code></pre></div>
-<h2 id="get-profile">GET /profile</h2>
-<p>会話から構築されたユーザープロファイルを取得。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>curl<span class="w"> </span>http://localhost:8400/profile
-</code></pre></div>
-<h2 id="get-hypotheses">GET /hypotheses</h2>
-<p>システムがユーザーについて形成した全仮説をリスト。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>http://localhost:8400/hypotheses
-</code></pre></div>
-<h2 id="get-sessions">GET /sessions</h2>
-<p>アクティブな会話セッションの一覧。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>http://localhost:8400/sessions
-</code></pre></div>
-<h2 id="websocket-wschat">WebSocket /ws/chat</h2>
-<p>リアルタイム双方向チャットに接続。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">ws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">WebSocket</span><span class="p">(</span><span class="s2">&quot;ws://localhost:8400/ws/chat&quot;</span><span class="p">);</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nx">ws</span><span class="p">.</span><span class="nx">onmessage</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">event</span><span class="p">.</span><span class="nx">data</span><span class="p">);</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nx">ws</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">({</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;こんにちは！&quot;</span><span class="w"> </span><span class="p">}));</span>
-</code></pre></div>
+<h2 id="three-layer-confidence-model">Three-Layer Confidence Model</h2>
+<p>Facts progress through confidence layers:</p>
+<ul>
+<li><strong><code>suspected</code></strong> — Initial extraction, unverified</li>
+<li><strong><code>confirmed</code></strong> — Cross-verified through multiple mentions or corroboration</li>
+<li><strong><code>closed</code></strong> — Superseded by newer information or expired</li>
+</ul>
+<h2 id="difference-from-jkriver">Difference from JKRiver</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>riverse (Python SDK)</th>
+<th>JKRiver (Full App)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>What</strong></td>
+<td>Library for your own app</td>
+<td>Complete AI assistant</td>
+</tr>
+<tr>
+<td><strong>Install</strong></td>
+<td><code>pip install riverse</code></td>
+<td>Docker or manual setup</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>SQLite (zero config)</td>
+<td>PostgreSQL</td>
+</tr>
+<tr>
+<td><strong>Channels</strong></td>
+<td>Your code decides</td>
+<td>Telegram, Discord, CLI, Web</td>
+</tr>
+<tr>
+<td><strong>Use case</strong></td>
+<td>Integrate memory into your product</td>
+<td>Use as your personal AI</td>
+</tr>
+</tbody>
+</table>
+<p>Full version: <a href="https://github.com/wangjiake/JKRiver">github.com/wangjiake/JKRiver</a></p>
 
 
 
@@ -1507,7 +1781,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  ページトップへ戻る
+  Back to top
 </button>
         
       </main>
@@ -1516,33 +1790,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="フッター" >
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../custom-skill/" class="md-footer__link md-footer__link--prev" aria-label="前: カスタムスキル開発">
+          <a href="../../features/proactive/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Proactive Outreach">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                前
+                Previous
               </span>
               <div class="md-ellipsis">
-                カスタムスキル開発
+                Proactive Outreach
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../faq/" class="md-footer__link md-footer__link--next" aria-label="次: よくある質問">
+          <a href="../custom-tool/" class="md-footer__link md-footer__link--next" aria-label="Next: Custom Tool Development">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                次
+                Next
               </span>
               <div class="md-ellipsis">
-                よくある質問
+                Custom Tool Development
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1612,12 +1886,12 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow", "announce.dismiss"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
       
-        <script src="../../../assets/javascripts/search-filter.js"></script>
+        <script src="../../assets/javascripts/search-filter.js"></script>
       
     
   </body>

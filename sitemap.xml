@@ -57,6 +57,14 @@
         <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-tool/"/>
     </url>
     <url>
+        <loc>https://wangjiake.github.io/riverse-docs/development/python-sdk/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/python-sdk/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/python-sdk/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/python-sdk/"/>
+    </url>
+    <url>
         <loc>https://wangjiake.github.io/riverse-docs/features/agents/</loc>
         <lastmod>2026-02-28</lastmod>
         <changefreq>daily</changefreq>
@@ -201,6 +209,14 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-tool/"/>
     </url>
     <url>
+        <loc>https://wangjiake.github.io/riverse-docs/zh/development/python-sdk/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/python-sdk/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/python-sdk/"/>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/python-sdk/"/>
+    </url>
+    <url>
         <loc>https://wangjiake.github.io/riverse-docs/zh/features/agents/</loc>
         <lastmod>2026-02-28</lastmod>
         <changefreq>daily</changefreq>
@@ -343,6 +359,14 @@
         <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-tool/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-tool/"/>
         <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/custom-tool/"/>
+    </url>
+    <url>
+        <loc>https://wangjiake.github.io/riverse-docs/ja/development/python-sdk/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/python-sdk/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/python-sdk/"/>
+        <xhtml:link rel="alternate" hreflang="zh" href="https://wangjiake.github.io/riverse-docs/zh/development/python-sdk/"/>
     </url>
     <url>
         <loc>https://wangjiake.github.io/riverse-docs/ja/features/agents/</loc>
