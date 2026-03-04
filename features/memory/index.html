@@ -723,6 +723,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#knowledge-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Network
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Clustering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#semantic-search" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1323,6 +1345,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#knowledge-network" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Network
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#memory-clustering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Memory Clustering
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#semantic-search" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1401,12 +1445,22 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># crontab -e</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/path/to/JKRiver<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>/path/to/python<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from agent.sleep import run; run()&quot;</span>
 </code></pre></div>
+<h2 id="knowledge-network">Knowledge Network</h2>
+<p>Sleep also builds a <strong>knowledge network</strong> — typed edges connecting related profile facts (e.g. <code>causes</code>, <code>related_to</code>, <code>contradicts</code>, <code>supports</code>). This lets the AI see structural relationships between facts, not just isolated entries.</p>
+<p>When facts are closed or superseded, their edges are automatically cleaned up.</p>
+<h2 id="memory-clustering">Memory Clustering</h2>
+<p>With embeddings enabled, Sleep can optionally cluster memory vectors using KMeans and generate theme labels for each cluster. This gives a bird's-eye view of what the AI knows about you.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">embedding</span><span class="p">:</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">clustering</span><span class="p">:</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">show_themes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</code></pre></div>
 <h2 id="semantic-search">Semantic Search</h2>
 <p>With embeddings enabled (BGE-M3), Riverse retrieves relevant memories by meaning rather than keyword matching.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">embedding</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bge-m3&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://localhost:11434&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">embedding</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bge-m3&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://localhost:11434&quot;</span>
 </code></pre></div>
 <h2 id="memory-accuracy">Memory Accuracy</h2>
 <div class="admonition info">
