@@ -87,8 +87,10 @@ Run the full River Algorithm consolidation pipeline:
 3. Create new facts, detect contradictions
 4. Cross-verify suspected facts for promotion
 5. Resolve disputed fact pairs
-6. Update maturity decay and user model
-7. Generate trajectory summary
+6. Extract knowledge network edges between related facts
+7. Handle expired facts, update maturity decay
+8. Analyze user model, generate trajectory summary
+9. Consolidate duplicates, generate memory snapshot
 
 Returns a summary dict with counts.
 

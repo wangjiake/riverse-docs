@@ -10,7 +10,7 @@ hide:
 
 <p class="hero-subtitle">
 为个人终端设计的 AI Agent — 持久记忆，离线认知，越用越懂你。所有数据存在本地。<br>
-<span style="font-size:0.8rem; opacity:0.55;">v1.0 Beta · 推荐单用户使用</span>
+<span style="font-size:0.8rem; opacity:0.55;">v0.1.6 · 推荐单用户使用</span>
 </p>
 
 <div class="hero-actions">

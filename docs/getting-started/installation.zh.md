@@ -39,7 +39,7 @@ psql -h localhost -U your_username -d Riverse -f agent/schema.sql
 psql -h localhost -U your_username -d Riverse -c "\dt"
 ```
 
-应看到 `conversation_turns`、`user_profile`、`observations` 等十余张表。
+应看到 `conversation_turns`、`user_profile`、`observations`、`fact_edges`、`memory_clusters` 等十五张表左右。
 
 !!! tip
     如需定时技能支持（Telegram Job Queue）：

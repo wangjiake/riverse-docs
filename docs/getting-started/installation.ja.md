@@ -36,7 +36,7 @@ psql -h localhost -U your_username -d Riverse -f agent/schema.sql
 psql -h localhost -U your_username -d Riverse -c "\dt"
 ```
 
-`conversation_turns`、`user_profile`、`observations` など10以上のテーブルが表示されるはずです。
+`conversation_turns`、`user_profile`、`observations`、`fact_edges`、`memory_clusters` など15前後のテーブルが表示されるはずです。
 
 !!! tip
     スケジュールスキルサポートが必要な場合（Telegram Job Queue）：

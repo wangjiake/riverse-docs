@@ -10,7 +10,7 @@ hide:
 
 <p class="hero-subtitle">
 個人デバイスのために設計された AI エージェント — 永続的な記憶、オフライン認知、使うほどあなたを理解する。すべてのデータはローカルに保存。<br>
-<span style="font-size:0.8rem; opacity:0.55;">v1.0 Beta · シングルユーザー推奨</span>
+<span style="font-size:0.8rem; opacity:0.55;">v0.1.6 · シングルユーザー推奨</span>
 </p>
 
 <div class="hero-actions">

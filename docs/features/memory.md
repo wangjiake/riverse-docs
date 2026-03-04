@@ -26,6 +26,23 @@ Run Sleep every day at midnight:
 0 0 * * * cd /path/to/JKRiver && /path/to/python -c "from agent.sleep import run; run()"
 ```
 
+## Knowledge Network
+
+Sleep also builds a **knowledge network** — typed edges connecting related profile facts (e.g. `causes`, `related_to`, `contradicts`, `supports`). This lets the AI see structural relationships between facts, not just isolated entries.
+
+When facts are closed or superseded, their edges are automatically cleaned up.
+
+## Memory Clustering
+
+With embeddings enabled, Sleep can optionally cluster memory vectors using KMeans and generate theme labels for each cluster. This gives a bird's-eye view of what the AI knows about you.
+
+```yaml
+embedding:
+  clustering:
+    enabled: true
+    show_themes: true
+```
+
 ## Semantic Search
 
 With embeddings enabled (BGE-M3), Riverse retrieves relevant memories by meaning rather than keyword matching.

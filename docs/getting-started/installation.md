@@ -36,7 +36,7 @@ Verify tables were created:
 psql -h localhost -U your_username -d Riverse -c "\dt"
 ```
 
-You should see `conversation_turns`, `user_profile`, `observations` and about ten other tables.
+You should see `conversation_turns`, `user_profile`, `observations`, `fact_edges`, `memory_clusters` and about fifteen other tables.
 
 !!! tip
     If you need scheduled skills support (Telegram Job Queue):
