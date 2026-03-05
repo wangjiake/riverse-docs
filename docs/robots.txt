@@ -2,3 +2,8 @@ User-agent: *
 Allow: /
 
 Sitemap: https://wangjiake.github.io/riverse-docs/sitemap.xml
+
+# LLM-specific content
+# https://llmstxt.org/
+# llms.txt: concise project summary for AI crawlers
+# llms-full.txt: comprehensive documentation for AI crawlers

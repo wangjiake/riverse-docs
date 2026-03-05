@@ -17,6 +17,50 @@
   <meta name="twitter:image" content="{{ config.site_url }}assets/images/og-cover.png">
 
   <!-- Additional SEO -->
-  <meta name="keywords" content="AI memory, River Algorithm, personal AI, LLM, user profiling, contradiction detection, riverse, JKRiver">
+  <meta name="keywords" content="AI memory, River Algorithm, personal AI, LLM, user profiling, contradiction detection, riverse, JKRiver, local AI, AI agent, persistent memory, offline cognition">
   <meta name="author" content="JK">
+
+  <!-- JSON-LD Structured Data for AI and Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Riverse",
+    "alternateName": ["River Algorithm", "JKRiver"],
+    "description": "A personal AI agent that runs on your own machine — persistent memory, offline cognition, grows with every conversation. All data stays local.",
+    "url": "https://wangjiake.github.io/riverse-docs/",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "programmingLanguage": "Python",
+    "softwareRequirements": "Python 3.10+, PostgreSQL 16",
+    "license": "https://www.gnu.org/licenses/agpl-3.0.html",
+    "isAccessibleForFree": true,
+    "codeRepository": "https://github.com/wangjiake/JKRiver",
+    "downloadUrl": "https://github.com/wangjiake/JKRiver",
+    "installUrl": "https://github.com/wangjiake/Riverse-Docker",
+    "author": {
+      "@type": "Person",
+      "name": "JK",
+      "url": "https://x.com/JKRiverse"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Persistent local memory with temporal awareness",
+      "Multi-layered fact verification (suspected → confirmed)",
+      "Contradiction detection and dispute resolution",
+      "Offline cognitive consolidation (Sleep pipeline)",
+      "Multi-channel: Telegram, Discord, REST API, WebSocket, CLI, Web Dashboard",
+      "Multi-modal input: text, voice, images",
+      "Custom tools and skills system",
+      "MCP (Model Context Protocol) integration",
+      "Works with any OpenAI-compatible LLM or local Ollama models",
+      "All data stored locally"
+    ],
+    "keywords": ["AI memory", "personal AI agent", "River Algorithm", "local AI", "LLM", "persistent memory", "user profiling", "contradiction detection"]
+  }
+  </script>
 {% endblock %}
