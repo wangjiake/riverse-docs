@@ -10,7 +10,7 @@ hide:
 
 <p class="hero-subtitle">
 A personal AI agent that runs on your own machine — persistent memory, offline cognition, grows with every conversation. All data stays local.<br>
-<span style="font-size:0.8rem; opacity:0.55;">v0.1.6 · Single-user recommended</span>
+<span style="font-size:0.8rem; opacity:0.55;">v0.1.7 · Single-user recommended</span>
 </p>
 
 <div class="hero-actions">
