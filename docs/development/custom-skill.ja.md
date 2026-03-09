@@ -54,6 +54,7 @@ enabled: true
 | `instruction` | keyword タイプ時 | LLM へのインストラクション |
 | `steps` | schedule タイプ時 | 実行するアクションのリスト |
 | `enabled` | はい | `true` / `false` |
+| `variables` | いいえ | テンプレートで使用可能なキー値マップ |
 
 ## チャットでスキルを作成
 

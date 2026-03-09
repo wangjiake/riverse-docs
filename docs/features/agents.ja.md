@@ -14,6 +14,7 @@
 | dify_agent | HTTP | Dify サブエージェント | 無効 |
 | backup_notes | Command | ローカルバックアップ | 無効 |
 | system_info | Command | システム情報取得 | 無効 |
+| httpbin_echo | HTTP | httpbin エコーテスト | 無効 |
 
 ## エージェントの有効化
 
@@ -44,6 +45,18 @@
 ### HTTP エージェント
 
 外部サービスに HTTP リクエストを送信（Home Assistant、n8n、Dify など）。
+
+### HTTP エージェントフィールド
+
+| フィールド | 説明 |
+|-----------|------|
+| `url` | ターゲット URL（`{parameter}` プレースホルダー対応） |
+| `method` | HTTP メソッド：GET、POST など |
+| `headers` | HTTP ヘッダー（例：Authorization） |
+| `body_template` | `{parameter}` プレースホルダー付きリクエストボディ（POST 用） |
+| `query_template` | `{parameter}` プレースホルダー付きクエリパラメータ（GET 用） |
+| `result_path` | JSON レスポンスから抽出するドット区切りパス（例：`"answer"`、`"current_condition"`） |
+| `timeout` | リクエストタイムアウト（秒） |
 
 ### Command エージェント
 

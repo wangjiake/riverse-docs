@@ -14,6 +14,7 @@ Connect external services to Riverse via `agent/config/agents_en.yaml`. The LLM 
 | dify_agent | HTTP | Dify sub-agent | Disabled |
 | backup_notes | Command | Local backup script | Disabled |
 | system_info | Command | System info query | Disabled |
+| httpbin_echo | HTTP | httpbin echo for testing | Disabled |
 
 ## Enabling an Agent
 
@@ -44,6 +45,18 @@ Set `enabled: true` and fill in your URL/token:
 ### HTTP Agent
 
 Makes HTTP requests to external services (Home Assistant, n8n, Dify, etc.).
+
+### HTTP Agent Fields
+
+| Field | Description |
+|-------|-------------|
+| `url` | Target URL (supports `{parameter}` placeholders) |
+| `method` | HTTP method: GET, POST, etc. |
+| `headers` | HTTP headers (e.g. Authorization) |
+| `body_template` | Request body with `{parameter}` placeholders (for POST) |
+| `query_template` | Query parameters with `{parameter}` placeholders (for GET) |
+| `result_path` | Dot-separated path to extract from JSON response (e.g. `"answer"`, `"current_condition"`) |
+| `timeout` | Request timeout in seconds |
 
 ### Command Agent
 

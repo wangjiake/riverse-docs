@@ -30,7 +30,7 @@ mkdocs gh-deploy --force
 
 - [JKRiver](https://github.com/wangjiake/JKRiver) — Main agent (source code)
 - [riverse](https://github.com/wangjiake/riverse) — Python SDK (`pip install riverse`)
-- [Riverse-Docker](https://github.com/wangjiake/Riverse-Docker) — Docker quick start
+- [JKRiver/docker](https://github.com/wangjiake/JKRiver/tree/main/docker) — Docker quick start
 
 ## License
 

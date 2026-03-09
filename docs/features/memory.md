@@ -54,6 +54,45 @@ embedding:
   api_base: "http://localhost:11434"
 ```
 
+## Session Memory
+
+Session Memory manages context within a single conversation using three layers:
+
+1. **Sliding Summary** — Old turns are compressed into a running summary by the LLM, keeping conversation history without exceeding token limits
+2. **Vector Recall** — When embeddings are enabled, relevant earlier turns are recalled by semantic similarity to the current message
+3. **Recent Turns** — The most recent turns are kept verbatim for immediate context
+
+This three-layer system lets conversations go indefinitely without losing important context. Configure in `settings.yaml`:
+
+```yaml
+session_memory:
+    char_budget: 3000        # Total character budget for session context
+    keep_recent: 5           # Recent turns to keep verbatim
+    summary_ratio: 0.4       # Fraction of budget allocated to summary
+    recall_max: 3            # Max recalled turns via vector search
+    recall_min_score: 0.45   # Min similarity for recall
+```
+
+## pgvector Acceleration
+
+By default, embeddings are stored as JSONB and cosine similarity is computed in Python. For better performance with large datasets, install the [pgvector](https://github.com/pgvector/pgvector) extension:
+
+```bash
+# macOS
+brew install pgvector
+
+# Debian/Ubuntu
+apt install postgresql-16-pgvector
+```
+
+Then run the migration:
+
+```bash
+psql -h localhost -U YOUR_USERNAME -d Riverse -f migrations/001_pgvector.sql
+```
+
+This creates a native `vector(1024)` column and an IVFFlat index for fast approximate nearest neighbor search. The application auto-detects pgvector and uses it when available; no config change needed.
+
 ## Memory Accuracy
 
 !!! info

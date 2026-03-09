@@ -125,28 +125,125 @@ embedding:
   api_base: "http://localhost:11434"
 ```
 
-## 其他可选配置
+## 时区
 
 ```yaml
-# 工具
+timezone: "Asia/Shanghai"       # IANA 格式：Asia/Shanghai, America/New_York, Asia/Tokyo 等
+```
+
+用于静默时段和主动推送的时间判断。
+
+## 数据库（高级）
+
+```yaml
+database:
+    name: "Riverse"
+    user: "your_username"
+    host: "localhost"
+    password: ""                # 如果 PostgreSQL 需要密码
+    port: 5432                  # 默认 PostgreSQL 端口
+```
+
+## 会话记忆
+
+控制 AI 在单次对话中的上下文管理：
+
+```yaml
+session_memory:
+    char_budget: 3000           # 上下文总字符预算
+    keep_recent: 5              # 保留完整的最近轮次数
+    summary_ratio: 0.4          # 摘要占预算的比例
+    recall_max: 3               # 向量召回最大条数
+    recall_min_score: 0.45      # 召回最低相似度
+```
+
+详见 [记忆与 Sleep](../features/memory.md#会话记忆session-memory)。
+
+## 工具
+
+```yaml
 tools:
-  enabled: true
-  shell_exec:
-    enabled: false               # 安全考虑默认禁用
+    enabled: true
 
-# TTS 文字转语音
+    voice_transcribe:
+        model: "whisper-1"
+        language: "zh"          # 语音语言
+
+    image_describe:
+        provider: "openai"      # "openai" 或 "local"（Ollama LLaVA）
+        model: "gpt-4o"
+
+    file_read:
+        enabled: true
+        max_file_size: 1048576  # 最大 1MB
+        allowed_dirs: []        # 空=不限目录
+
+    shell_exec:
+        enabled: false          # 安全考虑默认禁用
+        timeout: 30
+        whitelist:
+            - "ls"
+            - "date"
+            - "git status"
+
+    web_search:                 # 自动使用 cloud_llm 中 search=true 的模型
+```
+
+## 语音合成（TTS）
+
+```yaml
 tts:
-  enabled: false
+    enabled: false
+    voices:
+        zh: "zh-CN-XiaoxiaoNeural"
+        en: "en-US-AriaNeural"
+    temp_dir: "tmp/tts"
+    max_chars: 500              # 超过此长度截断
+```
 
-# MCP 协议
+## 向量嵌入（高级）
+
+```yaml
+embedding:
+    enabled: true
+    model: "bge-m3"
+    api_base: "http://localhost:11434"
+    search:
+        top_k: 5               # 返回最相关的条数
+        min_score: 0.40         # 最低相似度
+    clustering:
+        enabled: false          # KMeans 聚类
+        show_themes: false      # 在上下文中显示聚类主题
+```
+
+## MCP 协议
+
+```yaml
 mcp:
-  enabled: false
-  servers: []
+    enabled: false
+    servers: []
+```
 
-# 主动推送
+## 主动推送
+
+```yaml
 proactive:
-  enabled: true
-  quiet_hours:
-    start: "23:00"
-    end: "08:00"
+    enabled: true
+    scan_interval_minutes: 30
+    quiet_hours:
+        start: "23:00"
+        end: "08:00"
+    max_messages_per_day: 3
+    min_gap_minutes: 120
+    triggers:
+        event_followup:
+            enabled: true
+            min_importance: 0.6
+            followup_after_hours: 24
+            max_age_days: 7
+        strategy:
+            enabled: true
+        idle_checkin:
+            enabled: true
+            idle_hours: 48
 ```

@@ -54,6 +54,45 @@ embedding:
   api_base: "http://localhost:11434"
 ```
 
+## セッションメモリ
+
+セッションメモリは、3 つのレイヤーで単一会話内のコンテキストを管理します：
+
+1. **スライディングサマリー** — 古いターンは LLM によって要約に圧縮され、トークン制限を超えずに会話履歴を保持
+2. **ベクトルリコール** — 埋め込みが有効な場合、現在のメッセージとの意味的類似度で関連する以前のターンを呼び出し
+3. **最近のターン** — 最新のターンはそのまま保持し、即座のコンテキストを提供
+
+この 3 層システムにより、重要なコンテキストを失うことなく会話を無制限に続けられます。`settings.yaml` で設定：
+
+```yaml
+session_memory:
+    char_budget: 3000        # セッションコンテキストの合計文字バジェット
+    keep_recent: 5           # そのまま保持する最近のターン数
+    summary_ratio: 0.4       # バジェットのうち要約に割り当てる割合
+    recall_max: 3            # ベクトル検索による最大リコール数
+    recall_min_score: 0.45   # リコールの最小類似度
+```
+
+## pgvector アクセラレーション
+
+デフォルトでは、埋め込みは JSONB として保存され、コサイン類似度は Python で計算されます。大規模データセットでのパフォーマンス向上には、[pgvector](https://github.com/pgvector/pgvector) 拡張をインストール：
+
+```bash
+# macOS
+brew install pgvector
+
+# Debian/Ubuntu
+apt install postgresql-16-pgvector
+```
+
+マイグレーションを実行：
+
+```bash
+psql -h localhost -U YOUR_USERNAME -d Riverse -f migrations/001_pgvector.sql
+```
+
+ネイティブの `vector(1024)` カラムと IVFFlat インデックスが作成され、高速な近似最近傍検索が可能になります。アプリケーションは pgvector を自動検出し、利用可能な場合に使用します。設定変更は不要です。
+
 ## メモリの精度
 
 !!! info

@@ -44,6 +44,14 @@ You can create skills by telling the bot directly:
 
 The bot will automatically generate the YAML and save it to `agent/skills/`.
 
+## Deleting Skills via Chat
+
+You can also delete skills by telling the bot:
+
+> "Delete the water reminder skill"
+
+The bot will find and remove the matching YAML file from `agent/skills/`.
+
 ## Custom Skill Development
 
 For more details on building advanced skills, see the [Custom Skill Development](../development/custom-skill.md) guide.

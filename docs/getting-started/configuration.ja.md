@@ -125,28 +125,125 @@ embedding:
   api_base: "http://localhost:11434"
 ```
 
-## その他の設定
+## タイムゾーン
 
 ```yaml
-# ツール
+timezone: "Asia/Tokyo"          # IANA 形式：Asia/Shanghai, America/New_York など
+```
+
+静かな時間帯やプロアクティブ通知のスケジュールに使用。
+
+## データベース（詳細）
+
+```yaml
+database:
+    name: "Riverse"
+    user: "your_username"
+    host: "localhost"
+    password: ""                # PostgreSQL にパスワードが必要な場合
+    port: 5432                  # デフォルト PostgreSQL ポート
+```
+
+## セッションメモリ
+
+単一会話内での AI のコンテキスト管理を制御：
+
+```yaml
+session_memory:
+    char_budget: 3000           # コンテキストの合計文字バジェット
+    keep_recent: 5              # そのまま保持する最近のターン数
+    summary_ratio: 0.4          # バジェットのうち要約に割り当てる割合
+    recall_max: 3               # ベクトル検索による最大リコール数
+    recall_min_score: 0.45      # リコールの最小類似度
+```
+
+詳細は [メモリ & Sleep](../features/memory.md#セッションメモリ) を参照。
+
+## ツール
+
+```yaml
 tools:
-  enabled: true
-  shell_exec:
-    enabled: false               # セキュリティのためデフォルト無効
+    enabled: true
 
-# TTS
+    voice_transcribe:
+        model: "whisper-1"
+        language: "ja"          # 音声の言語
+
+    image_describe:
+        provider: "openai"      # "openai" か "local"（Ollama LLaVA）
+        model: "gpt-4o"
+
+    file_read:
+        enabled: true
+        max_file_size: 1048576  # 最大 1MB
+        allowed_dirs: []        # 空=制限なし
+
+    shell_exec:
+        enabled: false          # セキュリティのためデフォルト無効
+        timeout: 30
+        whitelist:
+            - "ls"
+            - "date"
+            - "git status"
+
+    web_search:                 # cloud_llm の search=true のモデルを自動使用
+```
+
+## 音声合成（TTS）
+
+```yaml
 tts:
-  enabled: false
+    enabled: false
+    voices:
+        zh: "zh-CN-XiaoxiaoNeural"
+        en: "en-US-AriaNeural"
+    temp_dir: "tmp/tts"
+    max_chars: 500              # この長さを超えると切り捨て
+```
 
-# MCP プロトコル
+## 埋め込み検索（詳細）
+
+```yaml
+embedding:
+    enabled: true
+    model: "bge-m3"
+    api_base: "http://localhost:11434"
+    search:
+        top_k: 5               # 上位結果の数
+        min_score: 0.40         # 最小類似度
+    clustering:
+        enabled: false          # KMeans クラスタリング
+        show_themes: false      # コンテキストにクラスタテーマを表示
+```
+
+## MCP プロトコル
+
+```yaml
 mcp:
-  enabled: false
-  servers: []
+    enabled: false
+    servers: []
+```
 
-# プロアクティブ通知
+## プロアクティブ通知
+
+```yaml
 proactive:
-  enabled: true
-  quiet_hours:
-    start: "23:00"
-    end: "08:00"
+    enabled: true
+    scan_interval_minutes: 30
+    quiet_hours:
+        start: "23:00"
+        end: "08:00"
+    max_messages_per_day: 3
+    min_gap_minutes: 120
+    triggers:
+        event_followup:
+            enabled: true
+            min_importance: 0.6
+            followup_after_hours: 24
+            max_age_days: 7
+        strategy:
+            enabled: true
+        idle_checkin:
+            enabled: true
+            idle_hours: 48
 ```

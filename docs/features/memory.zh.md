@@ -54,6 +54,45 @@ embedding:
   api_base: "http://localhost:11434"
 ```
 
+## 会话记忆（Session Memory）
+
+会话记忆通过三层结构管理单次对话中的上下文：
+
+1. **滑动摘要** — 旧对话被 LLM 压缩为滚动摘要，保留历史不超 token 限制
+2. **向量召回** — 开启向量嵌入后，根据当前消息的语义相似度召回早期相关对话
+3. **最近轮次** — 最近几轮对话完整保留，提供即时上下文
+
+三层系统让对话可以无限进行而不丢失重要上下文。在 `settings.yaml` 中配置：
+
+```yaml
+session_memory:
+    char_budget: 3000        # 会话上下文总字符预算
+    keep_recent: 5           # 保留完整的最近轮次数
+    summary_ratio: 0.4       # 摘要占预算的比例
+    recall_max: 3            # 向量召回最大条数
+    recall_min_score: 0.45   # 召回最低相似度
+```
+
+## pgvector 加速
+
+默认情况下，向量以 JSONB 存储，余弦相似度在 Python 中计算。对于大数据集，安装 [pgvector](https://github.com/pgvector/pgvector) 扩展可显著提升性能：
+
+```bash
+# macOS
+brew install pgvector
+
+# Debian/Ubuntu
+apt install postgresql-16-pgvector
+```
+
+然后运行迁移脚本：
+
+```bash
+psql -h localhost -U YOUR_USERNAME -d Riverse -f migrations/001_pgvector.sql
+```
+
+这会创建原生 `vector(1024)` 列和 IVFFlat 索引，实现快速近似最近邻搜索。应用会自动检测 pgvector 并在可用时使用，无需修改配置。
+
 ## 记忆准确性
 
 !!! info

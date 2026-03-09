@@ -54,6 +54,7 @@ enabled: true
 | `instruction` | 关键词类型时 | LLM 的指令 |
 | `steps` | 定时类型时 | 要执行的操作列表 |
 | `enabled` | 是 | `true` / `false` |
+| `variables` | 否 | 模板中可用的键值对变量 |
 
 ## 对话中创建技能
 

@@ -14,6 +14,7 @@
 | dify_agent | HTTP | Dify 子 Agent | 禁用 |
 | backup_notes | Command | 本地备份脚本 | 禁用 |
 | system_info | Command | 查看系统信息 | 禁用 |
+| httpbin_echo | HTTP | httpbin 回声测试 | 禁用 |
 
 ## 启用 Agent
 
@@ -44,6 +45,18 @@
 ### HTTP Agent
 
 向外部服务发送 HTTP 请求（Home Assistant、n8n、Dify 等）。
+
+### HTTP Agent 字段
+
+| 字段 | 说明 |
+|------|------|
+| `url` | 目标 URL（支持 `{parameter}` 占位符） |
+| `method` | HTTP 方法：GET、POST 等 |
+| `headers` | HTTP 请求头（如 Authorization） |
+| `body_template` | 带 `{parameter}` 占位符的请求体（用于 POST） |
+| `query_template` | 带 `{parameter}` 占位符的查询参数（用于 GET） |
+| `result_path` | 从 JSON 响应中提取数据的点分路径（如 `"answer"`、`"current_condition"`） |
+| `timeout` | 请求超时时间（秒） |
 
 ### Command Agent
 

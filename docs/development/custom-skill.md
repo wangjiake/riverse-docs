@@ -54,6 +54,7 @@ enabled: true
 | `instruction` | For keyword type | Instructions for the LLM |
 | `steps` | For schedule type | List of actions to execute |
 | `enabled` | Yes | `true` / `false` |
+| `variables` | No | Key-value map of variables available in templates |
 
 ## Creating Skills via Chat
 

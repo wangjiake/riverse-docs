@@ -40,6 +40,14 @@ enabled: true
 
 直接对 Bot 说"创建一个技能..."或"帮我做一个定时提醒..."，Bot 会自动生成 YAML 并保存。
 
+## 对话中删除技能
+
+也可以直接对 Bot 说来删除技能：
+
+> "删除喝水提醒技能"
+
+Bot 会找到并删除 `agent/skills/` 中对应的 YAML 文件。
+
 ## 自定义技能开发
 
 更多详情参见[自定义技能开发](../development/custom-skill.md)指南。

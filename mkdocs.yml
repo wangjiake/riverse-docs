@@ -61,6 +61,7 @@ plugins:
           nav_translations:
             Home: 首页
             Getting Started: 快速开始
+            Chat History Import (RiverHistory): 对话历史导入
             Features: 功能
             Development: 开发
             Python SDK (riverse): Python SDK (riverse)
@@ -72,6 +73,7 @@ plugins:
           nav_translations:
             Home: ホーム
             Getting Started: はじめに
+            Chat History Import (RiverHistory): チャット履歴インポート
             Features: 機能
             Development: 開発
             Python SDK (riverse): Python SDK (riverse)
@@ -84,6 +86,7 @@ nav:
     - getting-started/installation.md
     - getting-started/configuration.md
     - getting-started/docker.md
+    - getting-started/history.md
     - getting-started/first-chat.md
   - Features:
     - features/memory.md

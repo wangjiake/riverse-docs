@@ -125,28 +125,125 @@ embedding:
   api_base: "http://localhost:11434"
 ```
 
-## Other Settings
+## Timezone
 
 ```yaml
-# Tools
+timezone: "Asia/Tokyo"          # IANA format: Asia/Shanghai, America/New_York, etc.
+```
+
+Used for quiet hours and proactive messaging schedules.
+
+## Database (Advanced)
+
+```yaml
+database:
+    name: "Riverse"
+    user: "your_username"
+    host: "localhost"
+    password: ""                # If your PostgreSQL requires a password
+    port: 5432                  # Default PostgreSQL port
+```
+
+## Session Memory
+
+Controls how the AI manages context within a single conversation:
+
+```yaml
+session_memory:
+    char_budget: 3000           # Total character budget for context
+    keep_recent: 5              # Recent turns kept verbatim
+    summary_ratio: 0.4          # Budget fraction for summary
+    recall_max: 3               # Max vector-recalled turns
+    recall_min_score: 0.45      # Min similarity for recall
+```
+
+See [Memory & Sleep](../features/memory.md#session-memory) for details.
+
+## Tools
+
+```yaml
 tools:
-  enabled: true
-  shell_exec:
-    enabled: false               # Disabled by default for safety
+    enabled: true
 
-# TTS
+    voice_transcribe:
+        model: "whisper-1"
+        language: "en"          # Voice language for transcription
+
+    image_describe:
+        provider: "openai"      # "openai" or "local" (Ollama LLaVA)
+        model: "gpt-4o"
+
+    file_read:
+        enabled: true
+        max_file_size: 1048576  # Max 1MB
+        allowed_dirs: []        # Empty = no restriction
+
+    shell_exec:
+        enabled: false          # Disabled by default for security
+        timeout: 30
+        whitelist:
+            - "ls"
+            - "date"
+            - "git status"
+
+    web_search:                 # Auto-picks search-enabled model from cloud_llm
+```
+
+## Text-to-Speech
+
+```yaml
 tts:
-  enabled: false
+    enabled: false
+    voices:
+        zh: "zh-CN-XiaoxiaoNeural"
+        en: "en-US-AriaNeural"
+    temp_dir: "tmp/tts"
+    max_chars: 500              # Truncate if longer
+```
 
-# MCP Protocol
+## Embedding Search (Advanced)
+
+```yaml
+embedding:
+    enabled: true
+    model: "bge-m3"
+    api_base: "http://localhost:11434"
+    search:
+        top_k: 5               # Number of top results
+        min_score: 0.40         # Minimum similarity threshold
+    clustering:
+        enabled: false          # KMeans clustering of memory vectors
+        show_themes: false      # Show cluster themes in context
+```
+
+## MCP Protocol
+
+```yaml
 mcp:
-  enabled: false
-  servers: []
+    enabled: false
+    servers: []
+```
 
-# Proactive Outreach
+## Proactive Outreach
+
+```yaml
 proactive:
-  enabled: true
-  quiet_hours:
-    start: "23:00"
-    end: "08:00"
+    enabled: true
+    scan_interval_minutes: 30
+    quiet_hours:
+        start: "23:00"
+        end: "08:00"
+    max_messages_per_day: 3
+    min_gap_minutes: 120
+    triggers:
+        event_followup:
+            enabled: true
+            min_importance: 0.6
+            followup_after_hours: 24
+            max_age_days: 7
+        strategy:
+            enabled: true
+        idle_checkin:
+            enabled: true
+            idle_hours: 48
 ```
