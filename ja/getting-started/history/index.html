@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="zh" class="no-js">
+<html lang="ja" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -10,21 +10,21 @@
       
       
       
-        <link rel="canonical" href="https://wangjiake.github.io/riverse-docs/zh/features/multi-channel/">
+        <link rel="canonical" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/history/">
       
       
-        <link rel="prev" href="../memory/">
+        <link rel="prev" href="../docker/">
       
       
-        <link rel="next" href="../tools/">
+        <link rel="next" href="../first-chat/">
       
       
         
-          <link rel="alternate" href="../../../features/multi-channel/" hreflang="en">
+          <link rel="alternate" href="../../../getting-started/history/" hreflang="en">
         
-          <link rel="alternate" href="./" hreflang="zh">
+          <link rel="alternate" href="../../../zh/getting-started/history/" hreflang="zh">
         
-          <link rel="alternate" href="../../../ja/features/multi-channel/" hreflang="ja">
+          <link rel="alternate" href="./" hreflang="ja">
         
       
       
@@ -33,7 +33,7 @@
     
     
       
-        <title>多渠道接入 - Riverse</title>
+        <title>チャット履歴インポート (RiverHistory) - Riverse</title>
       
     
     
@@ -69,16 +69,16 @@
     
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="多渠道接入 - Riverse">
+  <meta property="og:title" content="チャット履歴インポート (RiverHistory) - Riverse">
   <meta property="og:description" content="A personal AI agent — persistent memory, offline cognition, grows with every conversation.">
-  <meta property="og:url" content="https://wangjiake.github.io/riverse-docs/zh/features/multi-channel/">
+  <meta property="og:url" content="https://wangjiake.github.io/riverse-docs/ja/getting-started/history/">
   <meta property="og:image" content="https://wangjiake.github.io/riverse-docs/assets/images/og-cover.png">
   <meta property="og:site_name" content="Riverse">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@JKRiverse">
-  <meta name="twitter:title" content="多渠道接入 - Riverse">
+  <meta name="twitter:title" content="チャット履歴インポート (RiverHistory) - Riverse">
   <meta name="twitter:description" content="A personal AI agent — persistent memory, offline cognition, grows with every conversation.">
   <meta name="twitter:image" content="https://wangjiake.github.io/riverse-docs/assets/images/og-cover.png">
 
@@ -149,8 +149,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
-          跳转至
+        <a href="#riverhistory" class="md-skip">
+          コンテンツにスキップ
         </a>
       
     </div>
@@ -175,42 +175,42 @@
           
         
         <a href="../../" class="site-header__nav-link">
-          首页
+          ホーム
         </a>
       
         
           
         
-        <a href="../../getting-started/installation/" class="site-header__nav-link">
-          快速开始
+        <a href="../installation/" class="site-header__nav-link site-header__nav-link--active">
+          はじめに
         </a>
       
         
           
         
-        <a href="../memory/" class="site-header__nav-link site-header__nav-link--active">
-          功能
+        <a href="../../features/memory/" class="site-header__nav-link">
+          機能
         </a>
       
         
           
         
         <a href="../../development/python-sdk/" class="site-header__nav-link">
-          开发
+          開発
         </a>
       
         
           
         
         <a href="../../faq/" class="site-header__nav-link">
-          常见问题
+          よくある質問
         </a>
       
         
           
         
         <a href="../../about/license/" class="site-header__nav-link">
-          关于
+          について
         </a>
       
     </nav>
@@ -228,15 +228,15 @@
           <ul class="md-select__list">
             
             <li class="md-select__item">
-              <a href="../../../features/multi-channel/" hreflang="en" class="md-select__link">English</a>
+              <a href="../../../getting-started/history/" hreflang="en" class="md-select__link">English</a>
             </li>
             
             <li class="md-select__item">
-              <a href="./" hreflang="zh" class="md-select__link">中文</a>
+              <a href="../../../zh/getting-started/history/" hreflang="zh" class="md-select__link">中文</a>
             </li>
             
             <li class="md-select__item">
-              <a href="../../../ja/features/multi-channel/" hreflang="ja" class="md-select__link">日本語</a>
+              <a href="./" hreflang="ja" class="md-select__link">日本語</a>
             </li>
             
           </ul>
@@ -287,16 +287,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="検索" placeholder="検索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="查找">
+      <nav class="md-search__options" aria-label="検索">
         
-        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="クリア" aria-label="クリア" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -309,7 +309,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            正在初始化搜索引擎
+            検索を初期化
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -356,7 +356,7 @@
   
 
 
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="ナビゲーション" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
     <a href="../../" title="Riverse" class="md-nav__button md-logo" aria-label="Riverse" data-md-component="logo">
       
@@ -367,7 +367,7 @@
   </label>
   
     <div class="md-nav__source">
-      <a href="https://github.com/wangjiake/JKRiver" title="前往仓库" class="md-source" data-md-component="source">
+      <a href="https://github.com/wangjiake/JKRiver" title="リポジトリへ" class="md-source" data-md-component="source">
   <div class="md-source__icon md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
@@ -394,7 +394,7 @@
   <span class="md-ellipsis">
     
   
-    首页
+    ホーム
   
 
     
@@ -411,227 +411,12 @@
       
   
   
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    
-      
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    快速开始
-  
-
-    
-  </span>
-  
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            
-  
-    快速开始
-  
-
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/installation/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    安装
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/configuration/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    配置
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/docker/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Docker
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/history/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    对话历史导入 (RiverHistory)
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../getting-started/first-chat/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    第一次对话
-  
-
-    
-  </span>
-  
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
   
     
     
-      
-        
-      
-        
       
         
       
@@ -659,17 +444,17 @@
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   
   <span class="md-ellipsis">
     
   
-    功能
+    はじめに
   
 
     
@@ -680,12 +465,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_3">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
   
-    功能
+    はじめに
   
 
           </label>
@@ -698,14 +483,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../memory/" class="md-nav__link">
+      <a href="../installation/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    记忆与 Sleep
+    インストール
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    設定
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docker
   
 
     
@@ -742,7 +583,7 @@
   <span class="md-ellipsis">
     
   
-    多渠道接入
+    チャット履歴インポート (RiverHistory)
   
 
     
@@ -760,7 +601,7 @@
   <span class="md-ellipsis">
     
   
-    多渠道接入
+    チャット履歴インポート (RiverHistory)
   
 
     
@@ -772,7 +613,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="目次">
   
   
   
@@ -781,15 +622,26 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      目次
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        デモデータセット
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        支持的渠道
+        前提条件
       
     </span>
   </a>
@@ -797,10 +649,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#telegram-bot" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Telegram Bot
+        クイックスタート（ソースから）
       
     </span>
   </a>
@@ -808,10 +660,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discord-bot" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discord Bot
+        会話データのエクスポート
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        インポートコマンド
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        処理コマンド
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リセット
       
     </span>
   </a>
@@ -822,7 +707,40 @@
   <a href="#web" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Web 仪表盘
+        Web ビューアー
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker の代替手段
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        費用に関する注意
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        精度に関する注意
       
     </span>
   </a>
@@ -845,14 +763,117 @@
   
   
     <li class="md-nav__item">
-      <a href="../tools/" class="md-nav__link">
+      <a href="../first-chat/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    内置工具
+    初めての会話
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    機能
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    機能
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/memory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    メモリ &amp; Sleep
   
 
     
@@ -873,14 +894,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../skills/" class="md-nav__link">
+      <a href="../../features/multi-channel/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    技能系统
+    マルチチャネルアクセス
   
 
     
@@ -901,14 +922,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../agents/" class="md-nav__link">
+      <a href="../../features/tools/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    外部 Agent
+    ビルトインツール
   
 
     
@@ -929,14 +950,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../mcp/" class="md-nav__link">
+      <a href="../../features/skills/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    MCP 协议
+    スキルシステム
   
 
     
@@ -957,14 +978,70 @@
   
   
     <li class="md-nav__item">
-      <a href="../proactive/" class="md-nav__link">
+      <a href="../../features/agents/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    主动关怀
+    外部エージェント
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP プロトコル
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/proactive/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    プロアクティブ通知
   
 
     
@@ -1025,7 +1102,7 @@
   <span class="md-ellipsis">
     
   
-    开发
+    開発
   
 
     
@@ -1041,7 +1118,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    开发
+    開発
   
 
           </label>
@@ -1089,7 +1166,7 @@
   <span class="md-ellipsis">
     
   
-    自定义工具开发
+    カスタムツール開発
   
 
     
@@ -1117,7 +1194,7 @@
   <span class="md-ellipsis">
     
   
-    自定义技能开发
+    カスタムスキル開発
   
 
     
@@ -1145,7 +1222,7 @@
   <span class="md-ellipsis">
     
   
-    REST API 参考
+    REST API リファレンス
   
 
     
@@ -1180,7 +1257,7 @@
   <span class="md-ellipsis">
     
   
-    常见问题
+    よくある質問
   
 
     
@@ -1229,7 +1306,7 @@
   <span class="md-ellipsis">
     
   
-    关于
+    について
   
 
     
@@ -1245,7 +1322,7 @@
             <span class="md-nav__icon md-icon"></span>
             
   
-    关于
+    について
   
 
           </label>
@@ -1265,7 +1342,7 @@
   <span class="md-ellipsis">
     
   
-    许可证
+    ライセンス
   
 
     
@@ -1293,7 +1370,7 @@
   <span class="md-ellipsis">
     
   
-    联系方式
+    お問い合わせ
   
 
     
@@ -1327,7 +1404,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="目录">
+<nav class="md-nav md-nav--secondary" aria-label="目次">
   
   
   
@@ -1336,15 +1413,26 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      目录
+      目次
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        デモデータセット
+      
+    </span>
+  </a>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        支持的渠道
+        前提条件
       
     </span>
   </a>
@@ -1352,10 +1440,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#telegram-bot" class="md-nav__link">
+  <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Telegram Bot
+        クイックスタート（ソースから）
       
     </span>
   </a>
@@ -1363,10 +1451,43 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discord-bot" class="md-nav__link">
+  <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Discord Bot
+        会話データのエクスポート
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        インポートコマンド
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        処理コマンド
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        リセット
       
     </span>
   </a>
@@ -1377,7 +1498,40 @@
   <a href="#web" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Web 仪表盘
+        Web ビューアー
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Docker の代替手段
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        費用に関する注意
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        精度に関する注意
       
     </span>
   </a>
@@ -1404,86 +1558,223 @@
   
 
 
-<h1 id="_1">多渠道接入</h1>
-<p>Riverse 支持多种通信渠道，所有渠道共享同一份记忆和画像。</p>
-<h2 id="_2">支持的渠道</h2>
+<h1 id="riverhistory">チャット履歴インポート (RiverHistory)</h1>
+<p>RiverHistory は River Algorithm の特別版で、<strong>ChatGPT、Claude、Gemini の会話履歴からパーソナルプロフィールをバッチ抽出する</strong>ことに特化しています。リアルタイムの会話ではなく、過去の AI チャット履歴を遡って分析し、同じ豊かなプロフィールを構築します — 性格特性、人生のタイムライン、人間関係、キャリアの変遷など。</p>
+<p>RiverHistory は <a href="https://github.com/wangjiake/JKRiver">JKRiver</a> メインプロジェクトと同じ PostgreSQL データベース（<code>Riverse</code>）を共有しています。履歴から抽出されたプロフィールとライブチャットで構築されたプロフィールが一緒に保存され、統一されたビューを提供します。</p>
+<p><strong>ソースコード：</strong> <a href="https://github.com/wangjiake/RiverHistory">https://github.com/wangjiake/RiverHistory</a></p>
+<h2 id="_1">デモデータセット</h2>
+<p>3 つの組み込みデモキャラクターで、自分のデータをインポートせずにシステムをテストできます：</p>
 <table>
 <thead>
 <tr>
-<th>渠道</th>
-<th>命令</th>
-<th>说明</th>
+<th>フラグ</th>
+<th>キャラクター</th>
+<th>言語</th>
+<th>セッション数</th>
+<th>説明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>CLI</td>
-<td><code>python -m agent.main</code></td>
-<td>终端交互模式</td>
+<td><code>--demo</code></td>
+<td>林雨桐（Lin Yutong）</td>
+<td>中国語</td>
+<td>50</td>
+<td>キャリアの変遷、恋愛、都市生活を経験する若い女性 — アルゴリズムの矛盾処理と態度変化の追跡能力をテスト</td>
 </tr>
 <tr>
-<td>Telegram Bot</td>
-<td><code>python -m agent.telegram_bot</code></td>
-<td>支持文本、语音、图片</td>
+<td><code>--demo2</code></td>
+<td>沈一帆（Shen Yifan）</td>
+<td>中国語</td>
+<td>15</td>
+<td>芸術的追求を持つ建築家 — クイックテスト用の短いデータセット</td>
 </tr>
 <tr>
-<td>Discord Bot</td>
-<td><code>python -m agent.discord_bot</code></td>
-<td>支持文本、语音、图片</td>
-</tr>
-<tr>
-<td>REST API</td>
-<td><code>uvicorn agent.api:app --host 0.0.0.0 --port 8400</code></td>
-<td>HTTP 端点</td>
-</tr>
-<tr>
-<td>WebSocket</td>
-<td>包含在 REST API 中</td>
-<td>实时双向对话</td>
-</tr>
-<tr>
-<td>Web 仪表盘</td>
-<td><code>python web.py</code></td>
-<td>画像查看和记忆管理</td>
+<td><code>--demo3</code></td>
+<td>Jake Morrison</td>
+<td>英語</td>
+<td>20</td>
+<td>サンフランシスコのソフトウェアエンジニア — 英語デモ</td>
 </tr>
 </tbody>
 </table>
-<h2 id="telegram-bot">Telegram Bot</h2>
-<p>推荐的主要聊天入口 — 支持多模态输入（文本、语音、图片）。</p>
-<p>设置：</p>
-<ol>
-<li>通过 <a href="https://t.me/BotFather">@BotFather</a> 创建 Bot（<code>/newbot</code>）</li>
-<li>从 <a href="https://t.me/userinfobot">@userinfobot</a> 获取你的 User ID</li>
-<li>在 <code>settings.yaml</code> 中配置：</li>
-</ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">telegram</span><span class="p">:</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">bot_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;123456:ABC-DEF...&quot;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">temp_dir</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;tmp/telegram&quot;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">  </span><span class="nt">allowed_user_ids</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">your_user_id</span><span class="p p-Indicator">]</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><code>--demo2</code> と <code>--demo3</code> はインポート前にデモテーブルをクリアします。つまり、以前ロードしたデモデータを置き換えます。<code>--demo</code> はクリアせずに追加インポートします。</p>
+</div>
+<h2 id="_2">前提条件</h2>
+<table>
+<thead>
+<tr>
+<th>依存関係</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python 3.11+</td>
+<td>ランタイム</td>
+</tr>
+<tr>
+<td>PostgreSQL 16+</td>
+<td>データストレージ（JKRiver と共有）</td>
+</tr>
+<tr>
+<td>LLM API キー <strong>または</strong> Ollama</td>
+<td>プロフィール抽出用 AI モデル</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_3">クイックスタート（ソースから）</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. リポジトリをクローン</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/wangjiake/RiverHistory.git
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="nb">cd</span><span class="w"> </span>RiverHistory
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 2. 仮想環境を作成</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">        </span><span class="c1"># macOS / Linux</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># .venv\Scripts\activate         # Windows</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># 3. 依存関係をインストール</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># 4. 設定を構成</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>cp<span class="w"> </span>settings.yaml<span class="w"> </span>settings.yaml<span class="w">   </span><span class="c1"># このファイルを編集 — データベース情報と LLM 設定を入力</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="c1">#    database.user: PostgreSQL ユーザー名（macOS/Linux のターミナルで whoami を実行して確認）</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="c1">#    llm_provider: &quot;openai&quot; = リモート API、&quot;local&quot; = Ollama</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="c1">#    openai.api_key: API キー（リモート API 使用時）</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="c1">#    language: &quot;ja&quot; / &quot;en&quot; / &quot;zh&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="c1"># 5. データベースを初期化（Riverse データベースと全テーブルを作成）</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>python<span class="w"> </span>setup_db.py
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="c1"># 6. デモデータをインポート</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>python<span class="w"> </span>import_data.py<span class="w"> </span>--demo
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="c1"># 7. River Algorithm で処理</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>python<span class="w"> </span>run.py<span class="w"> </span>demo<span class="w"> </span>max
+<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="c1"># 8. 抽出されたプロフィールを確認</span>
+<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>python<span class="w"> </span>web.py
 </code></pre></div>
-<h2 id="discord-bot">Discord Bot</h2>
-<ol>
-<li>在 <a href="https://discord.com/developers/applications">Discord Developer Portal</a> 创建应用</li>
-<li>在 Bot 页面开启 Message Content Intent</li>
-<li>用 OAuth2 URL 邀请 Bot 到服务器</li>
-</ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">discord</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">bot_token</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;your-discord-bot-token&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">allowed_user_ids</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w">           </span><span class="c1"># 空 = 允许所有人</span>
+<p><a href="http://localhost:2345">http://localhost:2345</a> を開いて Web プロフィールビューアーを確認。</p>
+<h2 id="_4">会話データのエクスポート</h2>
+<p>インポートの前に、各プラットフォームからデータをエクスポートする必要があります：</p>
+<table>
+<thead>
+<tr>
+<th>プラットフォーム</th>
+<th>エクスポート方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ChatGPT</strong></td>
+<td>Settings → Data controls → Export data → メールを待つ → ダウンロードして解凍 → <code>conversations.json</code></td>
+</tr>
+<tr>
+<td><strong>Claude</strong></td>
+<td>Settings → Account → Export Data → メールを待つ → ダウンロードして解凍 → <code>conversations.json</code></td>
+</tr>
+<tr>
+<td><strong>Gemini</strong></td>
+<td><a href="https://takeout.google.com/">Google Takeout</a> → 「Gemini Apps」のみ選択 → ダウンロードして解凍</td>
+</tr>
+</tbody>
+</table>
+<p>エクスポートしたファイルを <code>data/</code> ディレクトリに配置：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>RiverHistory/
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>├── settings.yaml
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>├── run.py
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>└── data/
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    ├── ChatGPT/               ← conversations.json をここに配置
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    ├── Claude/                ← conversations.json をここに配置
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    └── Gemini/                ← Takeout ファイルをここに配置
 </code></pre></div>
-<h2 id="web">Web 仪表盘</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>python<span class="w"> </span>web.py<span class="w">                          </span><span class="c1"># 默认端口 1234</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python<span class="w"> </span>web.py<span class="w"> </span>--port<span class="w"> </span><span class="m">8401</span><span class="w">              </span><span class="c1"># 指定端口</span>
+<h2 id="_5">インポートコマンド</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># 各プラットフォームからインポート（1 つまたは複数選択）</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>python<span class="w"> </span>import_data.py<span class="w"> </span>--chatgpt<span class="w"> </span>data/ChatGPT/conversations.json
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>python<span class="w"> </span>import_data.py<span class="w"> </span>--claude<span class="w"> </span>data/Claude/conversations.json
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>python<span class="w"> </span>import_data.py<span class="w"> </span>--gemini<span class="w"> </span><span class="s2">&quot;data/Gemini/マイ アクティビティ.html&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># デモデータセットをインポート</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>python<span class="w"> </span>import_data.py<span class="w"> </span>--demo<span class="w">       </span><span class="c1"># 林雨桐（50 セッション、中国語）</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>python<span class="w"> </span>import_data.py<span class="w"> </span>--demo2<span class="w">      </span><span class="c1"># 沈一帆（15 セッション、中国語 — インポート前にデモテーブルをクリア）</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>python<span class="w"> </span>import_data.py<span class="w"> </span>--demo3<span class="w">      </span><span class="c1"># Jake Morrison（20 セッション、英語 — インポート前にデモテーブルをクリア）</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="c1"># 1 つのコマンドで複数のソースを組み合わせ可能</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>python<span class="w"> </span>import_data.py<span class="w"> </span>--chatgpt<span class="w"> </span>data/ChatGPT/conversations.json<span class="w"> </span>--claude<span class="w"> </span>data/Claude/conversations.json
 </code></pre></div>
-<p>仪表盘功能：</p>
+<p>インポートは冪等です — 重複する会話はチェックサムに基づいて自動的にスキップされます。</p>
+<h2 id="_6">処理コマンド</h2>
+<p>インポート後、River Algorithm を実行してプロフィールを抽出：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>run.py<span class="w"> </span>&lt;ソース&gt;<span class="w"> </span>&lt;件数&gt;
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>パラメータ</th>
+<th>値</th>
+<th>説明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ソース</code></td>
+<td><code>chatgpt</code>、<code>claude</code>、<code>gemini</code>、<code>demo</code>、<code>all</code></td>
+<td>どのデータソースを処理するか。<code>all</code> は chatgpt + claude + gemini を合わせて処理（demo は除外）。</td>
+</tr>
+<tr>
+<td><code>件数</code></td>
+<td>数値または <code>max</code></td>
+<td>何件の会話を処理するか。時系列順（古い順）。<code>max</code> は保留中のすべてを処理。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>例：</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>run.py<span class="w"> </span>demo<span class="w"> </span>max<span class="w">          </span><span class="c1"># すべてのデモ会話を処理</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python<span class="w"> </span>run.py<span class="w"> </span>chatgpt<span class="w"> </span><span class="m">50</span><span class="w">        </span><span class="c1"># 最も古い 50 件の ChatGPT 会話を処理</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>python<span class="w"> </span>run.py<span class="w"> </span>claude<span class="w"> </span>max<span class="w">        </span><span class="c1"># すべての Claude 会話を処理</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>python<span class="w"> </span>run.py<span class="w"> </span>gemini<span class="w"> </span><span class="m">100</span><span class="w">        </span><span class="c1"># 最も古い 100 件の Gemini 会話を処理</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>python<span class="w"> </span>run.py<span class="w"> </span>all<span class="w"> </span>max<span class="w">           </span><span class="c1"># すべて処理（chatgpt + claude + gemini、時系列で混合）</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>python<span class="w"> </span>run.py<span class="w"> </span>all<span class="w"> </span><span class="m">200</span><span class="w">           </span><span class="c1"># すべてのソース混合、最も古い 200 件</span>
+</code></pre></div>
+<p>処理は<strong>安全に中断できます</strong> — 次回実行時に処理済みの会話は自動的にスキップされます。</p>
+<h2 id="_7">リセット</h2>
+<p>抽出されたすべてのプロフィールと記憶をクリアし、元のインポート済み会話データは保持：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>reset_db.py
+</code></pre></div>
+<p>プロフィール関連テーブル（<code>user_profile</code>、<code>observations</code>、<code>hypotheses</code>、<code>trajectory_summary</code>、<code>relationships</code> など）をリセットしますが、ソーステーブル（<code>chatgpt</code>、<code>claude</code>、<code>gemini</code>、<code>demo</code>）はそのまま残ります。その後 <code>run.py</code> を再実行して最初から処理できます。</p>
+<h2 id="web">Web ビューアー</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>web.py
+</code></pre></div>
+<p><a href="http://localhost:2345">http://localhost:2345</a> で Web ダッシュボードを開き、抽出されたプロフィールを閲覧 — 性格次元、人生のタイムライン、人間関係、キャリア履歴など。</p>
+<h2 id="docker">Docker の代替手段</h2>
+<p>Python と PostgreSQL を手動でインストールしたくない場合は、Docker で RiverHistory を実行できます。<a href="../docker/">Docker ガイド</a>を参照してください。<code>docker compose up</code> 1 つのコマンドで RiverHistory と JKRiver の両方を起動できます。</p>
+<h2 id="_8">費用に関する注意</h2>
+<div class="admonition warning">
+<p class="admonition-title">トークンコスト（リモート LLM API）</p>
+<p>各会話は処理時にトークンを消費します。大量のコードや非常に長いメッセージを含む会話はより多く消費します。</p>
 <ul>
-<li>画像总览（分类、时间线、确认/待确认状态）</li>
-<li>人际关系图</li>
-<li>人物轨迹分析</li>
-<li>观察记录</li>
-<li>人工审核（编辑、确认、驳回、解决矛盾）</li>
-<li>财务数据、健康数据</li>
+<li><strong>高性能モデル</strong>（GPT-4o など）はプロフィール品質が高いですが、コストも高い。</li>
+<li><strong>安価なモデル</strong>（GPT-4o-mini、DeepSeek など）は高速で安価ですが、細部を見逃す可能性がある。</li>
+<li><strong>ローカル Ollama モデル</strong>は完全無料、ただし速度は遅い。</li>
 </ul>
+<p>処理前にエクスポートデータを確認し、不要な会話（純粋なコーディングセッション等）を削除してください。<strong>API の請求額を確認してください。</strong></p>
+<p>まず少量で試して（例：<code>python run.py chatgpt 10</code>）、コストを見積もってからすべてを処理してください。</p>
+</div>
+<h2 id="_9">精度に関する注意</h2>
+<div class="admonition info">
+<p class="admonition-title">LLM の制限</p>
+<p>プロフィール抽出は LLM の会話解釈に依存しています。結果には不正確な部分が含まれる可能性があります：</p>
+<ul>
+<li>LLM は皮肉、冗談、仮定の発言を事実として誤解する場合があります。</li>
+<li>曖昧または矛盾する発言が誤って解釈される場合があります。</li>
+<li>モデルによって結果の品質が異なります — データに最適なモデルを見つけるために実験してください。</li>
+<li>River Algorithm は矛盾や変化する情報を処理するよう設計されていますが、完璧なシステムはありません。</li>
+</ul>
+<p>抽出されたプロフィールの正確性を必ず確認してください。必要に応じてリセットし、別のモデルで再処理できます。</p>
+</div>
 
 
 
@@ -1509,7 +1800,7 @@
           <button type="button" class="md-top md-icon" data-md-component="top" hidden>
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  回到页面顶部
+  ページトップへ戻る
 </button>
         
       </main>
@@ -1518,33 +1809,33 @@
   
     
       
-      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      <nav class="md-footer__inner md-grid" aria-label="フッター" >
         
           
-          <a href="../memory/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 记忆与 Sleep">
+          <a href="../docker/" class="md-footer__link md-footer__link--prev" aria-label="前: Docker">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
             </div>
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                上一页
+                前
               </span>
               <div class="md-ellipsis">
-                记忆与 Sleep
+                Docker
               </div>
             </div>
           </a>
         
         
           
-          <a href="../tools/" class="md-footer__link md-footer__link--next" aria-label="下一页: 内置工具">
+          <a href="../first-chat/" class="md-footer__link md-footer__link--next" aria-label="次: 初めての会話">
             <div class="md-footer__title">
               <span class="md-footer__direction">
-                下一页
+                次
               </span>
               <div class="md-ellipsis">
-                内置工具
+                初めての会話
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -1614,7 +1905,7 @@
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.tabs.link", "toc.follow", "announce.dismiss"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version": "\u30d0\u30fc\u30b8\u30e7\u30f3\u5207\u308a\u66ff\u3048"}, "version": null}</script>
     
     
       <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>

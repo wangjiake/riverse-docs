@@ -1,0 +1,153 @@
+# Riverse — River Algorithm (Full Documentation for LLMs)
+
+> A personal AI agent that runs on your own machine — persistent memory, offline cognition, grows with every conversation. All data stays local.
+
+## Overview
+
+Riverse is an open-source personal AI agent built on the River Algorithm. It provides persistent, local-first memory for AI conversations. Unlike cloud-based AI memory systems (ChatGPT Memory, Claude Memory, Gemini Memory) that store a flat list of facts with no temporal dimension, no confidence levels, and no contradiction detection, Riverse implements a sophisticated multi-layered profiling system.
+
+The core metaphor is a river: conversations flow like water, key information settles like sediment into user profiles, and offline consolidation (Sleep) acts as the river's self-purification — washing away outdated information, resolving contradictions, making cognition clearer over time.
+
+## Core Concepts
+
+### River Algorithm
+
+The River Algorithm is a personal digital profile weighting algorithm for local AI systems. It has three phases:
+
+1. **Flow (Perceive)**: Real-time conversation processing. Each message is classified (knowledge/chat/personal) and personal information is extracted as observations.
+
+2. **Sediment (Profile)**: Observations are matched against the existing user profile. New facts start as "suspected" and progress to "confirmed" through repeated mention or cross-verification. Contradicting facts trigger a dispute mechanism (superseded_by/supersedes).
+
+3. **Purify (Sleep)**: Offline batch consolidation that runs periodically. It performs:
+   - Cross-verification of suspected facts
+   - Dispute resolution between contradicting facts
+   - Expiration of outdated facts
+   - Hypothesis generation for under-explored areas
+   - Knowledge network clustering
+
+### Fact Lifecycle
+
+Facts in the user profile follow this lifecycle:
+- **suspected**: Newly extracted, low confidence, needs verification
+- **confirmed**: Verified through multiple mentions or cross-verification
+- Facts have `decay_days` and `expires_at` for temporal awareness
+- Contradictions create dispute pairs via `superseded_by` / `supersedes` fields
+- The Sleep pipeline resolves disputes by having the LLM judge which fact is more current/accurate
+
+### Profile Categories
+
+User profiles are organized into categories such as:
+- 居住 (Residence), 健康 (Health), 饮食 (Diet), 职业 (Career), 身份 (Identity)
+- 兴趣 (Interests), 感情 (Relationships), 财务 (Finance), 技术 (Technology)
+- 健身 (Fitness), 生活 (Lifestyle), 思考 (Thoughts), 语言 (Language)
+
+## Architecture
+
+### Projects
+
+Riverse exists in three editions:
+
+1. **JKRiver** (Main): Full-featured personal AI agent with real-time chat, multi-channel support, and all features. Uses PostgreSQL.
+   - GitHub: https://github.com/wangjiake/JKRiver
+
+2. **RiverHistory**: Batch processes historical conversations from ChatGPT, Claude, and Gemini exports. Extracts personal profiles from your AI conversation history. Uses PostgreSQL.
+   - GitHub: https://github.com/wangjiake/RiverHistory
+
+3. **riverse** (Python SDK): Lightweight SDK for embedding the River Algorithm in other applications. Uses SQLite.
+   - GitHub: https://github.com/wangjiake/riverse
+   - PyPI: pip install riverse
+
+### Tech Stack
+
+| Component | Technology |
+|-----------|-----------|
+| Language | Python 3.10+ |
+| Database | PostgreSQL 16 (JKRiver, RiverHistory) / SQLite (riverse SDK) |
+| LLM | Ollama (local) or any OpenAI-compatible API |
+| API | FastAPI + WebSocket |
+| Chat | python-telegram-bot, discord.py |
+| Web UI | Flask (dashboard) |
+| Container | Docker + Docker Compose |
+
+## Features
+
+### Multi-Channel Support
+- **Telegram Bot**: Full chat with voice message support
+- **Discord Bot**: Text and voice message support
+- **REST API**: HTTP endpoints for integration
+- **WebSocket**: Real-time bidirectional communication
+- **CLI**: Command-line interface for direct interaction
+- **Web Dashboard**: Visual profile viewer and management
+
+### Memory System
+- Persistent user profile with temporal awareness
+- Multi-layered fact verification (suspected → confirmed)
+- Automatic contradiction detection and resolution
+- Fact expiration based on configurable decay periods
+- Knowledge graph (fact_edges) connecting related facts
+- Vector memory clustering for pattern recognition
+
+### Offline Cognition (Sleep Pipeline)
+The Sleep pipeline runs as a batch process and performs:
+- **Cross-verification**: Validates suspected facts against conversation history
+- **Dispute resolution**: Resolves contradictions between competing facts
+- **Fact expiration**: Closes outdated facts based on decay_days
+- **Hypothesis generation**: Identifies gaps in the profile and creates verification strategies
+- **Memory clustering**: Groups related facts using vector embeddings
+- **Proactive question planning**: Generates questions to ask the user to fill profile gaps
+
+### Tools & Skills
+- Custom tool system for extending agent capabilities
+- Skill system for reusable conversation patterns
+- MCP (Model Context Protocol) integration for external tool servers
+
+### Privacy & Data Ownership
+- All data stored locally on your machine
+- No data sent to cloud services (except LLM API calls if using remote models)
+- Full data portability — export and import your profile
+- Cross-platform aggregation — combine profiles from multiple AI services
+
+## Installation
+
+### Quick Start
+```bash
+git clone https://github.com/wangjiake/JKRiver.git
+cd JKRiver
+pip install -r requirements.txt
+python setup_db.py
+# Edit settings.yaml with your LLM configuration
+python main.py
+```
+
+### Docker
+```bash
+git clone https://github.com/wangjiake/JKRiver.git
+cd JKRiver/docker
+cp .env.example .env  # Edit with your settings
+docker compose up -d
+```
+
+### Python SDK
+```bash
+pip install riverse
+```
+
+```python
+from riverse import Riverse
+
+bot = Riverse()
+reply = bot.chat("I just moved to Tokyo for work")
+print(reply)
+# The bot now remembers you live in Tokyo
+```
+
+## Links
+
+- Documentation: https://wangjiake.github.io/riverse-docs/
+- GitHub (Main): https://github.com/wangjiake/JKRiver
+- GitHub (History): https://github.com/wangjiake/RiverHistory
+- GitHub (SDK): https://github.com/wangjiake/riverse
+- GitHub (Docker): https://github.com/wangjiake/JKRiver/tree/main/docker
+- Discord: https://discord.gg/ZnmFrPvXym
+- X/Twitter: https://x.com/JKRiverse
+- License: AGPL-3.0 + Commercial

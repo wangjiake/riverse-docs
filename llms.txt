@@ -1,0 +1,50 @@
+# Riverse — River Algorithm
+
+> A personal AI agent that runs on your own machine — persistent memory, offline cognition, grows with every conversation. All data stays local.
+
+## What is Riverse?
+
+Riverse is an open-source personal AI agent built on the River Algorithm. Unlike cloud-based AI memory systems (ChatGPT Memory, Claude Memory) that store flat lists of facts, Riverse uses a multi-layered profiling system inspired by how rivers deposit sediment:
+
+- **Flow**: Conversations stream through like water, key information is extracted in real-time.
+- **Sediment**: Facts settle into a user profile, progressing from "suspected" → "confirmed" → "established" through multi-turn verification.
+- **Purify**: Offline consolidation (Sleep) resolves contradictions, expires outdated info, and strengthens validated facts.
+
+## Key Features
+
+- Persistent local memory with temporal awareness
+- Contradiction detection and dispute resolution
+- Offline cognitive consolidation (Sleep pipeline)
+- Multi-channel support: Telegram, Discord, REST API, WebSocket, CLI, Web Dashboard
+- Multi-modal input: text, voice, images
+- Proactive engagement based on user patterns
+- Custom tools and skills system
+- MCP (Model Context Protocol) integration
+- Runs with any OpenAI-compatible LLM or local Ollama models
+- All data stored locally — never sent to cloud
+
+## Use Cases
+
+- Personal AI assistant that truly knows you over time
+- Local-first alternative to cloud AI memory
+- Cross-platform conversation profile aggregation
+- Batch extraction of personal profiles from ChatGPT/Claude/Gemini history (RiverHistory edition)
+
+## Tech Stack
+
+- Python 3.10+
+- PostgreSQL 16 (or SQLite via riverse SDK)
+- Ollama / OpenAI-compatible API
+- FastAPI + WebSocket
+- python-telegram-bot / discord.py
+
+## Links
+
+- GitHub: https://github.com/wangjiake/JKRiver
+- Documentation: https://wangjiake.github.io/riverse-docs/
+- Python SDK: https://github.com/wangjiake/riverse
+- Docker: https://github.com/wangjiake/JKRiver/tree/main/docker
+- Chat History Edition: https://github.com/wangjiake/RiverHistory
+- Discord: https://discord.gg/ZnmFrPvXym
+- X/Twitter: https://x.com/JKRiverse
+- License: AGPL-3.0 + Commercial
