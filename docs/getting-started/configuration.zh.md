@@ -157,7 +157,7 @@ session_memory:
     recall_min_score: 0.45      # 召回最低相似度
 ```
 
-详见 [记忆与 Sleep](../features/memory.md#会话记忆session-memory)。
+详见 [记忆与 Sleep](../features/memory.md#session-memory)。
 
 ## 工具
 

@@ -157,7 +157,7 @@ session_memory:
     recall_min_score: 0.45      # リコールの最小類似度
 ```
 
-詳細は [メモリ & Sleep](../features/memory.md#セッションメモリ) を参照。
+詳細は [メモリ & Sleep](../features/memory.md#session-memory) を参照。
 
 ## ツール
 

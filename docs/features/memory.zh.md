@@ -54,7 +54,7 @@ embedding:
   api_base: "http://localhost:11434"
 ```
 
-## 会话记忆（Session Memory）
+## 会话记忆（Session Memory） {#session-memory}
 
 会话记忆通过三层结构管理单次对话中的上下文：
 

@@ -54,7 +54,7 @@ embedding:
   api_base: "http://localhost:11434"
 ```
 
-## セッションメモリ
+## セッションメモリ {#session-memory}
 
 セッションメモリは、3 つのレイヤーで単一会話内のコンテキストを管理します：
 
