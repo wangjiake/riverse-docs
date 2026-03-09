@@ -4,7 +4,7 @@ Don't want to install Python or PostgreSQL? Run Riverse with Docker in 3 command
 
 ## Quick Start
 
-Visit the **[Riverse-Docker](https://github.com/wangjiake/Riverse-Docker)** repository for full instructions.
+Visit the **[Docker guide](https://github.com/wangjiake/JKRiver/tree/main/docker)** in the JKRiver repository for full instructions.
 
 Supports:
 

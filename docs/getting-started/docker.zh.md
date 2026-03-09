@@ -4,7 +4,7 @@
 
 ## 快速开始
 
-访问 **[Riverse-Docker](https://github.com/wangjiake/Riverse-Docker)** 仓库获取完整说明。
+访问 JKRiver 仓库中的 **[Docker 指南](https://github.com/wangjiake/JKRiver/tree/main/docker)** 获取完整说明。
 
 支持：
 

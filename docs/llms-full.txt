@@ -121,8 +121,8 @@ python main.py
 
 ### Docker
 ```bash
-git clone https://github.com/wangjiake/Riverse-Docker.git
-cd Riverse-Docker
+git clone https://github.com/wangjiake/JKRiver.git
+cd JKRiver/docker
 cp .env.example .env  # Edit with your settings
 docker compose up -d
 ```
@@ -147,7 +147,7 @@ print(reply)
 - GitHub (Main): https://github.com/wangjiake/JKRiver
 - GitHub (History): https://github.com/wangjiake/RiverHistory
 - GitHub (SDK): https://github.com/wangjiake/riverse
-- GitHub (Docker): https://github.com/wangjiake/Riverse-Docker
+- GitHub (Docker): https://github.com/wangjiake/JKRiver/tree/main/docker
 - Discord: https://discord.gg/ZnmFrPvXym
 - X/Twitter: https://x.com/JKRiverse
 - License: AGPL-3.0 + Commercial

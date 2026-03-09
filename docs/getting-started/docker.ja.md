@@ -4,7 +4,7 @@ Python や PostgreSQL をインストールしたくない方へ。Docker で 3 
 
 ## クイックスタート
 
-**[Riverse-Docker](https://github.com/wangjiake/Riverse-Docker)** リポジトリで完全な手順をご確認ください。
+JKRiver リポジトリの **[Docker ガイド](https://github.com/wangjiake/JKRiver/tree/main/docker)** で完全な手順をご確認ください。
 
 対応：
 
