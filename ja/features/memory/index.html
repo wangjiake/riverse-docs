@@ -830,7 +830,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#session-memory" class="md-nav__link">
     <span class="md-ellipsis">
       
         セッションメモリ
@@ -852,7 +852,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         メモリの精度
@@ -1474,7 +1474,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#session-memory" class="md-nav__link">
     <span class="md-ellipsis">
       
         セッションメモリ
@@ -1496,7 +1496,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         メモリの精度
@@ -1580,7 +1580,7 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;bge-m3&quot;</span>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;http://localhost:11434&quot;</span>
 </code></pre></div>
-<h2 id="_5">セッションメモリ</h2>
+<h2 id="session-memory">セッションメモリ</h2>
 <p>セッションメモリは、3 つのレイヤーで単一会話内のコンテキストを管理します：</p>
 <ol>
 <li><strong>スライディングサマリー</strong> — 古いターンは LLM によって要約に圧縮され、トークン制限を超えずに会話履歴を保持</li>
@@ -1607,7 +1607,7 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-U<span class="w"> </span>YOUR_USERNAME<span class="w"> </span>-d<span class="w"> </span>Riverse<span class="w"> </span>-f<span class="w"> </span>migrations/001_pgvector.sql
 </code></pre></div>
 <p>ネイティブの <code>vector(1024)</code> カラムと IVFFlat インデックスが作成され、高速な近似最近傍検索が可能になります。アプリケーションは pgvector を自動検出し、利用可能な場合に使用します。設定変更は不要です。</p>
-<h2 id="_6">メモリの精度</h2>
+<h2 id="_5">メモリの精度</h2>
 <div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>現在、個人プロファイル抽出に特化して訓練された LLM は存在しないため、抽出結果に誤りが含まれる場合があります。不正確な内容を見つけた場合は、Web ダッシュボードで誤った記憶を<strong>拒否</strong>するか、古くなった記憶を<strong>クローズ</strong>できます。Riverse は記憶内容の手動編集を意図的にサポートしていません — 誤った記憶は河の中の泥沙のように、水流に洗い流されるべきものであり、人の手で河床を削るべきではありません。会話が蓄積されるにつれ、河流アルゴリズムがマルチターン検証と矛盾検出により継続的に自己修正し、プロファイルはより正確になっていきます。</p>
