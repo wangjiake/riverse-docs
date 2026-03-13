@@ -56,6 +56,47 @@ docker compose up
 
 打开 http://localhost:2345 查看画像。通过 Telegram / Discord / 命令行聊天。
 
+## 安全须知
+
+!!! warning "部署到服务器前必读"
+
+    JKRiver 设计为**单用户本地使用**。API 和网页界面**没有内置认证**。如果你部署在远程服务器上，请遵循以下规则保护你的数据：
+
+    **1. 必须设置 `TELEGRAM_ALLOWED_USERS` / Discord 允许用户**
+
+    如果不设置，**任何人**找到你的机器人都能跟它聊天 — 消耗你的 LLM API 额度，并向你的个人画像写入数据。
+
+    ```bash
+    # .env — 限制为你自己的用户 ID
+    TELEGRAM_ALLOWED_USERS=123456789
+    ```
+
+    获取你的 Telegram 用户 ID：给 [@userinfobot](https://t.me/userinfobot) 发任意消息。
+
+    **2. 不要将 HTTP 端口暴露到公网**
+
+    端口 `8400`（JKRiver API）和 `2345`（RiverHistory 网页）没有登录功能。任何能访问这些端口的人都可以读取你的完整画像、健康数据、财务记录，并触发 LLM 调用。
+
+    - **本地使用：** 没有问题 — 端口只在你的电脑上可访问。
+    - **远程服务器：** 将端口绑定到 `127.0.0.1`，使用带认证的反向代理（Nginx/Caddy），或通过 SSH 隧道访问。
+
+    ```yaml
+    # docker-compose.yml — 仅绑定到本机
+    ports:
+      - "127.0.0.1:8400:8400"   # 而不是 "8400:8400"
+      - "127.0.0.1:2345:2345"   # 而不是 "2345:2345"
+    ```
+
+    **3. 不要暴露 PostgreSQL 端口 5432**
+
+    默认的 Docker Compose 将 `5432` 端口映射到宿主机，且没有密码（`trust` 认证）。在远程服务器上，请删除 postgres 的 `ports` 配置或绑定到本机：
+
+    ```yaml
+    # docker-compose.yml — postgres 部分
+    ports:
+      - "127.0.0.1:5432:5432"   # 或直接删除这一行
+    ```
+
 ## 支持的 AI 模型
 
 支持所有 OpenAI 兼容接口。编辑 `.env` 切换提供商：

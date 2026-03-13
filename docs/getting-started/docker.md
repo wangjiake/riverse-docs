@@ -56,6 +56,47 @@ docker compose up
 
 Open http://localhost:2345 to view profiles. Chat via Telegram / Discord / command line.
 
+## Security Notice
+
+!!! warning "Read this before deploying to a server"
+
+    JKRiver is designed for **single-user local use**. The API and web interface have **no built-in authentication**. If you deploy on a remote server, follow these rules to protect your data:
+
+    **1. Set `TELEGRAM_ALLOWED_USERS` / Discord allowed users (required)**
+
+    If you don't set this, **anyone** who finds your bot can chat with it — consuming your LLM API credits and writing to your personal profile.
+
+    ```bash
+    # .env — restrict to your own user ID
+    TELEGRAM_ALLOWED_USERS=123456789
+    ```
+
+    Get your Telegram user ID: send any message to [@userinfobot](https://t.me/userinfobot).
+
+    **2. Do NOT expose HTTP ports to the public internet**
+
+    Ports `8400` (JKRiver API) and `2345` (RiverHistory web) have no login. Anyone who can reach them can read your full profile, health data, finance records, and trigger LLM calls.
+
+    - **Local use:** No problem — ports are only accessible on your machine.
+    - **Remote server:** Bind ports to `127.0.0.1` and use a reverse proxy (Nginx/Caddy) with authentication, or only access via SSH tunnel.
+
+    ```yaml
+    # docker-compose.yml — bind to localhost only
+    ports:
+      - "127.0.0.1:8400:8400"   # instead of "8400:8400"
+      - "127.0.0.1:2345:2345"   # instead of "2345:2345"
+    ```
+
+    **3. Do NOT expose PostgreSQL port 5432**
+
+    The default Docker Compose maps port `5432` to the host with no password (`trust` auth). On a remote server, remove the `ports` section for postgres or bind to localhost:
+
+    ```yaml
+    # docker-compose.yml — postgres section
+    ports:
+      - "127.0.0.1:5432:5432"   # or remove this line entirely
+    ```
+
 ## Supported AI Models
 
 Works with any OpenAI-compatible API. Edit `.env` to switch providers:
