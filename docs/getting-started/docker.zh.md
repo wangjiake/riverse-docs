@@ -1,35 +1,14 @@
 # Docker
 
-不想装 Python 和 PostgreSQL？通过 Docker 一键运行完整的 Riverse AI 系统 — 只需配置 AI 模型的 API 密钥，一条命令即可启动。
+不想装 Python 和 PostgreSQL？通过 Docker 一键运行完整的 Riverse AI 系统 — 无需编辑任何配置文件，三条命令即可启动。
 
-**自动启动两个服务：**
+**自动启动三个服务：**
 
 | 服务 | 地址 | 功能说明 |
 |------|------|----------|
-| **RiverHistory** | http://localhost:2345 | 网页画像查看器 — 查看提取的性格、偏好、经历和人生时间线 |
-| **JKRiver** | http://localhost:8400/docs | AI 核心引擎 — REST API、聊天机器人、记忆整理调度 |
-
-## 如何聊天
-
-JKRiver 提供 **三种方式** 与 AI 聊天。所有对话都会被河流算法分析，持续丰富你的个人画像：
-
-| 方式 | 配置 | 适合场景 |
-|------|------|----------|
-| **Telegram 机器人** | 在 `.env` 中设置 `TELEGRAM_BOT_TOKEN`，从 [@BotFather](https://t.me/BotFather) 获取 token | 日常手机使用，最方便 |
-| **Discord 机器人** | 在 `.env` 中设置 `DISCORD_BOT_TOKEN`，从 [Developer Portal](https://discord.com/developers/applications) 获取 token | 社区/群组使用 |
-| **命令行** | 无需额外配置 | 快速测试，不需要机器人 token |
-
-**Telegram 机器人** — 在 @BotFather 创建机器人，将 token 复制到 `.env`。如需限制访问，设置 `TELEGRAM_ALLOWED_USERS` 为你的用户 ID（给 [@userinfobot](https://t.me/userinfobot) 发任意消息即可获取）。**不要加括号** — 直接填数字，如 `TELEGRAM_ALLOWED_USERS=123456789`。`docker compose up` 后直接给机器人发消息即可。
-
-**Discord 机器人** — 在 Discord Developer Portal 创建应用和机器人，将 token 复制到 `.env`，邀请机器人加入你的服务器。`docker compose up` 后 @机器人 或私信它。
-
-**命令行** — 打开终端运行：
-```bash
-docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
-```
-在 `>` 提示符后输入消息，输入 `quit` 退出。退出时会自动运行记忆整理。
-
-> REST API 也可用于开发者集成，接口文档见 `http://localhost:8400/docs`。
+| **JKRiver** | http://localhost:1234 | 网页聊天 + 系统配置（API 密钥、语言等） |
+| **RiverHistory** | http://localhost:2345 | 用户画像查看器 — 查看提取的性格、偏好、经历和人生时间线 |
+| **API 文档** | http://localhost:8400/docs | 开发者 REST API 参考 |
 
 ## 前置要求
 
@@ -38,64 +17,77 @@ docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
 ## 快速开始
 
 ```bash
-# 1. 获取文件
-git clone https://github.com/wangjiake/JKRiver.git
-cd JKRiver/docker
+# 1. 获取 compose 文件
+mkdir jkriver && cd jkriver
+curl -O https://raw.githubusercontent.com/wangjiake/JKRiver/main/docker/docker-compose.yaml
 
-# 2. 创建配置文件
-cp .env.example .env
+# 2. 启动所有服务
+docker compose pull && docker compose up -d
 
-# 3. 编辑 .env — 填入你的 API 密钥（参考下方"支持的 AI 模型"）
-#    至少设置：OPENAI_API_KEY=sk-你的密钥
-#    设置 LANGUAGE=zh/en/ja — 控制 LLM 提示词的语言（不影响网页界面）
-#    聊天功能：设置 TELEGRAM_BOT_TOKEN 或 DISCORD_BOT_TOKEN（或使用命令行）
-
-# 4. 启动所有服务
-docker compose up
+# 3. 获取访问 Token（首次启动时自动生成）
+docker logs jkriver-jkriver-1 2>&1 | grep "ACCESS_TOKEN="
 ```
 
-打开 http://localhost:2345 查看画像。通过 Telegram / Discord / 命令行聊天。
+在浏览器打开 `http://localhost:1234`，输入 Token 后进入 **System** 页面填写 API Key 即可。无需编辑任何配置文件。
+
+> **Token 只生成一次。** 保存在数据卷的 `settings.yaml` 中，只要数据卷存在就无需再次查找。
+
+## 如何聊天
+
+JKRiver 提供**多种方式**与 AI 聊天。所有对话都会被河流算法分析，持续丰富你的个人画像：
+
+| 方式 | 配置 | 适合场景 |
+|------|------|----------|
+| **网页聊天** | 内置，直接打开 http://localhost:1234 | 浏览器随时访问 |
+| **Telegram 机器人** | 在 System 页面设置 token，从 [@BotFather](https://t.me/BotFather) 获取 | 日常手机使用，最方便 |
+| **Discord 机器人** | 在 System 页面设置 token，从 [Developer Portal](https://discord.com/developers/applications) 获取 | 社区/群组使用 |
+| **命令行** | 无需额外配置 | 快速测试，不需要机器人 token |
+
+**命令行** — 打开终端运行：
+```bash
+docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
+```
+在 `>` 提示符后输入消息，输入 `quit` 退出。退出时会自动运行记忆整理。
 
 ## 安全须知
 
 !!! warning "部署到服务器前必读"
 
-    JKRiver 设计为**单用户本地使用**。API 和网页界面**没有内置认证**。如果你部署在远程服务器上，请遵循以下规则保护你的数据：
+    JKRiver 设计为**单用户本地使用**。网页面板（端口 1234）受 Access Token 保护。但 **REST API（端口 8400）和 RiverHistory（端口 2345）没有认证**。部署到远程服务器时请遵循以下规则：
 
-    **1. 必须设置 `TELEGRAM_ALLOWED_USERS` / Discord 允许用户**
+    **1. 不要将端口 8400 和 2345 暴露到公网**
 
-    如果不设置，**任何人**找到你的机器人都能跟它聊天 — 消耗你的 LLM API 额度，并向你的个人画像写入数据。
-
-    ```bash
-    # .env — 限制为你自己的用户 ID
-    TELEGRAM_ALLOWED_USERS=123456789
-    ```
-
-    获取你的 Telegram 用户 ID：给 [@userinfobot](https://t.me/userinfobot) 发任意消息。
-
-    **2. 不要将 HTTP 端口暴露到公网**
-
-    端口 `8400`（JKRiver API）和 `2345`（RiverHistory 网页）没有登录功能。任何能访问这些端口的人都可以读取你的完整画像、健康数据、财务记录，并触发 LLM 调用。
+    任何能访问这些端口的人都可以读取你的完整画像、健康数据、财务记录，并触发 LLM 调用。
 
     - **本地使用：** 没有问题 — 端口只在你的电脑上可访问。
     - **远程服务器：** 将端口绑定到 `127.0.0.1`，使用带认证的反向代理（Nginx/Caddy），或通过 SSH 隧道访问。
 
     ```yaml
-    # docker-compose.yml — 仅绑定到本机
+    # docker-compose.yaml — 仅绑定到本机
     ports:
       - "127.0.0.1:8400:8400"   # 而不是 "8400:8400"
       - "127.0.0.1:2345:2345"   # 而不是 "2345:2345"
     ```
 
-    **3. 不要暴露 PostgreSQL 端口 5432**
+    **2. 不要暴露 PostgreSQL 端口 5432**
 
     默认的 Docker Compose 将 `5432` 端口映射到宿主机，且没有密码（`trust` 认证）。在远程服务器上，请删除 postgres 的 `ports` 配置或绑定到本机：
 
     ```yaml
-    # docker-compose.yml — postgres 部分
+    # docker-compose.yaml — postgres 部分
     ports:
       - "127.0.0.1:5432:5432"   # 或直接删除这一行
     ```
+
+    **3. 使用 Telegram 机器人时设置 `TELEGRAM_ALLOWED_USERS`**
+
+    如果不设置，**任何人**找到你的机器人都能跟它聊天 — 消耗你的 LLM API 额度并写入你的画像。
+
+    在 System 页面设置，或通过环境变量传入：
+    ```bash
+    TELEGRAM_ALLOWED_USERS=123456789
+    ```
+    获取 Telegram 用户 ID：给 [@userinfobot](https://t.me/userinfobot) 发任意消息。
 
 ## 支持的 AI 模型
 
@@ -170,16 +162,18 @@ docker compose exec riverhistory bash -c "cd /app_work && python run.py all max"
 
 ## 配置说明
 
+启动后，大部分配置可在 `http://localhost:1234` 的 **System** 页面修改。以下环境变量仅在首次启动时（`settings.yaml` 创建之前）生效。
+
 | 配置项 | 默认值 | 说明 |
 |--------|--------|------|
-| `LANGUAGE` | `en` | LLM 提示词语言：`zh` 中文 / `en` 英文 / `ja` 日文（不影响网页界面） |
+| `ACCESS_TOKEN` | *（自动生成）* | 网页面板访问 Token。未设置时首次启动自动生成 — 查看 `docker logs` 获取 |
+| `TIMEZONE` | `Asia/Tokyo` | 你的本地时区（如 `Asia/Shanghai`、`America/New_York`）。用于 AI 感知你的本地时间 |
+| `LANGUAGE` | `en` | LLM 提示词语言：`zh` 中文 / `en` 英文 / `ja` 日文 |
 | `LLM_PROVIDER` | `openai` | `openai` = 远端 API / `local` = 本机 Ollama |
 | `OPENAI_API_KEY` | | 你的 API 密钥（使用远端 API 时必填） |
 | `OPENAI_API_BASE` | `https://api.openai.com` | API 地址（换 DeepSeek、Groq 等改这里） |
 | `OPENAI_MODEL` | `gpt-4o-mini` | 使用哪个 AI 模型 |
 | `OLLAMA_MODEL` | `qwen2.5:14b` | Ollama 模型名（当 `LLM_PROVIDER=local`） |
-| `DEMO_MODE` | `true` | 启动时导入演示对话 |
-| `DEMO_PROCESS` | `false` | 启动时自动处理演示数据（会调用 AI，需要几分钟） |
 | `SLEEP_MODE` | `cron` | 记忆整理方式：`cron` = 每天定时 / `auto` = 每次聊天后 / `off` = 手动 |
 | `SLEEP_CRON_HOUR` | `0` | 每天几点运行记忆整理（0-23） |
 | `TELEGRAM_BOT_TOKEN` | | Telegram 机器人 token（从 [@BotFather](https://t.me/BotFather) 获取） |
@@ -243,10 +237,10 @@ docker compose up
 │                                                          │
 │  ┌──────────┐  ┌────────────────┐  ┌───────────────────┐│
 │  │ postgres │  │  riverhistory  │  │     jkriver       ││
-│  │  :5432   │←─│  :2345 (web)   │  │  :8400 (api)      ││
-│  │          │  │  init schema   │  │  telegram bot      ││
-│  │ Riverse  │←─│  load demo     │←─│  discord bot       ││
-│  │   (DB)   │  │  process data  │  │  sleep scheduler   ││
+│  │  :5432   │←─│  :2345 (web)   │  │  :1234 (网页聊天) ││
+│  │          │  │  init schema   │  │  :8400 (api)       ││
+│  │ Riverse  │←─│  load demo     │←─│  telegram bot      ││
+│  │   (DB)   │  │  process data  │  │  discord bot       ││
 │  └──────────┘  └────────────────┘  └───────────────────┘│
 │                                                          │
 └──────────────────────────────────────────────────────────┘

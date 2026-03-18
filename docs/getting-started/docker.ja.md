@@ -1,35 +1,14 @@
 # Docker
 
-Python や PostgreSQL をインストールしたくない方へ。Docker を使って Riverse AI システム全体をワンクリックで実行できます。AI モデルの API キーを設定して、1 つのコマンドを実行するだけです。
+Python や PostgreSQL をインストールしたくない方へ。Docker を使って Riverse AI システム全体を実行できます。設定ファイルの編集も不要で、3 つのコマンドを実行してブラウザを開くだけです。
 
-**2 つのサービスが自動的に起動します：**
+**3 つのサービスが自動的に起動します：**
 
 | サービス | URL | 機能 |
 |----------|-----|------|
-| **RiverHistory** | http://localhost:2345 | Web プロフィールビューアー — 抽出された性格、好み、経験、人生タイムラインを確認 |
-| **JKRiver** | http://localhost:8400/docs | AI コアエンジン — REST API、チャットボット、記憶整理スケジューラー |
-
-## チャット方法
-
-JKRiver は **3 つの方法** で AI とチャットできます。すべての会話は River Algorithm で分析され、パーソナルプロフィールに反映されます：
-
-| 方法 | 設定 | 最適な用途 |
-|------|------|-----------|
-| **Telegram Bot** | `.env` で `TELEGRAM_BOT_TOKEN` を設定、[@BotFather](https://t.me/BotFather) でトークン取得 | 日常のモバイル利用、最も便利 |
-| **Discord Bot** | `.env` で `DISCORD_BOT_TOKEN` を設定、[Developer Portal](https://discord.com/developers/applications) でトークン取得 | コミュニティ / グループ利用 |
-| **コマンドライン** | 追加設定不要 | クイックテスト、ボットトークン不要 |
-
-**Telegram Bot** — @BotFather でボットを作成し、トークンを `.env` にコピー。アクセスを制限するには、`TELEGRAM_ALLOWED_USERS` にユーザー ID を設定（[@userinfobot](https://t.me/userinfobot) に任意のメッセージを送ると取得できます）。**括弧は付けない** — 数字のみ、例：`TELEGRAM_ALLOWED_USERS=123456789`。`docker compose up` 後、ボットに直接メッセージを送信。
-
-**Discord Bot** — Discord Developer Portal でアプリケーションとボットを作成、トークンを `.env` にコピー。ボットをサーバーに招待。`docker compose up` 後、ボットにメンションまたは DM。
-
-**コマンドライン** — ターミナルを開いて実行：
-```bash
-docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
-```
-`>` プロンプトでメッセージを入力、`quit` で終了。終了時に自動的に記憶整理が実行されます。
-
-> REST API も利用可能です。開発者向けドキュメント：`http://localhost:8400/docs`。
+| **JKRiver** | http://localhost:1234 | Web チャット + システム設定（API キー、言語など） |
+| **RiverHistory** | http://localhost:2345 | プロフィールビューアー — 抽出された性格、好み、経験、人生タイムラインを確認 |
+| **API ドキュメント** | http://localhost:8400/docs | 開発者向け REST API リファレンス |
 
 ## 前提条件
 
@@ -38,64 +17,77 @@ docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
 ## クイックスタート
 
 ```bash
-# 1. ファイルを取得
-git clone https://github.com/wangjiake/JKRiver.git
-cd JKRiver/docker
+# 1. compose ファイルを取得
+mkdir jkriver && cd jkriver
+curl -O https://raw.githubusercontent.com/wangjiake/JKRiver/main/docker/docker-compose.yaml
 
-# 2. 設定ファイルを作成
-cp .env.example .env
+# 2. 全サービスを起動
+docker compose pull && docker compose up -d
 
-# 3. .env を編集 — API キーを入力（下の「対応 AI モデル」を参照）
-#    最低限：OPENAI_API_KEY=sk-あなたのキー
-#    LANGUAGE=zh/en/ja を設定 — LLM プロンプトの言語を制御（Web UIには影響しません）
-#    チャット：TELEGRAM_BOT_TOKEN または DISCORD_BOT_TOKEN を設定（またはコマンドラインを使用）
-
-# 4. すべてのサービスを起動
-docker compose up
+# 3. アクセストークンを確認（初回起動時に自動生成）
+docker logs jkriver-jkriver-1 2>&1 | grep "ACCESS_TOKEN="
 ```
 
-http://localhost:2345 を開いてプロフィールを確認。Telegram / Discord / コマンドラインでチャット。
+ブラウザで `http://localhost:1234` を開き、トークンを入力後 **System** ページで API キーを設定するだけです。設定ファイルの編集は不要です。
+
+> **トークンは一度だけ生成されます。** ボリュームの `settings.yaml` に保存されるため、ボリュームが存在する限り再確認は不要です。
+
+## チャット方法
+
+JKRiver は**複数の方法**で AI とチャットできます。すべての会話は River Algorithm で分析され、パーソナルプロフィールに反映されます：
+
+| 方法 | 設定 | 最適な用途 |
+|------|------|-----------|
+| **Web チャット** | 内蔵 — http://localhost:1234 を開くだけ | ブラウザからすぐアクセス |
+| **Telegram Bot** | System ページでトークンを設定、[@BotFather](https://t.me/BotFather) で取得 | 日常のモバイル利用、最も便利 |
+| **Discord Bot** | System ページでトークンを設定、[Developer Portal](https://discord.com/developers/applications) で取得 | コミュニティ / グループ利用 |
+| **コマンドライン** | 追加設定不要 | クイックテスト、ボットトークン不要 |
+
+**コマンドライン** — ターミナルを開いて実行：
+```bash
+docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
+```
+`>` プロンプトでメッセージを入力、`quit` で終了。終了時に自動的に記憶整理が実行されます。
 
 ## セキュリティに関する注意
 
 !!! warning "サーバーにデプロイする前に必ずお読みください"
 
-    JKRiver は**シングルユーザーのローカル利用**を想定して設計されています。API と Web インターフェースには**認証機能がありません**。リモートサーバーにデプロイする場合は、以下のルールに従ってデータを保護してください：
+    JKRiver は**シングルユーザーのローカル利用**を想定して設計されています。Web ダッシュボード（ポート 1234）はアクセストークンで保護されています。ただし、**REST API（ポート 8400）と RiverHistory（ポート 2345）には認証がありません**。リモートサーバーにデプロイする場合は以下のルールに従ってください：
 
-    **1. `TELEGRAM_ALLOWED_USERS` / Discord 許可ユーザーの設定（必須）**
+    **1. ポート 8400 と 2345 を公開インターネットに公開しない**
 
-    設定しない場合、ボットを見つけた**誰でも**チャットできてしまいます — LLM API のクレジットが消費され、あなたのプロフィールにデータが書き込まれます。
-
-    ```bash
-    # .env — 自分のユーザー ID に制限
-    TELEGRAM_ALLOWED_USERS=123456789
-    ```
-
-    Telegram ユーザー ID の取得方法：[@userinfobot](https://t.me/userinfobot) に任意のメッセージを送信。
-
-    **2. HTTP ポートを公開インターネットに公開しない**
-
-    ポート `8400`（JKRiver API）と `2345`（RiverHistory Web）にはログイン機能がありません。これらのポートにアクセスできる人は誰でも、プロフィール全体、健康データ、財務記録を閲覧し、LLM 呼び出しをトリガーできます。
+    これらのポートにアクセスできる人は誰でも、プロフィール全体、健康データ、財務記録を閲覧し、LLM 呼び出しをトリガーできます。
 
     - **ローカル利用：** 問題なし — ポートはあなたのマシンでのみアクセス可能。
     - **リモートサーバー：** ポートを `127.0.0.1` にバインドし、認証付きリバースプロキシ（Nginx/Caddy）を使用するか、SSH トンネル経由でアクセス。
 
     ```yaml
-    # docker-compose.yml — localhost のみにバインド
+    # docker-compose.yaml — localhost のみにバインド
     ports:
       - "127.0.0.1:8400:8400"   # "8400:8400" の代わりに
       - "127.0.0.1:2345:2345"   # "2345:2345" の代わりに
     ```
 
-    **3. PostgreSQL ポート 5432 を公開しない**
+    **2. PostgreSQL ポート 5432 を公開しない**
 
     デフォルトの Docker Compose は `5432` ポートをホストにマッピングし、パスワードなし（`trust` 認証）です。リモートサーバーでは、postgres の `ports` 設定を削除するか localhost にバインドしてください：
 
     ```yaml
-    # docker-compose.yml — postgres セクション
+    # docker-compose.yaml — postgres セクション
     ports:
       - "127.0.0.1:5432:5432"   # またはこの行を完全に削除
     ```
+
+    **3. Telegram Bot を使う場合は `TELEGRAM_ALLOWED_USERS` を設定**
+
+    設定しない場合、ボットを見つけた**誰でも**チャットできてしまいます — LLM API のクレジットが消費され、プロフィールにデータが書き込まれます。
+
+    System ページで設定するか、環境変数で渡してください：
+    ```bash
+    TELEGRAM_ALLOWED_USERS=123456789
+    ```
+    Telegram ユーザー ID の取得方法：[@userinfobot](https://t.me/userinfobot) に任意のメッセージを送信。
 
 ## 対応 AI モデル
 
@@ -170,16 +162,18 @@ http://localhost:2345 を開いてプロフィールを確認。
 
 ## 設定リファレンス
 
+起動後、ほとんどの設定は `http://localhost:1234` の **System** ページで変更できます。以下の環境変数は初回起動時（`settings.yaml` が作成される前）にのみ適用されます。
+
 | 設定項目 | デフォルト | 説明 |
 |----------|-----------|------|
-| `LANGUAGE` | `en` | LLM プロンプト言語：`zh` 中国語 / `en` 英語 / `ja` 日本語（Web UI には影響しません） |
+| `ACCESS_TOKEN` | *（自動生成）* | Web ダッシュボードのアクセストークン。未設定の場合は初回起動時に自動生成 — `docker logs` で確認 |
+| `TIMEZONE` | `Asia/Tokyo` | あなたのローカルタイムゾーン（例：`Asia/Shanghai`、`America/New_York`）。AI があなたの現地時間を把握するために使用 |
+| `LANGUAGE` | `en` | LLM プロンプト言語：`zh` 中国語 / `en` 英語 / `ja` 日本語 |
 | `LLM_PROVIDER` | `openai` | `openai` = リモート API / `local` = ローカル Ollama |
 | `OPENAI_API_KEY` | | API キー（リモート API 使用時に必須） |
 | `OPENAI_API_BASE` | `https://api.openai.com` | API エンドポイント（DeepSeek、Groq 等はここを変更） |
 | `OPENAI_MODEL` | `gpt-4o-mini` | 使用する AI モデル |
 | `OLLAMA_MODEL` | `qwen2.5:14b` | Ollama モデル名（`LLM_PROVIDER=local` の場合） |
-| `DEMO_MODE` | `true` | 起動時にデモ会話をインポート |
-| `DEMO_PROCESS` | `false` | 起動時にデモを自動処理（AI を使用、数分かかる） |
 | `SLEEP_MODE` | `cron` | 記憶整理：`cron` = 毎日定時 / `auto` = チャット毎 / `off` = 手動 |
 | `SLEEP_CRON_HOUR` | `0` | 毎日何時に記憶整理を実行（0-23） |
 | `TELEGRAM_BOT_TOKEN` | | Telegram ボットトークン（[@BotFather](https://t.me/BotFather) で取得） |
@@ -243,10 +237,10 @@ docker compose up
 │                                                          │
 │  ┌──────────┐  ┌────────────────┐  ┌───────────────────┐│
 │  │ postgres │  │  riverhistory  │  │     jkriver       ││
-│  │  :5432   │←─│  :2345 (web)   │  │  :8400 (api)      ││
-│  │          │  │  init schema   │  │  telegram bot      ││
-│  │ Riverse  │←─│  load demo     │←─│  discord bot       ││
-│  │   (DB)   │  │  process data  │  │  sleep scheduler   ││
+│  │  :5432   │←─│  :2345 (web)   │  │  :1234 (web chat) ││
+│  │          │  │  init schema   │  │  :8400 (api)       ││
+│  │ Riverse  │←─│  load demo     │←─│  telegram bot      ││
+│  │   (DB)   │  │  process data  │  │  discord bot       ││
 │  └──────────┘  └────────────────┘  └───────────────────┘│
 │                                                          │
 └──────────────────────────────────────────────────────────┘

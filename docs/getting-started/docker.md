@@ -1,35 +1,14 @@
 # Docker
 
-Don't want to install Python or PostgreSQL? Run the complete Riverse AI system using Docker — just configure your AI model API key and run one command.
+Don't want to install Python or PostgreSQL? Run the complete Riverse AI system using Docker — no configuration files needed. Just run three commands and open your browser.
 
-**Two services start automatically:**
+**Three services start automatically:**
 
 | Service | URL | What it does |
 |---------|-----|--------------|
-| **RiverHistory** | http://localhost:2345 | Web profile viewer — see the extracted personality, preferences, experiences, and life timeline |
-| **JKRiver** | http://localhost:8400/docs | AI core engine — REST API, chat bots, memory consolidation scheduler |
-
-## How to Chat
-
-JKRiver provides **three ways** to chat with the AI. All conversations are analyzed by the River Algorithm and contribute to your personal profile:
-
-| Method | Setup | Best for |
-|--------|-------|----------|
-| **Telegram Bot** | Set `TELEGRAM_BOT_TOKEN` in `.env`, get token from [@BotFather](https://t.me/BotFather) | Daily mobile use, most convenient |
-| **Discord Bot** | Set `DISCORD_BOT_TOKEN` in `.env`, get token from [Developer Portal](https://discord.com/developers/applications) | Community / group use |
-| **Command Line** | No extra setup needed | Quick test, no bot token required |
-
-**Telegram Bot** — Create a bot via @BotFather, copy the token to `.env`. To restrict access, set `TELEGRAM_ALLOWED_USERS` to your user ID (send any message to [@userinfobot](https://t.me/userinfobot) to get it). **Do not add brackets** — just the number, e.g. `TELEGRAM_ALLOWED_USERS=123456789`. After `docker compose up`, message your bot directly.
-
-**Discord Bot** — Create an application in Discord Developer Portal, add a bot, copy the token to `.env`. Invite the bot to your server. After `docker compose up`, mention the bot or DM it.
-
-**Command Line** — Open a terminal and run:
-```bash
-docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
-```
-Type your message at the `>` prompt, type `quit` to exit. Memory consolidation runs automatically on exit.
-
-> REST API is also available at `http://localhost:8400/docs` for developers who want to integrate programmatically.
+| **JKRiver** | http://localhost:1234 | Web chat + system config (API key, language, etc.) |
+| **RiverHistory** | http://localhost:2345 | Profile viewer — see extracted personality, preferences, experiences, and life timeline |
+| **API Docs** | http://localhost:8400/docs | REST API reference for developers |
 
 ## Requirements
 
@@ -38,64 +17,77 @@ Type your message at the `>` prompt, type `quit` to exit. Memory consolidation r
 ## Quick Start
 
 ```bash
-# 1. Get the files
-git clone https://github.com/wangjiake/JKRiver.git
-cd JKRiver/docker
+# 1. Get the compose file
+mkdir jkriver && cd jkriver
+curl -O https://raw.githubusercontent.com/wangjiake/JKRiver/main/docker/docker-compose.yaml
 
-# 2. Create your config file
-cp .env.example .env
+# 2. Start everything
+docker compose pull && docker compose up -d
 
-# 3. Edit .env — add your API key (see "Supported AI Models" below)
-#    At minimum, set: OPENAI_API_KEY=sk-your-key-here
-#    Set LANGUAGE=zh/en/ja — controls the language of LLM prompts (not the web UI)
-#    For chat: set TELEGRAM_BOT_TOKEN or DISCORD_BOT_TOKEN (or use command line)
-
-# 4. Start everything
-docker compose up
+# 3. Get your access token (generated automatically on first start)
+docker logs jkriver-jkriver-1 2>&1 | grep "ACCESS_TOKEN="
 ```
 
-Open http://localhost:2345 to view profiles. Chat via Telegram / Discord / command line.
+Open `http://localhost:1234` in your browser, enter the access token, then go to **System** to set your API key. That's it — no config files to edit.
+
+> **Token is generated once.** It's saved in a `settings.yaml` volume. As long as the volume exists, you won't need to look it up again.
+
+## How to Chat
+
+JKRiver provides **multiple ways** to chat with the AI. All conversations are analyzed by the River Algorithm and contribute to your personal profile:
+
+| Method | Setup | Best for |
+|--------|-------|----------|
+| **Web Chat** | Built-in — open http://localhost:1234 | Quick access from any browser |
+| **Telegram Bot** | Set token in System page, get from [@BotFather](https://t.me/BotFather) | Daily mobile use, most convenient |
+| **Discord Bot** | Set token in System page, get from [Developer Portal](https://discord.com/developers/applications) | Community / group use |
+| **Command Line** | No extra setup needed | Quick test, no bot token required |
+
+**Command Line** — Open a terminal and run:
+```bash
+docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
+```
+Type your message at the `>` prompt, type `quit` to exit. Memory consolidation runs automatically on exit.
 
 ## Security Notice
 
 !!! warning "Read this before deploying to a server"
 
-    JKRiver is designed for **single-user local use**. The API and web interface have **no built-in authentication**. If you deploy on a remote server, follow these rules to protect your data:
+    JKRiver is designed for **single-user local use**. The Web Dashboard (port 1234) is protected by the access token. However, **the REST API (port 8400) and RiverHistory (port 2345) have no authentication**. If you deploy on a remote server, follow these rules:
 
-    **1. Set `TELEGRAM_ALLOWED_USERS` / Discord allowed users (required)**
+    **1. Do NOT expose ports 8400 and 2345 to the public internet**
 
-    If you don't set this, **anyone** who finds your bot can chat with it — consuming your LLM API credits and writing to your personal profile.
-
-    ```bash
-    # .env — restrict to your own user ID
-    TELEGRAM_ALLOWED_USERS=123456789
-    ```
-
-    Get your Telegram user ID: send any message to [@userinfobot](https://t.me/userinfobot).
-
-    **2. Do NOT expose HTTP ports to the public internet**
-
-    Ports `8400` (JKRiver API) and `2345` (RiverHistory web) have no login. Anyone who can reach them can read your full profile, health data, finance records, and trigger LLM calls.
+    Anyone who can reach them can read your full profile, health data, finance records, and trigger LLM calls.
 
     - **Local use:** No problem — ports are only accessible on your machine.
     - **Remote server:** Bind ports to `127.0.0.1` and use a reverse proxy (Nginx/Caddy) with authentication, or only access via SSH tunnel.
 
     ```yaml
-    # docker-compose.yml — bind to localhost only
+    # docker-compose.yaml — bind to localhost only
     ports:
       - "127.0.0.1:8400:8400"   # instead of "8400:8400"
       - "127.0.0.1:2345:2345"   # instead of "2345:2345"
     ```
 
-    **3. Do NOT expose PostgreSQL port 5432**
+    **2. Do NOT expose PostgreSQL port 5432**
 
     The default Docker Compose maps port `5432` to the host with no password (`trust` auth). On a remote server, remove the `ports` section for postgres or bind to localhost:
 
     ```yaml
-    # docker-compose.yml — postgres section
+    # docker-compose.yaml — postgres section
     ports:
       - "127.0.0.1:5432:5432"   # or remove this line entirely
     ```
+
+    **3. Set `TELEGRAM_ALLOWED_USERS` if you use a Telegram bot**
+
+    If you don't set this, **anyone** who finds your bot can chat with it — consuming your LLM API credits and writing to your profile.
+
+    Set it in the System page, or pass it as an environment variable:
+    ```bash
+    TELEGRAM_ALLOWED_USERS=123456789
+    ```
+    Get your Telegram user ID: send any message to [@userinfobot](https://t.me/userinfobot).
 
 ## Supported AI Models
 
@@ -170,16 +162,18 @@ Open http://localhost:2345 to see your extracted profile.
 
 ## Configuration Reference
 
+Most settings can be changed in the **System** page at http://localhost:1234 after startup. The environment variables below apply only on first startup (before `settings.yaml` is created).
+
 | Variable | Default | What it does |
 |----------|---------|--------------|
-| `LANGUAGE` | `en` | LLM prompt language: `zh` Chinese / `en` English / `ja` Japanese (does not affect web UI) |
+| `ACCESS_TOKEN` | *(auto-generated)* | Web dashboard access token. Auto-generated on first start if not set — check `docker logs` |
+| `TIMEZONE` | `Asia/Tokyo` | Your local timezone (e.g. `America/New_York`, `Asia/Shanghai`). Used so the AI knows your local time |
+| `LANGUAGE` | `en` | LLM prompt language: `zh` Chinese / `en` English / `ja` Japanese |
 | `LLM_PROVIDER` | `openai` | `openai` = remote API / `local` = Ollama on your machine |
 | `OPENAI_API_KEY` | | Your API key (required for remote API) |
 | `OPENAI_API_BASE` | `https://api.openai.com` | API endpoint URL (change for DeepSeek, Groq, etc.) |
 | `OPENAI_MODEL` | `gpt-4o-mini` | Which AI model to use |
 | `OLLAMA_MODEL` | `qwen2.5:14b` | Which Ollama model (when `LLM_PROVIDER=local`) |
-| `DEMO_MODE` | `true` | Load demo conversations on startup |
-| `DEMO_PROCESS` | `false` | Auto-process demo on startup (uses AI, takes minutes) |
 | `SLEEP_MODE` | `cron` | Memory consolidation: `cron` = daily / `auto` = after each chat / `off` = manual |
 | `SLEEP_CRON_HOUR` | `0` | What hour to run daily consolidation (0-23) |
 | `TELEGRAM_BOT_TOKEN` | | Telegram bot token (get from [@BotFather](https://t.me/BotFather)) |
@@ -243,10 +237,10 @@ docker compose up
 │                                                          │
 │  ┌──────────┐  ┌────────────────┐  ┌───────────────────┐│
 │  │ postgres │  │  riverhistory  │  │     jkriver       ││
-│  │  :5432   │←─│  :2345 (web)   │  │  :8400 (api)      ││
-│  │          │  │  init schema   │  │  telegram bot      ││
-│  │ Riverse  │←─│  load demo     │←─│  discord bot       ││
-│  │   (DB)   │  │  process data  │  │  sleep scheduler   ││
+│  │  :5432   │←─│  :2345 (web)   │  │  :1234 (web chat) ││
+│  │          │  │  init schema   │  │  :8400 (api)       ││
+│  │ Riverse  │←─│  load demo     │←─│  telegram bot      ││
+│  │   (DB)   │  │  process data  │  │  discord bot       ││
 │  └──────────┘  └────────────────┘  └───────────────────┘│
 │                                                          │
 └──────────────────────────────────────────────────────────┘
