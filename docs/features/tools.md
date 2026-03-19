@@ -30,10 +30,19 @@ tools:
     enabled: false               # Disabled by default for safety
 ```
 
+## Managing Tools from the Dashboard
+
+Open the **System page → Tools** section to:
+
+- **Toggle (ON/OFF)**: Click the ON/OFF badge on any tool card — takes effect after restart
+- **Delete**: Click ✕ to remove a tool from the `tools.yaml` registry
+
+No Python code changes needed.
+
 ## How Tools Work
 
-1. On startup, `ToolRegistry` scans every `.py` file in `agent/tools/` (skips files starting with `_`)
-2. For each `BaseTool` subclass found, it calls `is_available()`
+1. On startup, `ToolRegistry` reads the tool list from `agent/tools/tools.yaml`
+2. Each module is imported in order; `is_available()` is called on every `BaseTool` subclass found
 3. Available tools are registered by their `manifest().name`
 4. When the user sends a message, the LLM sees all tool manifests and decides which (if any) to call
 5. The tool's `execute()` result is injected into the LLM's context for generating the final response

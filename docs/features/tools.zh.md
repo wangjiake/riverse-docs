@@ -30,10 +30,19 @@ tools:
     enabled: false               # 安全考虑默认禁用
 ```
 
+## 在 Web 面板中管理工具
+
+打开 **System 页面 → 工具** 区域，可以直接：
+
+- **开关（ON/OFF）**：点击工具卡片上的 ON/OFF 标签，立即生效（需重启服务）
+- **删除**：点击 ✕ 按钮将工具从 `tools.yaml` 注册表中移除
+
+无需修改任何 Python 代码。
+
 ## 工作原理
 
-1. 启动时，`ToolRegistry` 扫描 `agent/tools/` 下所有 `.py` 文件（跳过 `_` 开头的文件）
-2. 对每个 `BaseTool` 子类调用 `is_available()`
+1. 启动时，`ToolRegistry` 读取 `agent/tools/tools.yaml` 中的工具列表
+2. 按列表顺序导入对应模块，对每个 `BaseTool` 子类调用 `is_available()`
 3. 可用的工具按 `manifest().name` 注册
 4. 用户发送消息时，LLM 会看到所有工具的 manifest，决定调用哪个
 5. 工具的 `execute()` 结果会注入 LLM 上下文，用于生成最终回复
