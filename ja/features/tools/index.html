@@ -839,7 +839,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        仕組み
+        ダッシュボードからツールを管理
       
     </span>
   </a>
@@ -848,6 +848,17 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仕組み
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         カスタムツール
@@ -1366,7 +1377,7 @@
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
-        仕組み
+        ダッシュボードからツールを管理
       
     </span>
   </a>
@@ -1375,6 +1386,17 @@
       
         <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        仕組み
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         カスタムツール
@@ -1455,15 +1477,22 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">shell_exec</span><span class="p">:</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">               </span><span class="c1"># セキュリティのためデフォルト無効</span>
 </code></pre></div>
-<h2 id="_4">仕組み</h2>
+<h2 id="_4">ダッシュボードからツールを管理</h2>
+<p><strong>System ページ → ツール</strong> セクションで直接操作できます：</p>
+<ul>
+<li><strong>ON/OFF 切り替え</strong>：ツールカードの ON/OFF バッジをクリック（再起動後に反映）</li>
+<li><strong>削除</strong>：✕ ボタンで <code>tools.yaml</code> レジストリから削除</li>
+</ul>
+<p>Python コードの変更は不要です。</p>
+<h2 id="_5">仕組み</h2>
 <ol>
-<li>起動時に <code>ToolRegistry</code> が <code>agent/tools/</code> 内のすべての <code>.py</code> ファイルをスキャン（<code>_</code> で始まるファイルはスキップ）</li>
-<li>各 <code>BaseTool</code> サブクラスに対して <code>is_available()</code> を呼び出し</li>
+<li>起動時に <code>ToolRegistry</code> が <code>agent/tools/tools.yaml</code> のツールリストを読み込み</li>
+<li>リスト順にモジュールをインポートし、各 <code>BaseTool</code> サブクラスに <code>is_available()</code> を呼び出し</li>
 <li>利用可能なツールは <code>manifest().name</code> で登録</li>
 <li>ユーザーがメッセージを送信すると、LLM はすべてのツールの manifest を確認し、どれを呼び出すか決定</li>
 <li>ツールの <code>execute()</code> 結果が LLM のコンテキストに注入され、最終回答の生成に使用</li>
 </ol>
-<h2 id="_5">カスタムツール</h2>
+<h2 id="_6">カスタムツール</h2>
 <p><code>agent/tools/</code> に <code>.py</code> ファイルを追加して独自のツールを作成できます。<a href="../../development/custom-tool/">カスタムツール開発</a>ガイドをご参照ください。</p>
 
 

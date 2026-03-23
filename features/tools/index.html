@@ -836,6 +836,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#managing-tools-from-the-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Tools from the Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-tools-work" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1363,6 +1374,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#managing-tools-from-the-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Managing Tools from the Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#how-tools-work" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1455,10 +1477,17 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">shell_exec</span><span class="p">:</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">               </span><span class="c1"># Disabled by default for safety</span>
 </code></pre></div>
+<h2 id="managing-tools-from-the-dashboard">Managing Tools from the Dashboard</h2>
+<p>Open the <strong>System page → Tools</strong> section to:</p>
+<ul>
+<li><strong>Toggle (ON/OFF)</strong>: Click the ON/OFF badge on any tool card — takes effect after restart</li>
+<li><strong>Delete</strong>: Click ✕ to remove a tool from the <code>tools.yaml</code> registry</li>
+</ul>
+<p>No Python code changes needed.</p>
 <h2 id="how-tools-work">How Tools Work</h2>
 <ol>
-<li>On startup, <code>ToolRegistry</code> scans every <code>.py</code> file in <code>agent/tools/</code> (skips files starting with <code>_</code>)</li>
-<li>For each <code>BaseTool</code> subclass found, it calls <code>is_available()</code></li>
+<li>On startup, <code>ToolRegistry</code> reads the tool list from <code>agent/tools/tools.yaml</code></li>
+<li>Each module is imported in order; <code>is_available()</code> is called on every <code>BaseTool</code> subclass found</li>
 <li>Available tools are registered by their <code>manifest().name</code></li>
 <li>When the user sends a message, the LLM sees all tool manifests and decides which (if any) to call</li>
 <li>The tool's <code>execute()</code> result is injected into the LLM's context for generating the final response</li>

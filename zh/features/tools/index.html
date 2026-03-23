@@ -836,6 +836,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在 Web 面板中管理工具
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1363,6 +1374,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#web" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        在 Web 面板中管理工具
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1455,10 +1477,17 @@
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">shell_exec</span><span class="p">:</span>
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w">               </span><span class="c1"># 安全考虑默认禁用</span>
 </code></pre></div>
+<h2 id="web">在 Web 面板中管理工具</h2>
+<p>打开 <strong>System 页面 → 工具</strong> 区域，可以直接：</p>
+<ul>
+<li><strong>开关（ON/OFF）</strong>：点击工具卡片上的 ON/OFF 标签，立即生效（需重启服务）</li>
+<li><strong>删除</strong>：点击 ✕ 按钮将工具从 <code>tools.yaml</code> 注册表中移除</li>
+</ul>
+<p>无需修改任何 Python 代码。</p>
 <h2 id="_4">工作原理</h2>
 <ol>
-<li>启动时，<code>ToolRegistry</code> 扫描 <code>agent/tools/</code> 下所有 <code>.py</code> 文件（跳过 <code>_</code> 开头的文件）</li>
-<li>对每个 <code>BaseTool</code> 子类调用 <code>is_available()</code></li>
+<li>启动时，<code>ToolRegistry</code> 读取 <code>agent/tools/tools.yaml</code> 中的工具列表</li>
+<li>按列表顺序导入对应模块，对每个 <code>BaseTool</code> 子类调用 <code>is_available()</code></li>
 <li>可用的工具按 <code>manifest().name</code> 注册</li>
 <li>用户发送消息时，LLM 会看到所有工具的 manifest，决定调用哪个</li>
 <li>工具的 <code>execute()</code> 结果会注入 LLM 上下文，用于生成最终回复</li>

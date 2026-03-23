@@ -884,7 +884,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        チャットでスキルを作成
+        ダッシュボードからスキルを管理
       
     </span>
   </a>
@@ -895,7 +895,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        チャットでスキルを削除
+        チャットでスキルを作成
       
     </span>
   </a>
@@ -904,6 +904,17 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        チャットでスキルを削除
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         カスタムスキル開発
@@ -1411,7 +1422,7 @@
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
-        チャットでスキルを作成
+        ダッシュボードからスキルを管理
       
     </span>
   </a>
@@ -1422,7 +1433,7 @@
   <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
-        チャットでスキルを削除
+        チャットでスキルを作成
       
     </span>
   </a>
@@ -1431,6 +1442,17 @@
       
         <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        チャットでスキルを削除
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         カスタムスキル開発
@@ -1488,19 +1510,31 @@
 <a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">      </span><span class="no">短く温かい週末の挨拶を書いてください。</span>
 <a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
-<h2 id="_5">チャットでスキルを作成</h2>
+<h2 id="_5">ダッシュボードからスキルを管理</h2>
+<p><strong>System ページ → スキル</strong> セクションで直接操作できます：</p>
+<ul>
+<li><strong>ON/OFF 切り替え</strong>：スキルカードの ON/OFF バッジをクリック</li>
+<li><strong>削除</strong>：✕ ボタンで対応する YAML ファイルを削除</li>
+<li><strong>インストール</strong>：右上の「+ スキルをインストール」ボタンから2つの方法で：<ul>
+<li><strong>貼り付け</strong>：YAML または SKILL.md 形式のコンテンツを直接貼り付け</li>
+<li><strong>SkillHub</strong>：スキル名（例：<code>explain-code</code>）を入力して SkillHub から取得・インストール</li>
+</ul>
+</li>
+</ul>
+<p>スキルカードにはソースバッジが表示されます：バッジなし＝組み込み、<strong>インストール済み</strong>＝ローカルファイル、<strong>SkillHub</strong>＝SkillHub からインストール。</p>
+<h2 id="_6">チャットでスキルを作成</h2>
 <p>Bot に直接話しかけるだけでスキルを作成できます：</p>
 <blockquote>
 <p>「スキルを作って、2時間ごとに水を飲むよう思い出させて」</p>
 </blockquote>
 <p>Bot が自動的に YAML を生成し、<code>agent/skills/</code> に保存します。</p>
-<h2 id="_6">チャットでスキルを削除</h2>
+<h2 id="_7">チャットでスキルを削除</h2>
 <p>Bot に話しかけてスキルを削除することもできます：</p>
 <blockquote>
 <p>「水飲みリマインダーのスキルを削除して」</p>
 </blockquote>
 <p>Bot が <code>agent/skills/</code> から該当する YAML ファイルを見つけて削除します。</p>
-<h2 id="_7">カスタムスキル開発</h2>
+<h2 id="_8">カスタムスキル開発</h2>
 <p>高度なスキル構築の詳細は<a href="../../development/custom-skill/">カスタムスキル開発</a>ガイドをご参照ください。</p>
 
 

@@ -602,7 +602,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        如何聊天
+        前置要求
       
     </span>
   </a>
@@ -613,7 +613,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        前置要求
+        快速开始
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System 页面配置
       
     </span>
   </a>
@@ -624,7 +635,18 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        快速开始
+        如何聊天
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全须知
       
     </span>
   </a>
@@ -654,7 +676,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         导入自己的数据
@@ -665,7 +687,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         配置说明
@@ -676,7 +698,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         常用命令
@@ -698,7 +720,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         架构
@@ -1410,7 +1432,7 @@
   <a href="#_1" class="md-nav__link">
     <span class="md-ellipsis">
       
-        如何聊天
+        前置要求
       
     </span>
   </a>
@@ -1421,7 +1443,18 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        前置要求
+        快速开始
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System 页面配置
       
     </span>
   </a>
@@ -1432,7 +1465,18 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        快速开始
+        如何聊天
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        安全须知
       
     </span>
   </a>
@@ -1462,7 +1506,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         导入自己的数据
@@ -1473,7 +1517,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         配置说明
@@ -1484,7 +1528,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_7" class="md-nav__link">
     <span class="md-ellipsis">
       
         常用命令
@@ -1506,7 +1550,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_8" class="md-nav__link">
     <span class="md-ellipsis">
       
         架构
@@ -1537,8 +1581,8 @@
 
 
 <h1 id="docker">Docker</h1>
-<p>不想装 Python 和 PostgreSQL？通过 Docker 一键运行完整的 Riverse AI 系统 — 只需配置 AI 模型的 API 密钥，一条命令即可启动。</p>
-<p><strong>自动启动两个服务：</strong></p>
+<p>不想装 Python 和 PostgreSQL？通过 Docker 一键运行完整的 Riverse AI 系统 — 无需编辑任何配置文件，三条命令即可启动。</p>
+<p><strong>自动启动三个服务：</strong></p>
 <table>
 <thead>
 <tr>
@@ -1549,19 +1593,84 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>RiverHistory</strong></td>
-<td>http://localhost:2345</td>
-<td>网页画像查看器 — 查看提取的性格、偏好、经历和人生时间线</td>
+<td><strong>JKRiver</strong></td>
+<td>http://localhost:1234</td>
+<td>网页聊天 + 系统配置（API 密钥、语言等）</td>
 </tr>
 <tr>
-<td><strong>JKRiver</strong></td>
+<td><strong>RiverHistory</strong></td>
+<td>http://localhost:2345</td>
+<td>用户画像查看器 — 查看提取的性格、偏好、经历和人生时间线</td>
+</tr>
+<tr>
+<td><strong>API 文档</strong></td>
 <td>http://localhost:8400/docs</td>
-<td>AI 核心引擎 — REST API、聊天机器人、记忆整理调度</td>
+<td>开发者 REST API 参考</td>
 </tr>
 </tbody>
 </table>
-<h2 id="_1">如何聊天</h2>
-<p>JKRiver 提供 <strong>三种方式</strong> 与 AI 聊天。所有对话都会被河流算法分析，持续丰富你的个人画像：</p>
+<h2 id="_1">前置要求</h2>
+<ul>
+<li>安装 <a href="https://docs.docker.com/get-docker/">Docker Desktop</a>（已自带 Docker Compose）</li>
+</ul>
+<h2 id="_2">快速开始</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># 1. 获取 compose 文件</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>mkdir<span class="w"> </span>jkriver<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>jkriver
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>curl<span class="w"> </span>-O<span class="w"> </span>https://raw.githubusercontent.com/wangjiake/JKRiver/main/docker/docker-compose.yaml
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="c1"># 2. 启动所有服务</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>docker<span class="w"> </span>compose<span class="w"> </span>pull<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="c1"># 3. 获取访问 Token（首次启动时自动生成）</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>docker<span class="w"> </span>logs<span class="w"> </span>jkriver-jkriver-1<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;ACCESS_TOKEN=&quot;</span>
+</code></pre></div>
+<p>在浏览器打开 <code>http://localhost:1234</code>，输入 Token 后进入 <strong>System</strong> 页面配置 API Key 等设置即可。无需手动编辑任何配置文件。</p>
+<blockquote>
+<p><strong>Token 只生成一次。</strong> 保存在 <code>./config/settings.yaml</code> 中，只要 <code>config/</code> 目录存在就无需再次查找。</p>
+</blockquote>
+<h2 id="system">System 页面配置</h2>
+<p>登录后打开 <strong>System</strong> 页面（http://localhost:1234），所有配置均可在网页界面完成，无需编辑配置文件。</p>
+<table>
+<thead>
+<tr>
+<th>配置区域</th>
+<th>可配置内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>LLM</strong></td>
+<td>AI 提供商（OpenAI / DeepSeek / Groq / Ollama）、模型名、API Key、API 地址</td>
+</tr>
+<tr>
+<td><strong>语言与时区</strong></td>
+<td>LLM 提示词语言（zh / en / ja）、本地时区</td>
+</tr>
+<tr>
+<td><strong>Telegram</strong></td>
+<td>机器人 Token、允许使用的用户 ID</td>
+</tr>
+<tr>
+<td><strong>Discord</strong></td>
+<td>机器人 Token</td>
+</tr>
+<tr>
+<td><strong>记忆整理（Sleep）</strong></td>
+<td>整理模式（每日定时 / 每次聊天后 / 手动）、定时小时</td>
+</tr>
+<tr>
+<td><strong>工具</strong></td>
+<td>各工具的开关（网络搜索、财务、健康等）</td>
+</tr>
+<tr>
+<td><strong>云端 LLM</strong></td>
+<td>用于网络搜索和兜底的额外提供商</td>
+</tr>
+</tbody>
+</table>
+<p>配置立即保存到 <code>./config/settings.yaml</code>，重启后生效。</p>
+<h2 id="_3">如何聊天</h2>
+<p>JKRiver 提供<strong>多种方式</strong>与 AI 聊天。所有对话都会被河流算法分析，持续丰富你的个人画像：</p>
 <table>
 <thead>
 <tr>
@@ -1572,13 +1681,18 @@
 </thead>
 <tbody>
 <tr>
+<td><strong>网页聊天</strong></td>
+<td>内置，直接打开 http://localhost:1234</td>
+<td>浏览器随时访问</td>
+</tr>
+<tr>
 <td><strong>Telegram 机器人</strong></td>
-<td>在 <code>.env</code> 中设置 <code>TELEGRAM_BOT_TOKEN</code>，从 <a href="https://t.me/BotFather">@BotFather</a> 获取 token</td>
+<td>在 System 页面设置 token，从 <a href="https://t.me/BotFather">@BotFather</a> 获取</td>
 <td>日常手机使用，最方便</td>
 </tr>
 <tr>
 <td><strong>Discord 机器人</strong></td>
-<td>在 <code>.env</code> 中设置 <code>DISCORD_BOT_TOKEN</code>，从 <a href="https://discord.com/developers/applications">Developer Portal</a> 获取 token</td>
+<td>在 System 页面设置 token，从 <a href="https://discord.com/developers/applications">Developer Portal</a> 获取</td>
 <td>社区/群组使用</td>
 </tr>
 <tr>
@@ -1588,38 +1702,40 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Telegram 机器人</strong> — 在 @BotFather 创建机器人，将 token 复制到 <code>.env</code>。如需限制访问，设置 <code>TELEGRAM_ALLOWED_USERS</code> 为你的用户 ID（给 <a href="https://t.me/userinfobot">@userinfobot</a> 发任意消息即可获取）。<strong>不要加括号</strong> — 直接填数字，如 <code>TELEGRAM_ALLOWED_USERS=123456789</code>。<code>docker compose up</code> 后直接给机器人发消息即可。</p>
-<p><strong>Discord 机器人</strong> — 在 Discord Developer Portal 创建应用和机器人，将 token 复制到 <code>.env</code>，邀请机器人加入你的服务器。<code>docker compose up</code> 后 @机器人 或私信它。</p>
 <p><strong>命令行</strong> — 打开终端运行：
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jkriver<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python -m agent.main&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jkriver<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app &amp;&amp; python -m agent.main&quot;</span>
 </code></pre></div>
 在 <code>&gt;</code> 提示符后输入消息，输入 <code>quit</code> 退出。退出时会自动运行记忆整理。</p>
-<blockquote>
-<p>REST API 也可用于开发者集成，接口文档见 <code>http://localhost:8400/docs</code>。</p>
-</blockquote>
-<h2 id="_2">前置要求</h2>
+<h2 id="_4">安全须知</h2>
+<div class="admonition warning">
+<p class="admonition-title">部署到服务器前必读</p>
+<p>JKRiver 设计为<strong>单用户本地使用</strong>。网页面板（端口 1234）受 Access Token 保护。但 <strong>REST API（端口 8400）和 RiverHistory（端口 2345）没有认证</strong>。部署到远程服务器时请遵循以下规则：</p>
+<p><strong>1. 不要将端口 8400 和 2345 暴露到公网</strong></p>
+<p>任何能访问这些端口的人都可以读取你的完整画像、健康数据、财务记录，并触发 LLM 调用。</p>
 <ul>
-<li>安装 <a href="https://docs.docker.com/get-docker/">Docker Desktop</a>（已自带 Docker Compose）</li>
+<li><strong>本地使用：</strong> 没有问题 — 端口只在你的电脑上可访问。</li>
+<li><strong>远程服务器：</strong> 将端口绑定到 <code>127.0.0.1</code>，使用带认证的反向代理（Nginx/Caddy），或通过 SSH 隧道访问。</li>
 </ul>
-<h2 id="_3">快速开始</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># 1. 获取文件</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/wangjiake/JKRiver.git
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">cd</span><span class="w"> </span>JKRiver/docker
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="c1"># 2. 创建配置文件</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>cp<span class="w"> </span>.env.example<span class="w"> </span>.env
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="c1"># 3. 编辑 .env — 填入你的 API 密钥（参考下方&quot;支持的 AI 模型&quot;）</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="c1">#    至少设置：OPENAI_API_KEY=sk-你的密钥</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="c1">#    设置 LANGUAGE=zh/en/ja — 控制 LLM 提示词的语言（不影响网页界面）</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="c1">#    聊天功能：设置 TELEGRAM_BOT_TOKEN 或 DISCORD_BOT_TOKEN（或使用命令行）</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="c1"># 4. 启动所有服务</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>docker<span class="w"> </span>compose<span class="w"> </span>up
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># docker-compose.yaml — 仅绑定到本机</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:8400:8400&quot;</span><span class="w">   </span><span class="c1"># 而不是 &quot;8400:8400&quot;</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:2345:2345&quot;</span><span class="w">   </span><span class="c1"># 而不是 &quot;2345:2345&quot;</span>
 </code></pre></div>
-<p>打开 http://localhost:2345 查看画像。通过 Telegram / Discord / 命令行聊天。</p>
+<p><strong>2. 不要暴露 PostgreSQL 端口 5432</strong></p>
+<p>默认的 Docker Compose 将 <code>5432</code> 端口映射到宿主机，且没有密码（<code>trust</code> 认证）。在远程服务器上，请删除 postgres 的 <code>ports</code> 配置或绑定到本机：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># docker-compose.yaml — postgres 部分</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nt">ports</span><span class="p">:</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;127.0.0.1:5432:5432&quot;</span><span class="w">   </span><span class="c1"># 或直接删除这一行</span>
+</code></pre></div>
+<p><strong>3. 使用 Telegram 机器人时设置 <code>TELEGRAM_ALLOWED_USERS</code></strong></p>
+<p>如果不设置，<strong>任何人</strong>找到你的机器人都能跟它聊天 — 消耗你的 LLM API 额度并写入你的画像。</p>
+<p>在 System 页面设置，或通过环境变量传入：
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">TELEGRAM_ALLOWED_USERS</span><span class="o">=</span><span class="m">123456789</span>
+</code></pre></div>
+获取 Telegram 用户 ID：给 <a href="https://t.me/userinfobot">@userinfobot</a> 发任意消息。</p>
+</div>
 <h2 id="ai">支持的 AI 模型</h2>
-<p>支持所有 OpenAI 兼容接口。编辑 <code>.env</code> 切换提供商：</p>
+<p>支持所有 OpenAI 兼容接口。在 <strong>System</strong> 页面（http://localhost:1234）配置，或在首次启动前通过环境变量设置：</p>
 <table>
 <thead>
 <tr>
@@ -1659,12 +1775,12 @@
 <p>使用 Ollama 需要先在你的电脑上安装（<code>https://ollama.ai</code>），然后运行 <code>ollama pull qwen2.5:14b</code>。</p>
 <h2 id="demo">体验 Demo</h2>
 <p>Demo 对话会在启动时自动导入。运行河流算法处理并查看提取的画像：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py demo max&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py demo max&quot;</span>
 </code></pre></div>
 <p>处理需要几分钟（会调用 AI 模型）。完成后打开 http://localhost:2345 查看结果 — 从 20 段对话中提取的完整人格画像。</p>
 <p>处理完成后，AI 会<strong>拥有 Demo 主人公的身份</strong>。当你通过命令行、Telegram 或 Discord 聊天时，AI 已经了解这个角色 — 职业变迁、感情经历、性格特点和人生时间线。你可以问"我现在做什么工作？"或"说说我前女友"，AI 会根据提取的画像来回答。</p>
 <p>在后续的命令行或 Telegram/Discord 聊天中，你可以体验实时的感知和记忆功能 — AI 会在对话中持续更新画像。如果想测试更多记忆能力，可以编辑 demo JSON 文件，添加更多人生事件、拉长时间线。</p>
-<h2 id="_4">导入自己的数据</h2>
+<h2 id="_5">导入自己的数据</h2>
 <p>你可以导入自己在 ChatGPT、Claude 或 Gemini 上的真实对话记录。</p>
 <blockquote>
 <p><strong>建议：</strong> 先用 Demo 体验一下速度和效果。处理大量真实数据可能需要几小时甚至更久。体验完 Demo 后，运行 <code>docker compose down -v</code> 清空数据库，再开始导入自己的数据。</p>
@@ -1694,26 +1810,27 @@
 </tbody>
 </table>
 <p><strong>第二步：放入 <code>data/</code> 文件夹</strong></p>
-<p>在 <code>docker-compose.yml</code> 同级目录下创建 <code>data/</code> 文件夹，把导出文件放进去：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>JKRiver/docker/
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── docker-compose.yml
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── .env
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>└── data/                      ← 已包含
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    ├── ChatGPT/               ← 把 conversations.json 放这里
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    ├── Claude/                ← 把 conversations.json 放这里
-<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    └── Gemini/                ← 把 Takeout 文件放这里
+<p>在 <code>jkriver/</code> 目录下创建 <code>data/</code> 文件夹，把导出文件放进去：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>jkriver/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── docker-compose.yaml
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── config/                    ← 首次启动自动创建（存储你的配置）
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>└── data/                      ← 创建此目录存放导出文件
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>    ├── ChatGPT/               ← 把 conversations.json 放这里
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    ├── Claude/                ← 把 conversations.json 放这里
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>    └── Gemini/                ← 把 Takeout 文件放这里
 </code></pre></div>
 <p><strong>第三步：导入并处理</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># 导入（选一个或多个）</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python import_data.py --chatgpt data/ChatGPT/conversations.json&quot;</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python import_data.py --claude data/Claude/conversations.json&quot;</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python import_data.py --gemini &#39;data/Gemini/我的活动记录.html&#39;&quot;</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="c1"># 处理所有导入的数据</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py all max&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="c1"># 导入（选一个或多个）</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python import_data.py --chatgpt data/ChatGPT/conversations.json&quot;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python import_data.py --claude data/Claude/conversations.json&quot;</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python import_data.py --gemini &#39;data/Gemini/我的活动记录.html&#39;&quot;</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="c1"># 处理所有导入的数据</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py all max&quot;</span>
 </code></pre></div>
 <p>打开 http://localhost:2345 查看你的个人画像。</p>
-<h2 id="_5">配置说明</h2>
+<h2 id="_6">配置说明</h2>
+<p>启动后，大部分配置可在 <code>http://localhost:1234</code> 的 <strong>System</strong> 页面修改。以下环境变量仅在首次启动时（<code>./config/settings.yaml</code> 创建之前）生效。</p>
 <table>
 <thead>
 <tr>
@@ -1724,9 +1841,19 @@
 </thead>
 <tbody>
 <tr>
+<td><code>ACCESS_TOKEN</code></td>
+<td><em>（自动生成）</em></td>
+<td>网页面板访问 Token。未设置时首次启动自动生成 — 查看 <code>docker logs</code> 获取</td>
+</tr>
+<tr>
+<td><code>TIMEZONE</code></td>
+<td><code>Asia/Tokyo</code></td>
+<td>你的本地时区（如 <code>Asia/Shanghai</code>、<code>America/New_York</code>）。用于 AI 感知你的本地时间</td>
+</tr>
+<tr>
 <td><code>LANGUAGE</code></td>
 <td><code>en</code></td>
-<td>LLM 提示词语言：<code>zh</code> 中文 / <code>en</code> 英文 / <code>ja</code> 日文（不影响网页界面）</td>
+<td>LLM 提示词语言：<code>zh</code> 中文 / <code>en</code> 英文 / <code>ja</code> 日文</td>
 </tr>
 <tr>
 <td><code>LLM_PROVIDER</code></td>
@@ -1752,16 +1879,6 @@
 <td><code>OLLAMA_MODEL</code></td>
 <td><code>qwen2.5:14b</code></td>
 <td>Ollama 模型名（当 <code>LLM_PROVIDER=local</code>）</td>
-</tr>
-<tr>
-<td><code>DEMO_MODE</code></td>
-<td><code>true</code></td>
-<td>启动时导入演示对话</td>
-</tr>
-<tr>
-<td><code>DEMO_PROCESS</code></td>
-<td><code>false</code></td>
-<td>启动时自动处理演示数据（会调用 AI，需要几分钟）</td>
 </tr>
 <tr>
 <td><code>SLEEP_MODE</code></td>
@@ -1790,39 +1907,39 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_6">常用命令</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># 启动 / 停止</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w">                  </span><span class="c1"># 启动（前台运行，可看日志）</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w">               </span><span class="c1"># 启动（后台运行）</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w">                </span><span class="c1"># 停止（数据保留）</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v<span class="w">             </span><span class="c1"># 停止并删除所有数据</span>
-<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>
-<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1"># 命令行聊天</span>
-<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jkriver<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python -m agent.main&quot;</span>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>
-<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="c1"># 处理数据：run.py &lt;来源&gt; &lt;数量&gt;</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="c1">#   来源：demo / chatgpt / claude / gemini / all（all = chatgpt+claude+gemini，不含 demo）</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="c1">#   数量：max = 全部处理，或填数字如 50 = 从最早开始处理 50 条（适合先试水看费用）</span>
-<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="c1">#   可以随时中断，下次运行会自动跳过已处理的对话</span>
-<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py demo max&quot;</span>
-<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py all max&quot;</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py chatgpt 50&quot;</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>
-<a id="__codelineno-5-18" name="__codelineno-5-18" href="#__codelineno-5-18"></a><span class="c1"># 手动触发 Sleep（整理对话中的记忆，沉淀为画像）</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8400/sleep
-<a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>
-<a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a><span class="c1"># 清空所有画像和记忆，保留原始对话数据（含 demo）</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python reset_db.py&quot;</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>
-<a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a><span class="c1"># 查看日志</span>
-<a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f<span class="w">             </span><span class="c1"># 所有服务</span>
-<a id="__codelineno-5-26" name="__codelineno-5-26" href="#__codelineno-5-26"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>jkriver<span class="w">     </span><span class="c1"># 单个服务</span>
-<a id="__codelineno-5-27" name="__codelineno-5-27" href="#__codelineno-5-27"></a>
-<a id="__codelineno-5-28" name="__codelineno-5-28" href="#__codelineno-5-28"></a><span class="c1"># 更新到最新版本</span>
-<a id="__codelineno-5-29" name="__codelineno-5-29" href="#__codelineno-5-29"></a>docker<span class="w"> </span>compose<span class="w"> </span>pull<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
-<a id="__codelineno-5-30" name="__codelineno-5-30" href="#__codelineno-5-30"></a>
-<a id="__codelineno-5-31" name="__codelineno-5-31" href="#__codelineno-5-31"></a><span class="c1"># 彻底重置（删除所有数据包括数据库）</span>
-<a id="__codelineno-5-32" name="__codelineno-5-32" href="#__codelineno-5-32"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up
+<h2 id="_7">常用命令</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c1"># 启动 / 停止</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w">                  </span><span class="c1"># 启动（前台运行，可看日志）</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d<span class="w">               </span><span class="c1"># 启动（后台运行）</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w">                </span><span class="c1"># 停止（数据保留）</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v<span class="w">             </span><span class="c1"># 停止并删除所有数据</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="c1"># 命令行聊天</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>jkriver<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app &amp;&amp; python -m agent.main&quot;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="c1"># 处理数据：run.py &lt;来源&gt; &lt;数量&gt;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="c1">#   来源：demo / chatgpt / claude / gemini / all（all = chatgpt+claude+gemini，不含 demo）</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="c1">#   数量：max = 全部处理，或填数字如 50 = 从最早开始处理 50 条（适合先试水看费用）</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="c1">#   可以随时中断，下次运行会自动跳过已处理的对话</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py demo max&quot;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py all max&quot;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python run.py chatgpt 50&quot;</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a><span class="c1"># 手动触发 Sleep（整理对话中的记忆，沉淀为画像）</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>curl<span class="w"> </span>-X<span class="w"> </span>POST<span class="w"> </span>http://localhost:8400/sleep
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a><span class="c1"># 清空所有画像和记忆，保留原始对话数据（含 demo）</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>docker<span class="w"> </span>compose<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>riverhistory<span class="w"> </span>bash<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;cd /app_work &amp;&amp; python reset_db.py&quot;</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a><span class="c1"># 查看日志</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f<span class="w">             </span><span class="c1"># 所有服务</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26" href="#__codelineno-8-26"></a>docker<span class="w"> </span>compose<span class="w"> </span>logs<span class="w"> </span>-f<span class="w"> </span>jkriver<span class="w">     </span><span class="c1"># 单个服务</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27" href="#__codelineno-8-27"></a>
+<a id="__codelineno-8-28" name="__codelineno-8-28" href="#__codelineno-8-28"></a><span class="c1"># 更新到最新版本</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29" href="#__codelineno-8-29"></a>docker<span class="w"> </span>compose<span class="w"> </span>pull<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-8-30" name="__codelineno-8-30" href="#__codelineno-8-30"></a>
+<a id="__codelineno-8-31" name="__codelineno-8-31" href="#__codelineno-8-31"></a><span class="c1"># 彻底重置（删除所有数据包括数据库）</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32" href="#__codelineno-8-32"></a>docker<span class="w"> </span>compose<span class="w"> </span>down<span class="w"> </span>-v<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>docker<span class="w"> </span>compose<span class="w"> </span>up
 </code></pre></div>
 <h2 id="demo_1">Demo 演示什么？</h2>
 <p>Demo 角色拥有充满矛盾的人生轨迹，用来测试河流算法的能力：</p>
@@ -1862,19 +1979,19 @@
 </tr>
 </tbody>
 </table>
-<h2 id="_7">架构</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>docker compose up
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>┌──────────────────────────────────────────────────────────┐
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>│                                                          │
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>│  ┌──────────┐  ┌────────────────┐  ┌───────────────────┐│
-<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>│  │ postgres │  │  riverhistory  │  │     jkriver       ││
-<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>│  │  :5432   │←─│  :2345 (web)   │  │  :8400 (api)      ││
-<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>│  │          │  │  init schema   │  │  telegram bot      ││
-<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>│  │ Riverse  │←─│  load demo     │←─│  discord bot       ││
-<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>│  │   (DB)   │  │  process data  │  │  sleep scheduler   ││
-<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>│  └──────────┘  └────────────────┘  └───────────────────┘│
-<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>│                                                          │
-<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>└──────────────────────────────────────────────────────────┘
+<h2 id="_8">架构</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>docker compose up
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>┌──────────────────────────────────────────────────────────┐
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>│                                                          │
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>│  ┌──────────┐  ┌────────────────┐  ┌───────────────────┐│
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>│  │ postgres │  │  riverhistory  │  │     jkriver       ││
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>│  │  :5432   │←─│  :2345 (web)   │  │  :1234 (网页聊天) ││
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>│  │          │  │  init schema   │  │  :8400 (api)       ││
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>│  │ Riverse  │←─│  load demo     │←─│  telegram bot      ││
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>│  │   (DB)   │  │  process data  │  │  discord bot       ││
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>│  └──────────┘  └────────────────┘  └───────────────────┘│
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>│                                                          │
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>└──────────────────────────────────────────────────────────┘
 </code></pre></div>
 
 
