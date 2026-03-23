@@ -28,9 +28,25 @@ docker compose pull && docker compose up -d
 docker logs jkriver-jkriver-1 2>&1 | grep "ACCESS_TOKEN="
 ```
 
-Open `http://localhost:1234` in your browser, enter the access token, then go to **System** to set your API key. That's it — no config files to edit.
+Open `http://localhost:1234` in your browser, enter the access token, then go to **System** to configure your API key and other settings. That's it — no config files to edit manually.
 
-> **Token is generated once.** It's saved in a `settings.yaml` volume. As long as the volume exists, you won't need to look it up again.
+> **Token is generated once.** It's saved in `./config/settings.yaml`. As long as the `config/` directory exists, you won't need to look it up again.
+
+## System Page Configuration
+
+After logging in, open the **System** page at http://localhost:1234. Everything is configured here through the web UI — no config file editing required.
+
+| Section | What you can configure |
+|---------|----------------------|
+| **LLM** | AI provider (OpenAI / DeepSeek / Groq / Ollama), model, API key, API base URL |
+| **Language & Timezone** | LLM prompt language (zh / en / ja), your local timezone |
+| **Telegram** | Bot token, allowed user IDs |
+| **Discord** | Bot token |
+| **Memory (Sleep)** | Consolidation mode (daily cron / after each chat / manual), cron hour |
+| **Tools** | Enable or disable individual tools (web search, finance, health, etc.) |
+| **Cloud LLM** | Additional providers for web search and fallback |
+
+Settings are saved immediately to `./config/settings.yaml` and take effect after restart.
 
 ## How to Chat
 
@@ -45,7 +61,7 @@ JKRiver provides **multiple ways** to chat with the AI. All conversations are an
 
 **Command Line** — Open a terminal and run:
 ```bash
-docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
+docker compose exec jkriver bash -c "cd /app && python -m agent.main"
 ```
 Type your message at the `>` prompt, type `quit` to exit. Memory consolidation runs automatically on exit.
 
@@ -91,7 +107,7 @@ Type your message at the `>` prompt, type `quit` to exit. Memory consolidation r
 
 ## Supported AI Models
 
-Works with any OpenAI-compatible API. Edit `.env` to switch providers:
+Works with any OpenAI-compatible API. Configure in the **System** page at http://localhost:1234 after startup, or set environment variables before first start:
 
 | Provider | `OPENAI_API_BASE` | `OPENAI_MODEL` | Notes |
 |----------|-------------------|----------------|-------|
@@ -134,13 +150,13 @@ You can import your real conversation history from ChatGPT, Claude, or Gemini.
 
 **Step 2: Place files in the `data/` folder**
 
-Create a `data/` folder next to your `docker-compose.yml` and put the exported files inside:
+Create a `data/` folder inside your `jkriver/` directory and put the exported files inside:
 
 ```
-JKRiver/docker/
-├── docker-compose.yml
-├── .env
-└── data/                      ← already included
+jkriver/
+├── docker-compose.yaml
+├── config/                    ← auto-created on first start (your settings)
+└── data/                      ← create this for your exports
     ├── ChatGPT/               ← put conversations.json here
     ├── Claude/                ← put conversations.json here
     └── Gemini/                ← put Takeout files here
@@ -162,7 +178,7 @@ Open http://localhost:2345 to see your extracted profile.
 
 ## Configuration Reference
 
-Most settings can be changed in the **System** page at http://localhost:1234 after startup. The environment variables below apply only on first startup (before `settings.yaml` is created).
+Most settings can be changed in the **System** page at http://localhost:1234 after startup. The environment variables below apply only on first startup (before `settings.yaml` is created in `./config/`).
 
 | Variable | Default | What it does |
 |----------|---------|--------------|
@@ -190,7 +206,7 @@ docker compose down                # Stop (data preserved)
 docker compose down -v             # Stop and DELETE all data
 
 # Chat (command line)
-docker compose exec jkriver bash -c "cd /app_work && python -m agent.main"
+docker compose exec jkriver bash -c "cd /app && python -m agent.main"
 
 # Process data: run.py <source> <count>
 #   source: demo / chatgpt / claude / gemini / all (all = chatgpt+claude+gemini, excludes demo)
