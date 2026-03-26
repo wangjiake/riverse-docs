@@ -9,9 +9,9 @@ Riverse 支持多种通信渠道，所有渠道共享同一份记忆和画像。
 | CLI | `python -m agent.main` | 终端交互模式 |
 | Telegram Bot | `python -m agent.telegram_bot` | 支持文本、语音、图片 |
 | Discord Bot | `python -m agent.discord_bot` | 支持文本、语音、图片 |
-| REST API | `uvicorn agent.api:app --host 0.0.0.0 --port 8400` | HTTP 端点 |
+| REST API | `uvicorn agent.api:app --host 127.0.0.1 --port 8400` | HTTP 端点 |
 | WebSocket | 包含在 REST API 中 | 实时双向对话 |
-| Web 仪表盘 | `python web.py` | 画像查看和记忆管理 |
+| Web 仪表盘 | `python scripts/start_local.py` | 画像查看、记忆管理、外包任务 |
 
 ## Telegram Bot
 
@@ -45,8 +45,14 @@ discord:
 ## Web 仪表盘
 
 ```bash
-python web.py                          # 默认端口 1234
-python web.py --port 8401              # 指定端口
+python scripts/start_local.py          # 推荐：同时启动 FastAPI + Flask
+```
+
+或手动启动（两个都需要）：
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
+python web.py
 ```
 
 仪表盘功能：

@@ -3,7 +3,7 @@
 启动 API 服务：
 
 ```bash
-uvicorn agent.api:app --host 0.0.0.0 --port 8400
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
 ```
 
 ## 端点列表

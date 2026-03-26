@@ -9,9 +9,9 @@ Riverse は複数の通信チャネルをサポートしています。すべて
 | CLI | `python -m agent.main` | ターミナル対話モード |
 | Telegram Bot | `python -m agent.telegram_bot` | テキスト、音声、画像対応 |
 | Discord Bot | `python -m agent.discord_bot` | テキスト、音声、画像対応 |
-| REST API | `uvicorn agent.api:app --host 0.0.0.0 --port 8400` | HTTP エンドポイント |
+| REST API | `uvicorn agent.api:app --host 127.0.0.1 --port 8400` | HTTP エンドポイント |
 | WebSocket | REST API に含まれる | リアルタイム双方向チャット |
-| Web ダッシュボード | `python web.py` | プロフィール表示とメモリ管理 |
+| Web ダッシュボード | `python scripts/start_local.py` | プロフィール表示、メモリ管理、派遣タスク |
 
 ## Telegram Bot
 
@@ -45,8 +45,14 @@ discord:
 ## Web ダッシュボード
 
 ```bash
-python web.py                          # デフォルトポート 1234
-python web.py --port 8401              # ポート指定
+python scripts/start_local.py          # 推奨：FastAPI + Flask を同時起動
+```
+
+手動起動の場合（両方必要）：
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
+python web.py
 ```
 
 ダッシュボード機能：

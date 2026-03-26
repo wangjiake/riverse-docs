@@ -36,7 +36,7 @@ python -m agent.discord_bot
 ## REST API
 
 ```bash
-uvicorn agent.api:app --host 0.0.0.0 --port 8400
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
 ```
 
 发送消息：
@@ -50,8 +50,14 @@ curl -X POST http://localhost:8400/chat \
 ## Web 仪表盘
 
 ```bash
-python web.py                          # 默认端口 1234
-python web.py --port 8401              # 指定端口
+python scripts/start_local.py          # 推荐：同时启动 FastAPI + Flask
+```
+
+或手动启动（两个都需要）：
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
+python web.py
 ```
 
 浏览器访问 `http://localhost:1234`，可查看：

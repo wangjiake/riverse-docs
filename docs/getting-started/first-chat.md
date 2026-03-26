@@ -36,7 +36,7 @@ python -m agent.discord_bot
 ## REST API
 
 ```bash
-uvicorn agent.api:app --host 0.0.0.0 --port 8400
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
 ```
 
 Send a message:
@@ -50,8 +50,14 @@ curl -X POST http://localhost:8400/chat \
 ## Web Dashboard
 
 ```bash
-python web.py                          # Default port 1234
-python web.py --port 8401              # Custom port
+python scripts/start_local.py          # Recommended: starts FastAPI + Flask together
+```
+
+Or manually (both required):
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
+python web.py
 ```
 
 Visit `http://localhost:1234` to view:

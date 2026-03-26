@@ -9,9 +9,9 @@ Riverse supports multiple communication channels. All channels share the same me
 | CLI | `python -m agent.main` | Terminal-based interactive mode |
 | Telegram Bot | `python -m agent.telegram_bot` | Supports text, voice, images |
 | Discord Bot | `python -m agent.discord_bot` | Supports text, voice, images |
-| REST API | `uvicorn agent.api:app --host 0.0.0.0 --port 8400` | HTTP endpoints |
+| REST API | `uvicorn agent.api:app --host 127.0.0.1 --port 8400` | HTTP endpoints |
 | WebSocket | Included with REST API | Real-time bidirectional chat |
-| Web Dashboard | `python web.py` | Profile viewer and memory management |
+| Web Dashboard | `python scripts/start_local.py` | Profile viewer, memory management, outsource |
 
 ## Telegram Bot
 
@@ -45,8 +45,14 @@ discord:
 ## Web Dashboard
 
 ```bash
-python web.py                          # Default port 1234
-python web.py --port 8401              # Custom port
+python scripts/start_local.py          # Recommended: starts FastAPI + Flask together
+```
+
+Or manually (both required):
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
+python web.py
 ```
 
 The dashboard shows:

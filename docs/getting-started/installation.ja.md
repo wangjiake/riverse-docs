@@ -55,10 +55,20 @@ ollama pull bge-m3              # 埋め込みモデル（オプション）
 
 ## 起動
 
+**Web ダッシュボード（推奨）** — FastAPI バックエンドと Flask フロントエンドを同時起動：
+
 ```bash
-python -m agent.main                                    # CLI
-uvicorn agent.api:app --host 0.0.0.0 --port 8400       # REST API
-python web.py                                            # Web ダッシュボード
-python -m agent.telegram_bot                             # Telegram Bot
-python -m agent.discord_bot                              # Discord Bot
+python scripts/start_local.py
 ```
+
+個別に起動する場合：
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400    # FastAPI バックエンド（Web ダッシュボードに必要）
+python web.py                                           # Flask フロントエンド (http://localhost:1234)
+python -m agent.main                                    # CLI モード
+python -m agent.telegram_bot                            # Telegram Bot
+python -m agent.discord_bot                             # Discord Bot
+```
+
+> Web ダッシュボードは両方のサービスが必要です。`start_local.py` が自動で管理します。

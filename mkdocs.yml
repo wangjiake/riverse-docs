@@ -63,6 +63,7 @@ plugins:
             Getting Started: 快速开始
             Chat History Import (RiverHistory): 对话历史导入
             Features: 功能
+            Outsource / Task Agent: 外包 / 外包Agent
             Development: 开发
             Python SDK (riverse): Python SDK (riverse)
             FAQ: 常见问题
@@ -75,6 +76,7 @@ plugins:
             Getting Started: はじめに
             Chat History Import (RiverHistory): チャット履歴インポート
             Features: 機能
+            Outsource / Task Agent: 派遣 / タスクAgent
             Development: 開発
             Python SDK (riverse): Python SDK (riverse)
             FAQ: よくある質問
@@ -94,6 +96,7 @@ nav:
     - features/tools.md
     - features/skills.md
     - features/agents.md
+    - features/outsource.md
     - features/mcp.md
     - features/proactive.md
   - Development:

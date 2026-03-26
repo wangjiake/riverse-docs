@@ -36,7 +36,7 @@ python -m agent.discord_bot
 ## REST API
 
 ```bash
-uvicorn agent.api:app --host 0.0.0.0 --port 8400
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
 ```
 
 メッセージ送信：
@@ -50,8 +50,14 @@ curl -X POST http://localhost:8400/chat \
 ## Web ダッシュボード
 
 ```bash
-python web.py                          # デフォルトポート 1234
-python web.py --port 8401              # ポート指定
+python scripts/start_local.py          # 推奨：FastAPI + Flask を同時起動
+```
+
+手動起動の場合（両方必要）：
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400
+python web.py
 ```
 
 `http://localhost:1234` にアクセス：

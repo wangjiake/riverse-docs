@@ -55,10 +55,20 @@ ollama pull bge-m3              # Embedding model (optional)
 
 ## Run
 
+**Web Dashboard (recommended)** — starts FastAPI backend + Flask frontend together:
+
 ```bash
-python -m agent.main                                    # CLI
-uvicorn agent.api:app --host 0.0.0.0 --port 8400       # REST API
-python web.py                                            # Web Dashboard
-python -m agent.telegram_bot                             # Telegram Bot
-python -m agent.discord_bot                              # Discord Bot
+python scripts/start_local.py
 ```
+
+Or start individually:
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400    # FastAPI backend (required for web dashboard)
+python web.py                                           # Flask frontend (http://localhost:1234)
+python -m agent.main                                    # CLI
+python -m agent.telegram_bot                            # Telegram Bot
+python -m agent.discord_bot                             # Discord Bot
+```
+
+> The web dashboard needs both services running. `start_local.py` handles this automatically.

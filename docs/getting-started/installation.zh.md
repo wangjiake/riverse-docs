@@ -58,10 +58,20 @@ ollama pull bge-m3              # 向量嵌入模型（可选）
 
 ## 启动
 
+**Web 仪表盘（推荐）** — 一键同时启动 FastAPI 后端和 Flask 前端：
+
 ```bash
-python -m agent.main                                    # CLI
-uvicorn agent.api:app --host 0.0.0.0 --port 8400       # REST API
-python web.py                                            # Web 仪表盘
-python -m agent.telegram_bot                             # Telegram Bot
-python -m agent.discord_bot                              # Discord Bot
+python scripts/start_local.py
 ```
+
+或单独启动各服务：
+
+```bash
+uvicorn agent.api:app --host 127.0.0.1 --port 8400    # FastAPI 后端（Web 仪表盘必需）
+python web.py                                           # Flask 前端 (http://localhost:1234)
+python -m agent.main                                    # CLI 模式
+python -m agent.telegram_bot                            # Telegram Bot
+python -m agent.discord_bot                             # Discord Bot
+```
+
+> Web 仪表盘需要两个服务同时运行。`start_local.py` 会自动处理。
