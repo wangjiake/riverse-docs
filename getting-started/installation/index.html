@@ -748,6 +748,8 @@
       
         
       
+        
+      
     
     
     
@@ -920,6 +922,34 @@
     
   
     External Agents
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/outsource/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outsource / Task Agent
   
 
     
@@ -1483,12 +1513,19 @@
 <a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>ollama<span class="w"> </span>pull<span class="w"> </span>bge-m3<span class="w">              </span><span class="c1"># Embedding model (optional)</span>
 </code></pre></div>
 <h2 id="run">Run</h2>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>-m<span class="w"> </span>agent.main<span class="w">                                    </span><span class="c1"># CLI</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>uvicorn<span class="w"> </span>agent.api:app<span class="w"> </span>--host<span class="w"> </span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="w"> </span><span class="m">8400</span><span class="w">       </span><span class="c1"># REST API</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>python<span class="w"> </span>web.py<span class="w">                                            </span><span class="c1"># Web Dashboard</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>python<span class="w"> </span>-m<span class="w"> </span>agent.telegram_bot<span class="w">                             </span><span class="c1"># Telegram Bot</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>python<span class="w"> </span>-m<span class="w"> </span>agent.discord_bot<span class="w">                              </span><span class="c1"># Discord Bot</span>
+<p><strong>Web Dashboard (recommended)</strong> — starts FastAPI backend + Flask frontend together:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>scripts/start_local.py
 </code></pre></div>
+<p>Or start individually:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>uvicorn<span class="w"> </span>agent.api:app<span class="w"> </span>--host<span class="w"> </span><span class="m">127</span>.0.0.1<span class="w"> </span>--port<span class="w"> </span><span class="m">8400</span><span class="w">    </span><span class="c1"># FastAPI backend (required for web dashboard)</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>python<span class="w"> </span>web.py<span class="w">                                           </span><span class="c1"># Flask frontend (http://localhost:1234)</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>python<span class="w"> </span>-m<span class="w"> </span>agent.main<span class="w">                                    </span><span class="c1"># CLI</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>python<span class="w"> </span>-m<span class="w"> </span>agent.telegram_bot<span class="w">                            </span><span class="c1"># Telegram Bot</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>python<span class="w"> </span>-m<span class="w"> </span>agent.discord_bot<span class="w">                             </span><span class="c1"># Discord Bot</span>
+</code></pre></div>
+<blockquote>
+<p>The web dashboard needs both services running. <code>start_local.py</code> handles this automatically.</p>
+</blockquote>
 
 
 
