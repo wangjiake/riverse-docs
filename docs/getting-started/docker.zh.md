@@ -25,7 +25,7 @@ curl -O https://raw.githubusercontent.com/wangjiake/JKRiver/main/docker/docker-c
 docker compose pull && docker compose up -d
 
 # 3. 获取访问 Token（首次启动时自动生成）
-docker logs jkriver-jkriver-1 2>&1 | grep "ACCESS_TOKEN="
+docker logs jkriver-jkriver-1 2>&1 | grep "Token:"
 ```
 
 在浏览器打开 `http://localhost:1234`，输入 Token 后进入 **System** 页面配置 API Key 等设置即可。无需手动编辑任何配置文件。
