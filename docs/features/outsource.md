@@ -35,7 +35,11 @@ The agent calls `dispatch_task` with `action=preview`, generates a step-by-step 
 
 Reply with "yes", "start", or similar. The agent calls `dispatch_task` with `action=start` and execution begins in the background.
 
-You can continue chatting while the task runs.
+![The agent presents a step-by-step plan in chat for review before execution](../assets/images/demo-outsource-plan.png)
+
+You can continue chatting while the task runs. When done, the result appears directly in chat:
+
+![Task completed — result summary shown in chat with a link to the output file](../assets/images/demo-outsource-result.png)
 
 ## Tracking Progress
 
@@ -47,6 +51,8 @@ Open `/outsource` in the web dashboard to see:
 - Final result and files changed
 
 A **task tray** in the status bar shows active task count at a glance.
+
+![Tasks page — full execution log, step progress, result and files changed](../assets/images/demo-outsource-tasks.png)
 
 ## Interactive Questions
 
