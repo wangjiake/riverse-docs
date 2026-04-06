@@ -96,4 +96,6 @@ This creates a native `vector(1024)` column and an IVFFlat index for fast approx
 ## Memory Accuracy
 
 !!! info
-    No LLM today is specifically trained for personal profile extraction, so results may occasionally be off. When you spot something inaccurate, you can **reject** incorrect memories or **close** outdated ones in the Web Dashboard. Riverse intentionally does not allow manual editing of memory content — wrong memories are like sediment in a river, meant to be washed away by the current, not sculpted by hand. As conversations accumulate, the River Algorithm continuously self-corrects through multi-turn verification and contradiction detection — profiles become more accurate over time.
+    No LLM today is specifically trained for personal profile extraction, so results may occasionally be off. You can **mark incorrect memories as error** or **manually close outdated ones** in the Web Dashboard — but memories cannot be deleted or edited directly. This is by design: the River Algorithm treats your memory as an audit trail. Wrong memories are like sediment in a river, meant to be washed away by the current, not sculpted by hand.
+
+    If you see too many extraction errors, the likely cause is your LLM's understanding capability, not a bug. Try switching to a stronger model — the memory pipeline is also a practical benchmark for evaluating how well your LLM understands natural language. As conversations accumulate, the algorithm continuously self-corrects through multi-turn verification and contradiction detection.
