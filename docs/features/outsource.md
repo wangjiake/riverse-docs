@@ -31,13 +31,11 @@ Example:
 
 The agent calls `dispatch_task` with `action=preview`, generates a step-by-step plan, and shows it to you for review.
 
-**Step 2 — Confirm**
-
-Reply with "yes", "start", or similar. The agent calls `dispatch_task` with `action=start` and execution begins in the background.
-
 ![The agent presents a step-by-step plan in chat for review before execution](../assets/images/demo-outsource-plan.png)
 
-You can continue chatting while the task runs. When done, the result appears directly in chat:
+**Step 2 — Confirm**
+
+Reply with "yes", "start", or similar. The agent calls `dispatch_task` with `action=start` and execution begins in the background. You can continue chatting while the task runs. When done, the result appears directly in chat:
 
 ![Task completed — result summary shown in chat with a link to the output file](../assets/images/demo-outsource-result.png)
 
