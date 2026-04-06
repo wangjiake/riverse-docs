@@ -32,6 +32,14 @@ Open `http://localhost:1234` in your browser, enter the access token, then go to
 
 > **Token is generated once.** It's saved in `./config/settings.yaml`. As long as the `config/` directory exists, you won't need to look it up again.
 
+After logging in, you'll see three main tabs:
+
+![Chat interface — where you talk to the AI](../assets/images/demo-chat-empty.png)
+
+![Profile interface — where extracted memories and facts are stored](../assets/images/demo-profile-empty.png)
+
+![Tasks interface — background tasks and agent jobs](../assets/images/demo-tasks.png)
+
 ## System Page Configuration
 
 After logging in, open the **System** page at http://localhost:1234. Everything is configured here through the web UI — no config file editing required.
@@ -47,6 +55,8 @@ After logging in, open the **System** page at http://localhost:1234. Everything 
 | **Cloud LLM** | Additional providers for web search and fallback |
 
 Settings are saved immediately to `./config/settings.yaml` and take effect after restart.
+
+![System page — configure LLM provider, API key, Telegram/Discord bots, tools, and more](../assets/images/demo-system.png)
 
 ## How to Chat
 
@@ -120,7 +130,17 @@ For Ollama, install it on your computer first (`https://ollama.ai`), then run `o
 
 ## Try the Demo
 
-Demo conversations are loaded automatically. To process them with the River Algorithm and see the extracted profile:
+Demo conversations are loaded automatically. The demo is a set of 20 casual conversations with a fictional character — Jake Morrison, a software engineer in Austin. The conversations cover his career changes, relationships, hobbies, and daily life, all written in natural language with no special formatting:
+
+![Demo raw conversations — 20 casual chats about Jake's life, career, and relationships](../assets/images/demo-raw-data.png)
+
+From these unstructured conversations, the River Algorithm extracts a structured profile, detects contradictions, tracks how facts change over time, and builds a relationship map. Run it:
+
+> **Note:** RiverHistory reads the API key from the `.env` file, not from the System page. Before running, make sure your `.env` contains `OPENAI_API_KEY=sk-...`. If you just added it, restart the container first:
+> ```bash
+> echo 'OPENAI_API_KEY=sk-your-key' >> .env
+> docker compose up -d --force-recreate riverhistory
+> ```
 
 ```bash
 docker compose exec riverhistory bash -c "cd /app_work && python run.py demo max"
@@ -132,7 +152,23 @@ After processing, the AI **takes on the demo character's identity**. When you ch
 
 Through follow-up conversations in command line or Telegram/Discord, you can experience the real-time perception and memory features — the AI will continuously update the profile as you chat. If you want to test more memory capabilities, you can edit the demo JSON to add more life events and extend the timeline.
 
+**What the extracted profile looks like:**
+
+![Profile view — confirmed and suspected facts extracted from conversations](../assets/images/demo-profile-confirmed.png)
+
+![Profile view — suspected facts pending verification](../assets/images/demo-profile-suspected.png)
+
+![Timeline view — how facts changed over time](../assets/images/demo-profile-timeline.png)
+
+![Snapshots view — profile state at each point in time](../assets/images/demo-profile-snapshots.png)
+
+![Observations view — raw statements extracted from conversations](../assets/images/demo-profile-observations.png)
+
+![Relationships view — people mentioned across conversations](../assets/images/demo-profile-relationships.png)
+
 ## Import Your Own Data
+
+> **Note:** RiverHistory reads the API key from the `.env` file. Make sure `.env` contains `OPENAI_API_KEY=sk-...` before running `run.py`.
 
 You can import your real conversation history from ChatGPT, Claude, or Gemini.
 

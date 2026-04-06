@@ -122,6 +122,12 @@ Ollama を使用するには、まずコンピュータにインストール（`
 
 デモ会話は起動時に自動インポートされます。River Algorithm で処理してプロフィールを確認：
 
+> **注意：** RiverHistory は System ページではなく `.env` ファイルから API キーを読み込みます。実行前に `.env` に `OPENAI_API_KEY=sk-...` が含まれていることを確認してください。追加した場合はコンテナを再起動してください：
+> ```bash
+> echo 'OPENAI_API_KEY=sk-your-key' >> .env
+> docker compose up -d --force-recreate riverhistory
+> ```
+
 ```bash
 docker compose exec riverhistory bash -c "cd /app_work && python run.py demo max"
 ```
@@ -133,6 +139,8 @@ docker compose exec riverhistory bash -c "cd /app_work && python run.py demo max
 コマンドラインや Telegram/Discord での後続チャットでは、リアルタイムの感知と記憶機能を体験できます — AI は会話の中でプロフィールを継続的に更新します。より多くの記憶機能をテストしたい場合は、デモ JSON ファイルを編集して、より多くの人生イベントやタイムラインを追加できます。
 
 ## 自分のデータをインポート
+
+> **注意：** RiverHistory は `.env` ファイルから API キーを読み込みます。`run.py` を実行する前に `.env` に `OPENAI_API_KEY=sk-...` が含まれていることを確認してください。
 
 ChatGPT、Claude、Gemini の実際の会話履歴をインポートできます。
 

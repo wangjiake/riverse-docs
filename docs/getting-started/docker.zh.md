@@ -122,6 +122,12 @@ docker compose exec jkriver bash -c "cd /app && python -m agent.main"
 
 Demo 对话会在启动时自动导入。运行河流算法处理并查看提取的画像：
 
+> **注意：** RiverHistory 从 `.env` 文件读取 API Key，而不是 System 页面的配置。运行前请确认 `.env` 中包含 `OPENAI_API_KEY=sk-...`。如果刚刚添加，需要重启容器：
+> ```bash
+> echo 'OPENAI_API_KEY=sk-your-key' >> .env
+> docker compose up -d --force-recreate riverhistory
+> ```
+
 ```bash
 docker compose exec riverhistory bash -c "cd /app_work && python run.py demo max"
 ```
@@ -133,6 +139,8 @@ docker compose exec riverhistory bash -c "cd /app_work && python run.py demo max
 在后续的命令行或 Telegram/Discord 聊天中，你可以体验实时的感知和记忆功能 — AI 会在对话中持续更新画像。如果想测试更多记忆能力，可以编辑 demo JSON 文件，添加更多人生事件、拉长时间线。
 
 ## 导入自己的数据
+
+> **注意：** RiverHistory 从 `.env` 文件读取 API Key，运行 `run.py` 前请确认 `.env` 中包含 `OPENAI_API_KEY=sk-...`。
 
 你可以导入自己在 ChatGPT、Claude 或 Gemini 上的真实对话记录。
 
