@@ -1550,7 +1550,9 @@
 <p>The agent calls <code>dispatch_task</code> with <code>action=preview</code>, generates a step-by-step plan, and shows it to you for review.</p>
 <p><strong>Step 2 — Confirm</strong></p>
 <p>Reply with "yes", "start", or similar. The agent calls <code>dispatch_task</code> with <code>action=start</code> and execution begins in the background.</p>
-<p>You can continue chatting while the task runs.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/demo-outsource-plan.png" data-desc-position="bottom"><img alt="The agent presents a step-by-step plan in chat for review before execution" src="../../assets/images/demo-outsource-plan.png"></a></p>
+<p>You can continue chatting while the task runs. When done, the result appears directly in chat:</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/demo-outsource-result.png" data-desc-position="bottom"><img alt="Task completed — result summary shown in chat with a link to the output file" src="../../assets/images/demo-outsource-result.png"></a></p>
 <h2 id="tracking-progress">Tracking Progress</h2>
 <p>Open <code>/outsource</code> in the web dashboard to see:</p>
 <ul>
@@ -1560,6 +1562,7 @@
 <li>Final result and files changed</li>
 </ul>
 <p>A <strong>task tray</strong> in the status bar shows active task count at a glance.</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../assets/images/demo-outsource-tasks.png" data-desc-position="bottom"><img alt="Tasks page — full execution log, step progress, result and files changed" src="../../assets/images/demo-outsource-tasks.png"></a></p>
 <h2 id="interactive-questions">Interactive Questions</h2>
 <p>If the sub-agent needs clarification mid-task, it uses the <code>ask_user</code> tool to pause and send a question to your chat. Reply inline — the agent resumes automatically.</p>
 <h2 id="strict-vs-loose-mode">Strict vs. Loose Mode</h2>
