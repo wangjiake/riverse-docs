@@ -130,6 +130,9 @@ markdown_extensions:
       custom_checkbox: true
 
 extra:
+  analytics:
+    provider: google
+    property: G-111HD7CEY5
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/wangjiake/JKRiver
