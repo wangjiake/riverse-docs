@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <urlset xmlns:html="http://www.w3.org/1999/xhtml" xmlns:ns0="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/" />
@@ -9,7 +9,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/faq/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/faq/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/faq/" />
@@ -17,7 +17,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/about/contact/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/about/contact/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/about/contact/" />
@@ -25,7 +25,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/about/license/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/about/license/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/about/license/" />
@@ -33,7 +33,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/development/api/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/api/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/api/" />
@@ -41,7 +41,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/development/custom-skill/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-skill/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-skill/" />
@@ -49,7 +49,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/development/custom-tool/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/custom-tool/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/custom-tool/" />
@@ -57,7 +57,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/development/python-sdk/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/development/python-sdk/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/development/python-sdk/" />
@@ -65,7 +65,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/agents/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/agents/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/agents/" />
@@ -73,7 +73,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/mcp/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/mcp/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/mcp/" />
@@ -81,7 +81,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/memory/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/memory/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/memory/" />
@@ -89,7 +89,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/multi-channel/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/multi-channel/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/multi-channel/" />
@@ -97,7 +97,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/outsource/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/outsource/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/outsource/" />
@@ -105,7 +105,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/proactive/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/proactive/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/proactive/" />
@@ -113,7 +113,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/skills/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/skills/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/skills/" />
@@ -121,7 +121,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/features/tools/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/features/tools/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/features/tools/" />
@@ -129,7 +129,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/configuration/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/configuration/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/configuration/" />
@@ -137,7 +137,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/docker/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/docker/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/docker/" />
@@ -145,7 +145,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/first-chat/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/first-chat/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/first-chat/" />
@@ -153,7 +153,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/history/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/history/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/history/" />
@@ -161,7 +161,7 @@
     </ns0:url>
     <ns0:url>
         <ns0:loc>https://wangjiake.github.io/riverse-docs/ja/getting-started/installation/</ns0:loc>
-        <ns0:lastmod>2026-04-06</ns0:lastmod>
+        <ns0:lastmod>2026-04-08</ns0:lastmod>
         <ns0:changefreq>daily</ns0:changefreq>
         <html:link rel="alternate" hreflang="ja" href="https://wangjiake.github.io/riverse-docs/ja/getting-started/installation/" />
         <html:link rel="alternate" hreflang="en" href="https://wangjiake.github.io/riverse-docs/getting-started/installation/" />
