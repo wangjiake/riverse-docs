@@ -777,13 +777,85 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#persistent-memory" class="md-nav__link">
+  <a href="#memory-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Persistent Memory
+        Memory Engine
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Memory Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-gets-extracted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Gets Extracted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fact-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fact Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Decay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contradiction-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contradiction Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidence-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence Chains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1449,13 +1521,85 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#persistent-memory" class="md-nav__link">
+  <a href="#memory-engine" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Persistent Memory
+        Memory Engine
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Memory Engine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-gets-extracted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Gets Extracted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fact-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fact Lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#time-decay" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Time Decay
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contradiction-resolution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Contradiction Resolution
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidence-chains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence Chains
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Knowledge Graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1574,9 +1718,75 @@
 
 
 <h1 id="memory-sleep">Memory &amp; Sleep</h1>
-<h2 id="persistent-memory">Persistent Memory</h2>
-<p>Riverse remembers across sessions and builds a timeline-based profile that evolves with you. Every conversation contributes to a growing understanding of your personality, preferences, experiences, and relationships.</p>
-<p>This is powered by the <strong>River Algorithm</strong> — conversations flow like water, key information settles like riverbed sediment, progressively upgrading from "suspected" to "confirmed" to "established" through multi-turn verification.</p>
+<h2 id="memory-engine">Memory Engine</h2>
+<p>Riverse is not a RAG system. It doesn't store raw conversation chunks and retrieve similar text. Instead, it runs a structured extraction pipeline (Sleep) after each conversation to build a living, self-correcting profile of you.</p>
+<h3 id="what-gets-extracted">What Gets Extracted</h3>
+<p>Every conversation is processed into three separate data structures, each with its own lifecycle:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What it captures</th>
+<th>Lifecycle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Profile facts</strong></td>
+<td>Persistent attributes: job, city, preferences, health patterns, etc.</td>
+<td>Confidence-based, time-decayed, superseded when updated</td>
+</tr>
+<tr>
+<td><strong>Relationships</strong></td>
+<td>People you mention: name, relation, details, mention count</td>
+<td>Updated on each mention, status tracked</td>
+</tr>
+<tr>
+<td><strong>Events</strong></td>
+<td>Time-bounded occurrences: started a new job, moved cities, had surgery</td>
+<td>Expires automatically via <code>decay_days</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fact-lifecycle">Fact Lifecycle</h3>
+<p>Each profile fact goes through a defined lifecycle:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Observation (raw statement from conversation)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    ↓
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>suspected  →  confirmed  →  established
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    ↓               ↓
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>  rejected       closed (superseded by new fact)
+</code></pre></div>
+<ul>
+<li><strong>suspected</strong> — extracted but not yet verified across multiple conversations</li>
+<li><strong>confirmed</strong> — seen consistently across 2+ sessions; LLM has cross-verified it</li>
+<li><strong>established</strong> — long-standing, high-evidence fact; resistant to casual contradiction</li>
+<li><strong>rejected</strong> — marked as incorrect (manually or by LLM arbitration)</li>
+<li><strong>closed</strong> — fact changed; old record preserved with <code>end_time</code>, new one takes over</li>
+</ul>
+<h3 id="time-decay">Time Decay</h3>
+<p>Each fact carries a <code>decay_days</code> value — the estimated lifetime of that type of information. Facts approaching expiry get lower weight in context injection. Expired facts are removed from the active profile but kept in the timeline for historical accuracy.</p>
+<h3 id="contradiction-resolution">Contradiction Resolution</h3>
+<p>When Sleep detects conflicting facts (e.g. "lives in Tokyo" vs. "moved to Osaka"), it:</p>
+<ol>
+<li>Flags both as a disputed pair</li>
+<li>Runs LLM arbitration with full context (trajectory, timeline, recent conversations)</li>
+<li>Either accepts the new fact and closes the old one, or rejects the new claim</li>
+</ol>
+<h3 id="evidence-chains">Evidence Chains</h3>
+<p>Every fact stores the evidence that produced it — a list of observations from specific conversations. This means:</p>
+<ul>
+<li>You can trace any fact back to the conversation that created it</li>
+<li>LLM arbitration has full context when resolving contradictions</li>
+<li>Confidence scores reflect the number and quality of supporting observations</li>
+</ul>
+<h3 id="knowledge-graph">Knowledge Graph</h3>
+<p>Sleep extracts typed edges between facts, building a personal knowledge graph:</p>
+<ul>
+<li><code>causes</code> — "stress" causes "sleep problems"</li>
+<li><code>related_to</code> — "job change" related to "relocation"</li>
+<li><code>supports</code> / <code>contradicts</code> — evidence relationships between facts</li>
+</ul>
+<p>This graph is used during context injection to surface causally connected facts when a relevant topic comes up.</p>
 <h2 id="sleep-offline-memory-consolidation">Sleep — Offline Memory Consolidation</h2>
 <p>Sleep is the process where Riverse digests conversations and updates your profile. It is triggered automatically or on demand:</p>
 <table>
@@ -1607,25 +1817,25 @@
 </table>
 <h3 id="cron-example">Cron Example</h3>
 <p>Run Sleep every day at midnight:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># crontab -e</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/path/to/JKRiver<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>/path/to/python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"from agent.sleep import run; run()"</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># crontab -e</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/path/to/JKRiver<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>/path/to/python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"from agent.sleep import run; run()"</span>
 </code></pre></div>
 <h2 id="knowledge-network">Knowledge Network</h2>
 <p>Sleep also builds a <strong>knowledge network</strong> — typed edges connecting related profile facts (e.g. <code>causes</code>, <code>related_to</code>, <code>contradicts</code>, <code>supports</code>). This lets the AI see structural relationships between facts, not just isolated entries.</p>
 <p>When facts are closed or superseded, their edges are automatically cleaned up.</p>
 <h2 id="memory-clustering">Memory Clustering</h2>
 <p>With embeddings enabled, Sleep can optionally cluster memory vectors using KMeans and generate theme labels for each cluster. This gives a bird's-eye view of what the AI knows about you.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">embedding</span><span class="p">:</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">clustering</span><span class="p">:</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">show_themes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">embedding</span><span class="p">:</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">clustering</span><span class="p">:</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">show_themes</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </code></pre></div>
 <h2 id="semantic-search">Semantic Search</h2>
 <p>With embeddings enabled (BGE-M3), Riverse retrieves relevant memories by meaning rather than keyword matching.</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">embedding</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">"bge-m3"</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">"http://localhost:11434"</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">embedding</span><span class="p">:</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">enabled</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nt">model</span><span class="p">:</span><span class="w"> </span><span class="s">"bge-m3"</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">  </span><span class="nt">api_base</span><span class="p">:</span><span class="w"> </span><span class="s">"http://localhost:11434"</span>
 </code></pre></div>
 <h2 id="session-memory">Session Memory</h2>
 <p>Session Memory manages context within a single conversation using three layers:</p>
@@ -1635,23 +1845,23 @@
 <li><strong>Recent Turns</strong> — The most recent turns are kept verbatim for immediate context</li>
 </ol>
 <p>This three-layer system lets conversations go indefinitely without losing important context. Configure in <code>settings.yaml</code>:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">session_memory</span><span class="p">:</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">char_budget</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span><span class="w">        </span><span class="c1"># Total character budget for session context</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">keep_recent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">           </span><span class="c1"># Recent turns to keep verbatim</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="nt">summary_ratio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4</span><span class="w">       </span><span class="c1"># Fraction of budget allocated to summary</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="nt">recall_max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">            </span><span class="c1"># Max recalled turns via vector search</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">    </span><span class="nt">recall_min_score</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.45</span><span class="w">   </span><span class="c1"># Min similarity for recall</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">session_memory</span><span class="p">:</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">char_budget</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span><span class="w">        </span><span class="c1"># Total character budget for session context</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">keep_recent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w">           </span><span class="c1"># Recent turns to keep verbatim</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">summary_ratio</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4</span><span class="w">       </span><span class="c1"># Fraction of budget allocated to summary</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">    </span><span class="nt">recall_max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w">            </span><span class="c1"># Max recalled turns via vector search</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">    </span><span class="nt">recall_min_score</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.45</span><span class="w">   </span><span class="c1"># Min similarity for recall</span>
 </code></pre></div>
 <h2 id="pgvector-acceleration">pgvector Acceleration</h2>
 <p>By default, embeddings are stored as JSONB and cosine similarity is computed in Python. For better performance with large datasets, install the <a href="https://github.com/pgvector/pgvector">pgvector</a> extension:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># macOS</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>brew<span class="w"> </span>install<span class="w"> </span>pgvector
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Debian/Ubuntu</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>apt<span class="w"> </span>install<span class="w"> </span>postgresql-16-pgvector
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="c1"># macOS</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>brew<span class="w"> </span>install<span class="w"> </span>pgvector
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1"># Debian/Ubuntu</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>apt<span class="w"> </span>install<span class="w"> </span>postgresql-16-pgvector
 </code></pre></div>
 <p>Then run the migration:</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-U<span class="w"> </span>YOUR_USERNAME<span class="w"> </span>-d<span class="w"> </span>Riverse<span class="w"> </span>-f<span class="w"> </span>migrations/001_pgvector.sql
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>psql<span class="w"> </span>-h<span class="w"> </span>localhost<span class="w"> </span>-U<span class="w"> </span>YOUR_USERNAME<span class="w"> </span>-d<span class="w"> </span>Riverse<span class="w"> </span>-f<span class="w"> </span>migrations/001_pgvector.sql
 </code></pre></div>
 <p>This creates a native <code>vector(1024)</code> column and an IVFFlat index for fast approximate nearest neighbor search. The application auto-detects pgvector and uses it when available; no config change needed.</p>
 <h2 id="memory-accuracy">Memory Accuracy</h2>
