@@ -9,7 +9,7 @@ hide:
 # Riverse
 
 <p class="hero-subtitle">
-個人デバイスのために設計された AI エージェント — 永続的な記憶、オフライン認知、使うほどあなたを理解する。すべてのデータはローカルに保存。<br>
+AI のための個人記憶エンジン — すべての会話から記憶を抽出・管理・整理する。ローカル実行、任意の LLM に対応。<br>
 <span style="font-size:0.8rem; opacity:0.55;">v0.1.7 · シングルユーザー推奨</span>
 </p>
 
@@ -226,9 +226,9 @@ Telegram、Discord、REST API、WebSocket、CLI、Web ダッシュボード。
 <div class="feature-card" markdown>
 <span class="feature-icon">:material-server:</span>
 
-### ローカルファースト
+### 柔軟な LLM
 
-デフォルトは Ollama、必要時に OpenAI / DeepSeek へ自動エスカレーション。
+ローカル推論は Ollama；クラウドモードは任意の OpenAI 互換 API に対応。
 
 </div>
 
@@ -246,7 +246,7 @@ Telegram、Discord、REST API、WebSocket、CLI、Web ダッシュボード。
 
 ### セマンティック検索
 
-BGE-M3 ベクトル埋め込み、意味で関連する記憶を検索。
+ベクトル埋め込みで意味による記憶検索。Ollama の埋め込みモデルが必要。
 
 </div>
 
@@ -271,8 +271,8 @@ Model Context Protocol 対応、Gmail 等の MCP Server を接続。
 |---|---|
 | ランタイム | Python 3.10+, PostgreSQL 16+ |
 | ローカル LLM | Ollama（任意の互換モデル） |
-| クラウド LLM | OpenAI GPT-4o / DeepSeek（フォールバック）|
-| 埋め込み | Ollama + BGE-M3 |
+| クラウド LLM | 任意の OpenAI 互換 API（OpenAI、DeepSeek、Groq など） |
+| 埋め込み | Ollama + 任意の埋め込みモデル（pgvector で自動高速化） |
 | REST API | FastAPI + Uvicorn |
 | Web ダッシュボード | Flask |
 | Telegram | python-telegram-bot (async) |

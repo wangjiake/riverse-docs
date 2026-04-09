@@ -9,7 +9,7 @@ hide:
 # Riverse
 
 <p class="hero-subtitle">
-A personal AI agent that runs on your own machine — persistent memory, offline cognition, grows with every conversation. All data stays local.<br>
+Personal memory engine for AI — extracts, ages, and resolves your memories from every conversation. Runs locally. Works with any LLM.<br>
 <span style="font-size:0.8rem; opacity:0.55;">v0.1.7 · Single-user recommended</span>
 </p>
 
@@ -226,9 +226,9 @@ Telegram, Discord, REST API, WebSocket, CLI, and Web Dashboard.
 <div class="feature-card" markdown>
 <span class="feature-icon">:material-server:</span>
 
-### Local-First
+### Flexible LLM
 
-Ollama by default. Auto-escalates to OpenAI / DeepSeek when needed.
+Ollama for local inference. Cloud mode is compatible with any OpenAI-compatible API.
 
 </div>
 
@@ -246,7 +246,7 @@ Follows up on events, checks in when idle, respects quiet hours.
 
 ### Semantic Search
 
-BGE-M3 embeddings — retrieves relevant memories by meaning, not just keywords.
+Vector embeddings — retrieves relevant memories by meaning, not just keywords. Requires an Ollama embed model.
 
 </div>
 
@@ -271,8 +271,8 @@ Model Context Protocol support for Gmail and other MCP servers.
 |---|---|
 | Runtime | Python 3.10+, PostgreSQL 16+ |
 | Local LLM | Ollama (any compatible model) |
-| Cloud LLM | OpenAI GPT-4o / DeepSeek (fallback) |
-| Embeddings | Ollama + BGE-M3 |
+| Cloud LLM | Any OpenAI-compatible API (OpenAI, DeepSeek, Groq, and more) |
+| Embeddings | Ollama + any embed model (pgvector auto-accelerated if available) |
 | REST API | FastAPI + Uvicorn |
 | Web Dashboard | Flask |
 | Telegram | python-telegram-bot (async) |

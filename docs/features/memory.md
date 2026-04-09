@@ -1,10 +1,66 @@
 # Memory & Sleep
 
-## Persistent Memory
+## Memory Engine
 
-Riverse remembers across sessions and builds a timeline-based profile that evolves with you. Every conversation contributes to a growing understanding of your personality, preferences, experiences, and relationships.
+Riverse is not a RAG system. It doesn't store raw conversation chunks and retrieve similar text. Instead, it runs a structured extraction pipeline (Sleep) after each conversation to build a living, self-correcting profile of you.
 
-This is powered by the **River Algorithm** — conversations flow like water, key information settles like riverbed sediment, progressively upgrading from "suspected" to "confirmed" to "established" through multi-turn verification.
+### What Gets Extracted
+
+Every conversation is processed into three separate data structures, each with its own lifecycle:
+
+| Type | What it captures | Lifecycle |
+|------|-----------------|-----------|
+| **Profile facts** | Persistent attributes: job, city, preferences, health patterns, etc. | Confidence-based, time-decayed, superseded when updated |
+| **Relationships** | People you mention: name, relation, details, mention count | Updated on each mention, status tracked |
+| **Events** | Time-bounded occurrences: started a new job, moved cities, had surgery | Expires automatically via `decay_days` |
+
+### Fact Lifecycle
+
+Each profile fact goes through a defined lifecycle:
+
+```
+Observation (raw statement from conversation)
+    ↓
+suspected  →  confirmed  →  established
+    ↓               ↓
+  rejected       closed (superseded by new fact)
+```
+
+- **suspected** — extracted but not yet verified across multiple conversations
+- **confirmed** — seen consistently across 2+ sessions; LLM has cross-verified it
+- **established** — long-standing, high-evidence fact; resistant to casual contradiction
+- **rejected** — marked as incorrect (manually or by LLM arbitration)
+- **closed** — fact changed; old record preserved with `end_time`, new one takes over
+
+### Time Decay
+
+Each fact carries a `decay_days` value — the estimated lifetime of that type of information. Facts approaching expiry get lower weight in context injection. Expired facts are removed from the active profile but kept in the timeline for historical accuracy.
+
+### Contradiction Resolution
+
+When Sleep detects conflicting facts (e.g. "lives in Tokyo" vs. "moved to Osaka"), it:
+
+1. Flags both as a disputed pair
+2. Runs LLM arbitration with full context (trajectory, timeline, recent conversations)
+3. Either accepts the new fact and closes the old one, or rejects the new claim
+
+### Evidence Chains
+
+Every fact stores the evidence that produced it — a list of observations from specific conversations. This means:
+
+- You can trace any fact back to the conversation that created it
+- LLM arbitration has full context when resolving contradictions
+- Confidence scores reflect the number and quality of supporting observations
+
+### Knowledge Graph
+
+Sleep extracts typed edges between facts, building a personal knowledge graph:
+
+- `causes` — "stress" causes "sleep problems"
+- `related_to` — "job change" related to "relocation"
+- `supports` / `contradicts` — evidence relationships between facts
+
+This graph is used during context injection to surface causally connected facts when a relevant topic comes up.
 
 ## Sleep — Offline Memory Consolidation
 

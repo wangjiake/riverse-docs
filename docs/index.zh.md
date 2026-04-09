@@ -9,7 +9,7 @@ hide:
 # Riverse
 
 <p class="hero-subtitle">
-为个人终端设计的 AI Agent — 持久记忆，离线认知，越用越懂你。所有数据存在本地。<br>
+为 AI 打造的个人记忆引擎 — 从每次对话中提取、管理、整理你的记忆。本地运行，兼容任意 LLM。<br>
 <span style="font-size:0.8rem; opacity:0.55;">v0.1.7 · 推荐单用户使用</span>
 </p>
 
@@ -226,9 +226,9 @@ Telegram、Discord、REST API、WebSocket、CLI、Web 仪表盘。
 <div class="feature-card" markdown>
 <span class="feature-icon">:material-server:</span>
 
-### 本地优先
+### 灵活的 LLM
 
-默认 Ollama，质量不足时自动升级到 OpenAI / DeepSeek。
+本地推理使用 Ollama；云端模式兼容任意 OpenAI 格式 API。
 
 </div>
 
@@ -246,7 +246,7 @@ Telegram、Discord、REST API、WebSocket、CLI、Web 仪表盘。
 
 ### 语义搜索
 
-BGE-M3 向量嵌入，按语义而非关键词检索相关记忆。
+向量嵌入，按语义而非关键词检索相关记忆。需要配置 Ollama 嵌入模型。
 
 </div>
 
@@ -271,8 +271,8 @@ BGE-M3 向量嵌入，按语义而非关键词检索相关记忆。
 |---|---|
 | 运行时 | Python 3.10+, PostgreSQL 16+ |
 | 本地 LLM | Ollama（任意兼容模型） |
-| 云端 LLM | OpenAI GPT-4o / DeepSeek（兜底） |
-| 向量嵌入 | Ollama + BGE-M3 |
+| 云端 LLM | 兼容任意 OpenAI 格式 API（OpenAI、DeepSeek、Groq 等） |
+| 向量嵌入 | Ollama + 任意嵌入模型（安装 pgvector 后自动加速） |
 | REST API | FastAPI + Uvicorn |
 | Web 仪表盘 | Flask |
 | Telegram | python-telegram-bot (async) |
