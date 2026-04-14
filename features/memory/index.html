@@ -2143,7 +2143,9 @@ Mark all processed conversations. This is the last step — if the pipeline cras
 <li><strong>Multi-fact joint reasoning</strong> — evaluating a new observation against 30+ existing profile facts (a constrained NLI task with large fine-tuning potential)</li>
 <li><strong>Calibrated confidence</strong> — outputting reliable probability scores so the pipeline can threshold decisions, rather than binary yes/no classifications</li>
 </ul>
-<p>Until such a model becomes feasible — through dedicated training or through the natural evolution of foundation models — the algorithm improves automatically with each generation of stronger models, requiring zero code changes. The pipeline's context inputs (timeline, trajectory, conversation summaries, evidence chains) are already structured to give future models the richest possible signal.</p>
+<p>The author has a clear design for what this model should look like, but training it requires compute and data resources beyond what an individual can access.</p>
+<p>If your company is building a memory-focused model or working on personal AI and you have a role that fits — I'd love to hear from you: <a href="mailto:mailwangjk@gmail.com">mailwangjk@gmail.com</a></p>
+<p>Until then, the algorithm rides on general-purpose models and improves automatically with each stronger generation, requiring zero code changes. The pipeline's context inputs (timeline, trajectory, conversation summaries, evidence chains) are already structured to give future models the richest possible signal.</p>
 <p>This is a deliberate design choice: build the architecture right and let the models catch up, rather than simplify the architecture to match today's model limitations.</p>
 
 
