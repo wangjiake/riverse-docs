@@ -882,6 +882,78 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-14-step-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 14-Step Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The 14-Step Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Extract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Analyze
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-maintain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Maintain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -950,6 +1022,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Memory Accuracy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-first-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm-First Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1626,6 +1715,78 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#the-14-step-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The 14-Step Pipeline
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The 14-Step Pipeline">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#phase-1-extract" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 1: Extract
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-2-analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 2: Analyze
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-3-maintain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 3: Maintain
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phase-4-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Phase 4: Output
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#post-transaction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Post-transaction
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1694,6 +1855,23 @@
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Memory Accuracy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#algorithm-first-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Algorithm-First Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1820,6 +1998,92 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># crontab -e</span>
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="m">0</span><span class="w"> </span><span class="m">0</span><span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span>*<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/path/to/JKRiver<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>/path/to/python<span class="w"> </span>-c<span class="w"> </span><span class="s2">"from agent.sleep import run; run()"</span>
 </code></pre></div>
+<h3 id="the-14-step-pipeline">The 14-Step Pipeline</h3>
+<p>The entire pipeline runs atomically inside a single database transaction. If any step fails, everything rolls back — the same conversations will be re-processed on the next run (at-least-once semantics).</p>
+<h4 id="phase-1-extract">Phase 1: Extract</h4>
+<p><strong>Step 1 — Load initial data</strong>
+Load the existing user profile (excluding superseded facts) and the latest life trajectory summary. These provide context for all subsequent steps.</p>
+<p><strong>Step 2 — Extract sessions</strong>
+For each unprocessed conversation session, the LLM extracts:</p>
+<ul>
+<li><strong>Observations</strong> — factual statements, contradictions, preferences, and behavioral signals. Each observation is tagged with its type and subject. Third-party observations (about people the user mentions) are stored separately.</li>
+<li><strong>Tags</strong> — session-level topic tags</li>
+<li><strong>Relationships</strong> — people mentioned, their relation to the user, and details. Existing relationships are merged (mention count incremented, details updated).</li>
+<li><strong>Events</strong> — time-bounded occurrences (new job, relocation, surgery, etc.) with importance and decay days</li>
+</ul>
+<p>Sessions with only tool/outsource intents are skipped — they contain no personal information.</p>
+<h4 id="phase-2-analyze">Phase 2: Analyze</h4>
+<p><strong>Step 3 — Analyze behavior</strong>
+The LLM examines all observations alongside the current profile and trajectory to infer behavioral patterns. For example, multiple late-night messages may suggest the user is a night owl. Inferred facts are saved with <code>source_type=inferred</code>. When evidence count reaches 3+, a <code>clarify</code> strategy is generated to proactively verify the inference in a future conversation.</p>
+<p><strong>Step 4 — Classify &amp; integrate</strong>
+The core step. The LLM classifies each observation against the existing profile:</p>
+<ul>
+<li><code>support</code> — reinforces an existing fact → evidence is appended, mention count incremented</li>
+<li><code>contradict</code> — conflicts with an existing fact → a new fact is created with a <code>supersedes</code> link to the old one, forming a dispute pair</li>
+<li><code>evidence_against</code> — weakens an existing fact without asserting a replacement</li>
+<li><code>new</code> — no matching fact exists → a new profile fact is created</li>
+</ul>
+<p>Unclassified statement/contradiction observations are auto-assigned as <code>new</code>. After integration, change-driven strategies (type <code>probe</code>) are generated for newly created or contradicted facts.</p>
+<p><strong>Step 5 — Cross-verify</strong>
+Suspected facts undergo verification:</p>
+<ul>
+<li><strong>Rule-based fast path</strong>: facts with <code>source_type=stated</code> and <code>mention_count ≥ 2</code> are auto-confirmed</li>
+<li><strong>LLM verification</strong>: remaining suspected facts (up to 80, sorted by mention count) are cross-verified using timeline history, related conversation summaries (last 3 months), and trajectory context</li>
+</ul>
+<p>Facts that pass verification are promoted from <code>suspected</code> to <code>confirmed</code>.</p>
+<p><strong>Step 6 — Resolve disputes</strong>
+Disputed fact pairs (where a new fact <code>supersedes</code> an old one but neither is closed) are sent to LLM arbitration with full context. The LLM decides <code>accept_new</code> or <code>reject_new</code>. The losing fact is closed (<code>end_time</code> set), and its knowledge graph edges are cleaned up.</p>
+<h4 id="phase-3-maintain">Phase 3: Maintain</h4>
+<p><strong>Step 7 — Extract edges</strong>
+For all facts affected in this run, the LLM extracts typed edges (causal, temporal, hierarchical) to build the personal knowledge graph.</p>
+<p><strong>Step 8 — Expire facts</strong>
+Facts past their <code>expires_at</code> date are closed. For each expired fact, a <code>verify</code> strategy is generated so the AI will naturally ask about it in the next relevant conversation.</p>
+<p><strong>Step 9 — Maturity decay</strong>
+Long-standing, well-evidenced facts earn longer lifespans. The decay tiers:</p>
+<table>
+<thead>
+<tr>
+<th>Fact age</th>
+<th>Evidence count</th>
+<th>New decay_days</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>≥ 730 days</td>
+<td>≥ 10</td>
+<td>730 (2 years)</td>
+</tr>
+<tr>
+<td>≥ 365 days</td>
+<td>≥ 6</td>
+<td>365 (1 year)</td>
+</tr>
+<tr>
+<td>≥ 90 days</td>
+<td>≥ 3</td>
+<td>180 (6 months)</td>
+</tr>
+</tbody>
+</table>
+<p>Facts identified as <strong>key anchors</strong> in the trajectory (e.g. native language, long-term career) get a 40% threshold reduction — they mature faster.</p>
+<h4 id="phase-4-output">Phase 4: Output</h4>
+<p><strong>Step 10 — User model</strong>
+The LLM analyzes communication style dimensions from the conversations (e.g. direct vs. indirect, formal vs. casual, humor style). Results are stored in the <code>user_model</code> table and used to shape response tone.</p>
+<p><strong>Step 11 — Trajectory</strong>
+When significant changes are detected (fact confirmations, dispute resolutions, contradictions in important categories) and at least 2 sessions have passed since the last update, the life trajectory is regenerated. It captures: life phase, direction, stability, key anchors, volatile areas, and recent momentum.</p>
+<p><strong>Step 12 — Consolidate</strong>
+Deduplicate the profile to clean up any redundancies created during extraction and integration.</p>
+<p><strong>Step 13 — Snapshot</strong>
+Pre-compile a complete memory snapshot: profile facts + user model + active events + relationships + knowledge graph edges. This snapshot is served directly during the next conversation, avoiding the cost of re-assembling context from multiple tables.</p>
+<p><strong>Step 14 — Finalize</strong>
+Mark all processed conversations. This is the last step — if the pipeline crashed before this point, the transaction rolls back and the same conversations will be re-processed.</p>
+<h4 id="post-transaction">Post-transaction</h4>
+<p>After the atomic transaction completes, two non-critical tasks run outside the transaction:</p>
+<ul>
+<li><strong>Vector embedding</strong> — embed all memories for semantic search</li>
+<li><strong>Memory clustering</strong> — KMeans clustering with theme label generation</li>
+</ul>
 <h2 id="knowledge-network">Knowledge Network</h2>
 <p>Sleep also builds a <strong>knowledge network</strong> — typed edges connecting related profile facts (e.g. <code>causes</code>, <code>related_to</code>, <code>contradicts</code>, <code>supports</code>). This lets the AI see structural relationships between facts, not just isolated entries.</p>
 <p>When facts are closed or superseded, their edges are automatically cleaned up.</p>
@@ -1870,6 +2134,17 @@
 <p>No LLM today is specifically trained for personal profile extraction, so results may occasionally be off. You can <strong>mark incorrect memories as error</strong> or <strong>manually close outdated ones</strong> in the Web Dashboard — but memories cannot be deleted or edited directly. This is by design: the River Algorithm treats your memory as an audit trail. Wrong memories are like sediment in a river, meant to be washed away by the current, not sculpted by hand.</p>
 <p>If you see too many extraction errors, the likely cause is your LLM's understanding capability, not a bug. Try switching to a stronger model — the memory pipeline is also a practical benchmark for evaluating how well your LLM understands natural language. As conversations accumulate, the algorithm continuously self-corrects through multi-turn verification and contradiction detection.</p>
 </div>
+<h3 id="algorithm-first-design">Algorithm-First Design</h3>
+<p>Riverse's memory pipeline is architecturally designed beyond what current general-purpose LLMs can fully deliver. The 14-step Sleep consolidation requires precise structured judgment at each stage — observation extraction, fact classification, cross-verification, contradiction resolution — where each step feeds into the next. Today's accuracy bottleneck is the precision of LLM outputs at each stage, not the algorithm itself.</p>
+<p>Consider the cascade: if each LLM step achieves 90% accuracy (already optimistic for some tasks), six serial steps yield roughly 53% end-to-end accuracy. With a purpose-trained model achieving 99% per step, the same pipeline reaches 94% — a qualitative leap from the same code.</p>
+<p>No LLM today is purpose-trained for personal memory consolidation. The ideal path would be a dedicated memory LLM optimized for:</p>
+<ul>
+<li><strong>Observation extraction precision</strong> — distinguishing "I live in Tokyo" (statement) from "I wish I were in Tokyo" (hypothetical)</li>
+<li><strong>Multi-fact joint reasoning</strong> — evaluating a new observation against 30+ existing profile facts (a constrained NLI task with large fine-tuning potential)</li>
+<li><strong>Calibrated confidence</strong> — outputting reliable probability scores so the pipeline can threshold decisions, rather than binary yes/no classifications</li>
+</ul>
+<p>Until such a model becomes feasible — through dedicated training or through the natural evolution of foundation models — the algorithm improves automatically with each generation of stronger models, requiring zero code changes. The pipeline's context inputs (timeline, trajectory, conversation summaries, evidence chains) are already structured to give future models the richest possible signal.</p>
+<p>This is a deliberate design choice: build the architecture right and let the models catch up, rather than simplify the architecture to match today's model limitations.</p>
 
 
 
