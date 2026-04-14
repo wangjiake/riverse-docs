@@ -256,6 +256,10 @@ No LLM today is purpose-trained for personal memory consolidation. The ideal pat
 - **Multi-fact joint reasoning** — evaluating a new observation against 30+ existing profile facts (a constrained NLI task with large fine-tuning potential)
 - **Calibrated confidence** — outputting reliable probability scores so the pipeline can threshold decisions, rather than binary yes/no classifications
 
-Until such a model becomes feasible — through dedicated training or through the natural evolution of foundation models — the algorithm improves automatically with each generation of stronger models, requiring zero code changes. The pipeline's context inputs (timeline, trajectory, conversation summaries, evidence chains) are already structured to give future models the richest possible signal.
+The author has a clear design for what this model should look like, but training it requires compute and data resources beyond what an individual can access.
+
+If your company is building a memory-focused model or working on personal AI and you have a role that fits — I'd love to hear from you: [mailwangjk@gmail.com](mailto:mailwangjk@gmail.com)
+
+Until then, the algorithm rides on general-purpose models and improves automatically with each stronger generation, requiring zero code changes. The pipeline's context inputs (timeline, trajectory, conversation summaries, evidence chains) are already structured to give future models the richest possible signal.
 
 This is a deliberate design choice: build the architecture right and let the models catch up, rather than simplify the architecture to match today's model limitations.
