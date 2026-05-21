@@ -20,6 +20,44 @@ database:
 language: "ja"                  # en / zh / ja
 ```
 
+## ファミリーマルチユーザー（任意）
+
+家族とこのデプロイを共有する場合のみ関連。詳細は [ファミリーマルチユーザーモード](family-multi-user.md) を参照。
+
+```yaml
+# 播種される admin アカウント — 初回 `setup_db.py` 実行時に作成。
+# 両フィールド任意、未指定なら OS ユーザー（whoami）、失敗時は 'jk'。
+admin_name: "alice"
+admin_display_name: "Alice"
+
+family:
+    # 有効にすると、招待を承諾したデバイスは pending_approval=TRUE で
+    # 待機し、admin が System UI で「承認」をクリックするまでログインできない。
+    # 招待 URL を公開チャネルで共有する場合は推奨。
+    require_admin_approval: false
+```
+
+## Web アクセストークン
+
+Web UI をネットワークに公開する場合、トークンで保護する。設定方法は2通り：
+
+```yaml
+public_mode:
+    enabled: true
+    access_token: "your-secret"   # 空欄 → 初回起動時に UUID 自動生成
+```
+
+または環境変数（Docker / CLI）：
+
+```bash
+ACCESS_TOKEN=your-secret python web.py
+# または
+docker run -e ACCESS_TOKEN=your-secret jkriver
+docker logs jkriver-jkriver-1 2>&1 | grep "Token:"
+```
+
+トークンは起動時に stdout に出力される。ユーザーは初回訪問時に unlock ページに貼り付けると、生成された cookie は1年間保持される。
+
 ## LLM 設定
 
 === "ローカル（Ollama）"

@@ -110,23 +110,24 @@ Import is idempotent — duplicate conversations are automatically skipped based
 After importing, run the River Algorithm to extract profiles:
 
 ```bash
-python run.py <source> <count>
+python run.py <source> <count> [--owner-name <name>]
 ```
 
 | Parameter | Values | Description |
 |-----------|--------|-------------|
 | `source` | `chatgpt`, `claude`, `gemini`, `demo`, `all` | Which data source to process. `all` processes chatgpt + claude + gemini combined (excludes demo). |
 | `count` | A number or `max` | How many conversations to process. Uses chronological order (oldest first). `max` processes all pending. |
+| `--owner-name` | An account name from the `accounts` table | Which family member's profile/memory to write the extracted data under. **Optional** — auto-selected when only one account exists. **Required** when the database is shared with JKRiver in [family multi-user mode](family-multi-user.md). |
 
 **Examples:**
 
 ```bash
-python run.py demo max          # Process all demo conversations
-python run.py chatgpt 50        # Process the oldest 50 ChatGPT conversations
-python run.py claude max        # Process all Claude conversations
-python run.py gemini 100        # Process the oldest 100 Gemini conversations
-python run.py all max           # Process everything (chatgpt + claude + gemini, mixed by time)
-python run.py all 200           # Process the oldest 200 across all sources
+python run.py demo max                            # Process all demo, auto-pick owner
+python run.py chatgpt 50                          # Oldest 50 ChatGPT, auto-pick owner
+python run.py claude max --owner-name jk          # Claude all, written under 'jk'
+python run.py gemini 100 --owner-name wife        # Gemini 100, written under 'wife'
+python run.py all max                              # All 3 sources mixed by time
+python run.py all 200 --owner-name kid            # All sources, 200 oldest, under 'kid'
 ```
 
 Processing is **safe to interrupt** — the next run automatically skips already-processed conversations.
@@ -139,7 +140,7 @@ To clear all extracted profiles and memories while keeping the original imported
 python reset_db.py
 ```
 
-This resets profile tables (`user_profile`, `observations`, `hypotheses`, `trajectory_summary`, `relationships`, etc.) but leaves the source tables (`chatgpt`, `claude`, `gemini`, `demo`) untouched. You can then re-run `run.py` to reprocess from scratch.
+This resets profile tables (`user_profile`, `observations`, `trajectory_summary`, `relationships`, etc.) but leaves the source tables (`chatgpt`, `claude`, `gemini`, `demo`) untouched. You can then re-run `run.py` to reprocess from scratch.
 
 ## Web Viewer
 

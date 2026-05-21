@@ -91,6 +91,7 @@ nav:
     - getting-started/docker.md
     - getting-started/history.md
     - getting-started/first-chat.md
+    - getting-started/family-multi-user.md
   - Features:
     - features/memory.md
     - features/multi-channel.md

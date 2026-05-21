@@ -15,7 +15,7 @@ uvicorn agent.api:app --host 127.0.0.1 --port 8400
 | `/sleep` | POST | 記憶整理をトリガー |
 | `/health` | GET | サービスの健全性チェック |
 | `/profile` | GET | 現在のプロファイル取得 |
-| `/hypotheses` | GET | 全仮説取得 |
+| `/hypotheses` | GET | suspected プロフィール事実取得（`user_profile` の後方互換ビュー）|
 | `/sessions` | GET | アクティブセッション一覧 |
 | `/ws/chat` | WebSocket | リアルタイムチャット |
 
@@ -100,7 +100,9 @@ curl http://localhost:8400/profile
 
 ## GET /hypotheses
 
-システムがユーザーについて形成した全仮説をリスト。
+システムがユーザーについて形成した**未確認**のプロフィール事実（証拠は見たが、まだ確認に至っていないもの）をリスト。
+
+内部的には「未確認」と「確認済み」のいずれも同じ `user_profile` テーブルに格納され、`layer` カラム（`'suspected'` / `'confirmed'`）で区別される。このエンドポイントは `layer='suspected'` の行を旧仮説レスポンス形式で返す — **古いクライアントとの後方互換のため**に残されている。独立した `hypotheses` テーブル自体は migration `008_drop_hypotheses.sql` で削除済み。
 
 ```bash
 curl http://localhost:8400/hypotheses

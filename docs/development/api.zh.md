@@ -15,7 +15,7 @@ uvicorn agent.api:app --host 127.0.0.1 --port 8400
 | `/sleep` | POST | 触发记忆整理 |
 | `/health` | GET | 检查服务健康状态 |
 | `/profile` | GET | 获取当前画像 |
-| `/hypotheses` | GET | 获取所有假设 |
+| `/hypotheses` | GET | 获取所有 suspected 画像事实（在 `user_profile` 上的向后兼容视图）|
 | `/sessions` | GET | 列出活跃会话 |
 | `/ws/chat` | WebSocket | 实时对话 |
 
@@ -100,7 +100,9 @@ curl http://localhost:8400/profile
 
 ## GET /hypotheses
 
-列出系统对用户形成的所有假设。
+列出系统对用户**尚未确认**的画像事实——即看到证据但还没升级为确认事实的那些。
+
+内部实现上，"已确认"和"尚未确认"的事实都存在同一张 `user_profile` 表里，靠 `layer` 列区分（`'suspected'` / `'confirmed'`）；这个端点把 `layer='suspected'` 的那些以旧版 hypothesis 响应格式返回，**保留是为了向后兼容老客户端**。`hypotheses` 这张独立表已经在 migration `008_drop_hypotheses.sql` 删除。
 
 ```bash
 curl http://localhost:8400/hypotheses

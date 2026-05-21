@@ -113,7 +113,7 @@ Conversations flow like water, key information settles like riverbed sediment, p
 Conversation flows in ──→ Erosion ──→ Sedimentation ──→ Shapes cognition ──→ Keeps flowing
                            │              │                   │
                            │              │                   └─ Confirmed knowledge → stable bedrock
-                           │              └─ Key info → observations, hypotheses, profiles
+                           │              └─ Key info → observations + profile facts (suspected → confirmed)
                            └─ Outdated beliefs washed away, replaced by new insights
 ```
 
@@ -135,7 +135,7 @@ Every conversation is water flowing through. The river never stops — understan
 
 #### Sediment
 
-Key information settles like silt: facts sink into profiles, emotions into observations, patterns into hypotheses. Confirmed knowledge sinks deeper.
+Key information settles like silt: emotions and raw signals land in observations; behavioural patterns and identity claims become profile facts that start out *suspected* and harden into *confirmed* over repeated mentions. Confirmed knowledge sinks deeper.
 
 </div>
 

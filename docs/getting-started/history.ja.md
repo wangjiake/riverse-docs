@@ -110,23 +110,24 @@ python import_data.py --chatgpt data/ChatGPT/conversations.json --claude data/Cl
 インポート後、River Algorithm を実行してプロフィールを抽出：
 
 ```bash
-python run.py <ソース> <件数>
+python run.py <ソース> <件数> [--owner-name <名前>]
 ```
 
 | パラメータ | 値 | 説明 |
 |-----------|-----|------|
 | `ソース` | `chatgpt`、`claude`、`gemini`、`demo`、`all` | どのデータソースを処理するか。`all` は chatgpt + claude + gemini を合わせて処理（demo は除外）。 |
 | `件数` | 数値または `max` | 何件の会話を処理するか。時系列順（古い順）。`max` は保留中のすべてを処理。 |
+| `--owner-name` | `accounts` テーブルのアカウント名 | 抽出したプロフィール／記憶をどの家族メンバー名義で書き込むか。**省略可** — アカウントが1つだけなら自動選択。JKRiver の[ファミリーマルチユーザーモード](family-multi-user.md)とDBを共有する場合は**必須**。 |
 
 **例：**
 
 ```bash
-python run.py demo max          # すべてのデモ会話を処理
-python run.py chatgpt 50        # 最も古い 50 件の ChatGPT 会話を処理
-python run.py claude max        # すべての Claude 会話を処理
-python run.py gemini 100        # 最も古い 100 件の Gemini 会話を処理
-python run.py all max           # すべて処理（chatgpt + claude + gemini、時系列で混合）
-python run.py all 200           # すべてのソース混合、最も古い 200 件
+python run.py demo max                            # すべてのデモ、owner 自動選択
+python run.py chatgpt 50                          # 最古 50 件 ChatGPT、自動選択
+python run.py claude max --owner-name jk          # Claude 全件、'jk' に書き込み
+python run.py gemini 100 --owner-name wife        # Gemini 100 件、'wife' に書き込み
+python run.py all max                              # すべて混合（時系列）
+python run.py all 200 --owner-name kid            # 全ソース最古 200 件、'kid' に書き込み
 ```
 
 処理は**安全に中断できます** — 次回実行時に処理済みの会話は自動的にスキップされます。
@@ -139,7 +140,7 @@ python run.py all 200           # すべてのソース混合、最も古い 200
 python reset_db.py
 ```
 
-プロフィール関連テーブル（`user_profile`、`observations`、`hypotheses`、`trajectory_summary`、`relationships` など）をリセットしますが、ソーステーブル（`chatgpt`、`claude`、`gemini`、`demo`）はそのまま残ります。その後 `run.py` を再実行して最初から処理できます。
+プロフィール関連テーブル（`user_profile`、`observations`、`trajectory_summary`、`relationships` など）をリセットしますが、ソーステーブル（`chatgpt`、`claude`、`gemini`、`demo`）はそのまま残ります。その後 `run.py` を再実行して最初から処理できます。
 
 ## Web ビューアー
 

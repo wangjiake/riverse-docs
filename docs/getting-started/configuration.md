@@ -20,6 +20,44 @@ database:
 language: "en"                  # en / zh / ja
 ```
 
+## Family multi-user (optional)
+
+Only relevant if you plan to share this deployment with other family members. See [Family Multi-User Mode](family-multi-user.md) for the full story.
+
+```yaml
+# Seeded admin account — created on first `setup_db.py` run. Both fields
+# optional; defaults to `whoami` (or 'jk' if that fails).
+admin_name: "alice"
+admin_display_name: "Alice"
+
+family:
+    # When true, accepted invites land in pending_approval=TRUE and the
+    # admin must click "approve" in the System UI before the new device can
+    # log in. Recommended if you share the URL via public channels.
+    require_admin_approval: false
+```
+
+## Web access token
+
+If you expose the web UI on a network, protect it with a token. Two ways to set it:
+
+```yaml
+public_mode:
+    enabled: true
+    access_token: "your-secret"   # blank → auto-generated UUID on first start
+```
+
+Or via environment variable (Docker / CLI):
+
+```bash
+ACCESS_TOKEN=your-secret python web.py
+# or
+docker run -e ACCESS_TOKEN=your-secret jkriver
+docker logs jkriver-jkriver-1 2>&1 | grep "Token:"
+```
+
+The token gets printed to stdout on startup. Users paste it into the unlock page on first visit; the resulting cookie persists for one year.
+
 ## LLM Provider
 
 === "Local (Ollama)"

@@ -110,23 +110,24 @@ python import_data.py --chatgpt data/ChatGPT/conversations.json --claude data/Cl
 导入完成后，运行河流算法提取画像：
 
 ```bash
-python run.py <来源> <数量>
+python run.py <来源> <数量> [--owner-name <名字>]
 ```
 
 | 参数 | 可选值 | 说明 |
 |------|--------|------|
 | `来源` | `chatgpt`、`claude`、`gemini`、`demo`、`all` | 处理哪个数据源。`all` 合并处理 chatgpt + claude + gemini（不含 demo）。 |
 | `数量` | 数字或 `max` | 处理多少条对话。按时间顺序（最早优先）。`max` 处理所有待处理的。 |
+| `--owner-name` | `accounts` 表里的账号名 | 把提取出的画像/记忆写到哪个家庭成员名下。**可选** — 库里只有一个账号时自动选；与 JKRiver [家庭多账号模式](family-multi-user.md)共享库时**必填**。 |
 
 **示例：**
 
 ```bash
-python run.py demo max          # 处理所有演示对话
-python run.py chatgpt 50        # 处理最早的 50 条 ChatGPT 对话
-python run.py claude max        # 处理所有 Claude 对话
-python run.py gemini 100        # 处理最早的 100 条 Gemini 对话
-python run.py all max           # 处理全部（chatgpt + claude + gemini，按时间混合排序）
-python run.py all 200           # 所有来源混合，处理最早的 200 条
+python run.py demo max                            # 处理所有演示对话，自动选 owner
+python run.py chatgpt 50                          # 最早 50 条 ChatGPT，自动选
+python run.py claude max --owner-name jk          # Claude 全部，写到 'jk' 名下
+python run.py gemini 100 --owner-name wife        # Gemini 100 条，写到 'wife' 名下
+python run.py all max                              # 全部（按时间混合）
+python run.py all 200 --owner-name kid            # 所有源最早 200 条，写到 'kid' 名下
 ```
 
 处理过程**可以随时中断** — 下次运行会自动跳过已处理的对话。
@@ -139,7 +140,7 @@ python run.py all 200           # 所有来源混合，处理最早的 200 条
 python reset_db.py
 ```
 
-这会重置画像相关表（`user_profile`、`observations`、`hypotheses`、`trajectory_summary`、`relationships` 等），但不会动来源数据表（`chatgpt`、`claude`、`gemini`、`demo`）。你可以重新运行 `run.py` 从头处理。
+这会重置画像相关表（`user_profile`、`observations`、`trajectory_summary`、`relationships` 等），但不会动来源数据表（`chatgpt`、`claude`、`gemini`、`demo`）。你可以重新运行 `run.py` 从头处理。
 
 ## 网页查看器
 

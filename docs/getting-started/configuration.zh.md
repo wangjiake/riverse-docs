@@ -20,6 +20,44 @@ database:
 language: "zh"                  # zh / en / ja
 ```
 
+## 家庭多账号（可选）
+
+只有当你打算和家人共享这套部署时才需要看这一节。完整说明见 [家庭多账号模式](family-multi-user.md)。
+
+```yaml
+# 播种的 admin 账号 — 首次跑 setup_db.py 时创建。两个字段都可选，
+# 不填会读系统用户名（whoami），还失败就兜底 'jk'。
+admin_name: "alice"
+admin_display_name: "Alice"
+
+family:
+    # 打开后，家人接受邀请的设备会停在 pending_approval=TRUE 状态，
+    # 需要 admin 在 System 页点"批准"才能登录。
+    # 如果你通过公开渠道分享邀请 URL，建议打开。
+    require_admin_approval: false
+```
+
+## Web 访问令牌
+
+如果你把 Web UI 暴露到网络上，用 token 保护。两种设置方式：
+
+```yaml
+public_mode:
+    enabled: true
+    access_token: "your-secret"   # 留空 → 首次启动时自动生成 UUID
+```
+
+或者用环境变量（Docker / CLI）：
+
+```bash
+ACCESS_TOKEN=your-secret python web.py
+# 或
+docker run -e ACCESS_TOKEN=your-secret jkriver
+docker logs jkriver-jkriver-1 2>&1 | grep "Token:"
+```
+
+启动时 token 会打印到 stdout。用户首次访问粘贴到 unlock 页，生成的 cookie 保留一年。
+
 ## LLM 配置
 
 === "本地 Ollama（推荐）"

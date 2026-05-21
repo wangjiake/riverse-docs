@@ -15,7 +15,7 @@ uvicorn agent.api:app --host 127.0.0.1 --port 8400
 | `/sleep` | POST | Trigger memory consolidation |
 | `/health` | GET | Check service health |
 | `/profile` | GET | Get current profile |
-| `/hypotheses` | GET | Get all hypotheses |
+| `/hypotheses` | GET | Get suspected profile facts (backward-compat view over `user_profile`) |
 | `/sessions` | GET | List active sessions |
 | `/ws/chat` | WebSocket | Real-time chat |
 
@@ -100,7 +100,9 @@ curl http://localhost:8400/profile
 
 ## GET /hypotheses
 
-List all hypotheses the system has formed about the user.
+List all *suspected* profile facts the system has formed about the user — i.e. claims it has seen evidence for but not yet confirmed.
+
+Internally, suspected vs confirmed facts both live in `user_profile` distinguished by the `layer` column (`'suspected'` / `'confirmed'`); this endpoint returns the suspected ones in the legacy "hypothesis" response shape for backwards compatibility with older clients. The `hypotheses` table itself was dropped in migration `008_drop_hypotheses.sql`.
 
 ```bash
 curl http://localhost:8400/hypotheses
