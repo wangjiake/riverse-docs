@@ -1791,7 +1791,7 @@ Type your message at the <code>&gt;</code> prompt, type <code>quit</code> to exi
 <h2 id="security-notice">Security Notice</h2>
 <div class="admonition warning">
 <p class="admonition-title">Read this before deploying to a server</p>
-<p>JKRiver is designed for <strong>single-user local use</strong>. The Web Dashboard (port 1234) is protected by the access token. However, <strong>the REST API (port 8400) and RiverHistory (port 2345) have no authentication</strong>. If you deploy on a remote server, follow these rules:</p>
+<p>The Web Dashboard (port 1234) is protected by access tokens and supports family multi-user mode with per-account device tokens (see <a href="../family-multi-user/">Family Multi-User Mode</a>). However, <strong>the REST API (port 8400) and RiverHistory (port 2345) have no per-account authentication</strong> — they assume local/trusted access. If you deploy on a remote server, follow these rules:</p>
 <p><strong>1. Do NOT expose ports 8400 and 2345 to the public internet</strong></p>
 <p>Anyone who can reach them can read your full profile, health data, finance records, and trigger LLM calls.</p>
 <ul>

@@ -1786,7 +1786,7 @@
 <h2 id="_4">安全须知</h2>
 <div class="admonition warning">
 <p class="admonition-title">部署到服务器前必读</p>
-<p>JKRiver 设计为<strong>单用户本地使用</strong>。网页面板（端口 1234）受 Access Token 保护。但 <strong>REST API（端口 8400）和 RiverHistory（端口 2345）没有认证</strong>。部署到远程服务器时请遵循以下规则：</p>
+<p>网页面板（端口 1234）受 Access Token 保护，并支持家庭多账号模式（每个家庭成员独立的设备 token，见 <a href="../family-multi-user/">家庭多账号模式</a>）。但 <strong>REST API（端口 8400）和 RiverHistory（端口 2345）没有按账号认证</strong>——它们假设你只从本地或可信网络访问。部署到远程服务器时请遵循以下规则：</p>
 <p><strong>1. 不要将端口 8400 和 2345 暴露到公网</strong></p>
 <p>任何能访问这些端口的人都可以读取你的完整画像、健康数据、财务记录，并触发 LLM 调用。</p>
 <ul>
