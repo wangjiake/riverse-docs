@@ -10,7 +10,7 @@ hide:
 
 <p class="hero-subtitle">
 Personal memory engine for AI — extracts, ages, and resolves your memories from every conversation. Runs locally. Works with any LLM.<br>
-<span style="font-size:0.8rem; opacity:0.55;">v0.1.7 · Single-user recommended</span>
+<span style="font-size:0.8rem; opacity:0.55;">v2.5.0 · Family multi-user ready</span>
 </p>
 
 <div class="hero-actions">

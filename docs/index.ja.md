@@ -10,7 +10,7 @@ hide:
 
 <p class="hero-subtitle">
 AI のための個人記憶エンジン — すべての会話から記憶を抽出・管理・整理する。ローカル実行、任意の LLM に対応。<br>
-<span style="font-size:0.8rem; opacity:0.55;">v0.1.7 · シングルユーザー推奨</span>
+<span style="font-size:0.8rem; opacity:0.55;">v2.5.0 · ファミリーマルチユーザー対応</span>
 </p>
 
 <div class="hero-actions">

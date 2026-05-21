@@ -10,7 +10,7 @@ hide:
 
 <p class="hero-subtitle">
 为 AI 打造的个人记忆引擎 — 从每次对话中提取、管理、整理你的记忆。本地运行，兼容任意 LLM。<br>
-<span style="font-size:0.8rem; opacity:0.55;">v0.1.7 · 推荐单用户使用</span>
+<span style="font-size:0.8rem; opacity:0.55;">v2.5.0 · 家庭多账号已支持</span>
 </p>
 
 <div class="hero-actions">
