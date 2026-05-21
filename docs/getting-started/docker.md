@@ -79,7 +79,7 @@ Type your message at the `>` prompt, type `quit` to exit. Memory consolidation r
 
 !!! warning "Read this before deploying to a server"
 
-    JKRiver is designed for **single-user local use**. The Web Dashboard (port 1234) is protected by the access token. However, **the REST API (port 8400) and RiverHistory (port 2345) have no authentication**. If you deploy on a remote server, follow these rules:
+    The Web Dashboard (port 1234) is protected by access tokens and supports family multi-user mode with per-account device tokens (see [Family Multi-User Mode](family-multi-user.md)). However, **the REST API (port 8400) and RiverHistory (port 2345) have no per-account authentication** — they assume local/trusted access. If you deploy on a remote server, follow these rules:
 
     **1. Do NOT expose ports 8400 and 2345 to the public internet**
 

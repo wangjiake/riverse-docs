@@ -69,7 +69,7 @@ docker compose exec jkriver bash -c "cd /app && python -m agent.main"
 
 !!! warning "部署到服务器前必读"
 
-    JKRiver 设计为**单用户本地使用**。网页面板（端口 1234）受 Access Token 保护。但 **REST API（端口 8400）和 RiverHistory（端口 2345）没有认证**。部署到远程服务器时请遵循以下规则：
+    网页面板（端口 1234）受 Access Token 保护，并支持家庭多账号模式（每个家庭成员独立的设备 token，见 [家庭多账号模式](family-multi-user.md)）。但 **REST API（端口 8400）和 RiverHistory（端口 2345）没有按账号认证**——它们假设你只从本地或可信网络访问。部署到远程服务器时请遵循以下规则：
 
     **1. 不要将端口 8400 和 2345 暴露到公网**
 
