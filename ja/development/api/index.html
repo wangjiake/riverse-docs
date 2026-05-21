@@ -443,6 +443,8 @@
       
         
       
+        
+      
     
     
     
@@ -615,6 +617,34 @@
     
   
     初めての会話
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/family-multi-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ファミリーマルチユーザーモード
   
 
     
@@ -1603,7 +1633,7 @@
 <tr>
 <td><code>/hypotheses</code></td>
 <td>GET</td>
-<td>全仮説取得</td>
+<td>suspected プロフィール事実取得（<code>user_profile</code> の後方互換ビュー）</td>
 </tr>
 <tr>
 <td><code>/sessions</code></td>
@@ -1746,7 +1776,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>http://localhost:8400/profile
 </code></pre></div>
 <h2 id="get-hypotheses">GET /hypotheses</h2>
-<p>システムがユーザーについて形成した全仮説をリスト。</p>
+<p>システムがユーザーについて形成した<strong>未確認</strong>のプロフィール事実（証拠は見たが、まだ確認に至っていないもの）をリスト。</p>
+<p>内部的には「未確認」と「確認済み」のいずれも同じ <code>user_profile</code> テーブルに格納され、<code>layer</code> カラム（<code>'suspected'</code> / <code>'confirmed'</code>）で区別される。このエンドポイントは <code>layer='suspected'</code> の行を旧仮説レスポンス形式で返す — <strong>古いクライアントとの後方互換のため</strong>に残されている。独立した <code>hypotheses</code> テーブル自体は migration <code>008_drop_hypotheses.sql</code> で削除済み。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>http://localhost:8400/hypotheses
 </code></pre></div>
 <h2 id="get-sessions">GET /sessions</h2>

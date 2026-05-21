@@ -445,6 +445,8 @@
       
         
       
+        
+      
     
     
     
@@ -788,6 +790,34 @@
     
   
     第一次对话
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../family-multi-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    家庭多账号模式
   
 
     
@@ -1755,7 +1785,7 @@
 <p>导入是幂等的 — 重复的对话会根据校验和自动跳过。</p>
 <h2 id="_6">处理命令</h2>
 <p>导入完成后，运行河流算法提取画像：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>run.py<span class="w"> </span>&lt;来源&gt;<span class="w"> </span>&lt;数量&gt;
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>python<span class="w"> </span>run.py<span class="w"> </span>&lt;来源&gt;<span class="w"> </span>&lt;数量&gt;<span class="w"> </span><span class="o">[</span>--owner-name<span class="w"> </span>&lt;名字&gt;<span class="o">]</span>
 </code></pre></div>
 <table>
 <thead>
@@ -1776,22 +1806,27 @@
 <td>数字或 <code>max</code></td>
 <td>处理多少条对话。按时间顺序（最早优先）。<code>max</code> 处理所有待处理的。</td>
 </tr>
+<tr>
+<td><code>--owner-name</code></td>
+<td><code>accounts</code> 表里的账号名</td>
+<td>把提取出的画像/记忆写到哪个家庭成员名下。<strong>可选</strong> — 库里只有一个账号时自动选；与 JKRiver <a href="../family-multi-user/">家庭多账号模式</a>共享库时<strong>必填</strong>。</td>
+</tr>
 </tbody>
 </table>
 <p><strong>示例：</strong></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>run.py<span class="w"> </span>demo<span class="w"> </span>max<span class="w">          </span><span class="c1"># 处理所有演示对话</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python<span class="w"> </span>run.py<span class="w"> </span>chatgpt<span class="w"> </span><span class="m">50</span><span class="w">        </span><span class="c1"># 处理最早的 50 条 ChatGPT 对话</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>python<span class="w"> </span>run.py<span class="w"> </span>claude<span class="w"> </span>max<span class="w">        </span><span class="c1"># 处理所有 Claude 对话</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>python<span class="w"> </span>run.py<span class="w"> </span>gemini<span class="w"> </span><span class="m">100</span><span class="w">        </span><span class="c1"># 处理最早的 100 条 Gemini 对话</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>python<span class="w"> </span>run.py<span class="w"> </span>all<span class="w"> </span>max<span class="w">           </span><span class="c1"># 处理全部（chatgpt + claude + gemini，按时间混合排序）</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>python<span class="w"> </span>run.py<span class="w"> </span>all<span class="w"> </span><span class="m">200</span><span class="w">           </span><span class="c1"># 所有来源混合，处理最早的 200 条</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>python<span class="w"> </span>run.py<span class="w"> </span>demo<span class="w"> </span>max<span class="w">                            </span><span class="c1"># 处理所有演示对话，自动选 owner</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>python<span class="w"> </span>run.py<span class="w"> </span>chatgpt<span class="w"> </span><span class="m">50</span><span class="w">                          </span><span class="c1"># 最早 50 条 ChatGPT，自动选</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>python<span class="w"> </span>run.py<span class="w"> </span>claude<span class="w"> </span>max<span class="w"> </span>--owner-name<span class="w"> </span>jk<span class="w">          </span><span class="c1"># Claude 全部，写到 'jk' 名下</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>python<span class="w"> </span>run.py<span class="w"> </span>gemini<span class="w"> </span><span class="m">100</span><span class="w"> </span>--owner-name<span class="w"> </span>wife<span class="w">        </span><span class="c1"># Gemini 100 条，写到 'wife' 名下</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>python<span class="w"> </span>run.py<span class="w"> </span>all<span class="w"> </span>max<span class="w">                              </span><span class="c1"># 全部（按时间混合）</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>python<span class="w"> </span>run.py<span class="w"> </span>all<span class="w"> </span><span class="m">200</span><span class="w"> </span>--owner-name<span class="w"> </span>kid<span class="w">            </span><span class="c1"># 所有源最早 200 条，写到 'kid' 名下</span>
 </code></pre></div>
 <p>处理过程<strong>可以随时中断</strong> — 下次运行会自动跳过已处理的对话。</p>
 <h2 id="_7">重置</h2>
 <p>清空所有提取的画像和记忆，但保留原始导入的对话数据：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>python<span class="w"> </span>reset_db.py
 </code></pre></div>
-<p>这会重置画像相关表（<code>user_profile</code>、<code>observations</code>、<code>hypotheses</code>、<code>trajectory_summary</code>、<code>relationships</code> 等），但不会动来源数据表（<code>chatgpt</code>、<code>claude</code>、<code>gemini</code>、<code>demo</code>）。你可以重新运行 <code>run.py</code> 从头处理。</p>
+<p>这会重置画像相关表（<code>user_profile</code>、<code>observations</code>、<code>trajectory_summary</code>、<code>relationships</code> 等），但不会动来源数据表（<code>chatgpt</code>、<code>claude</code>、<code>gemini</code>、<code>demo</code>）。你可以重新运行 <code>run.py</code> 从头处理。</p>
 <h2 id="_8">网页查看器</h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>python<span class="w"> </span>web.py
 </code></pre></div>

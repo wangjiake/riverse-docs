@@ -443,6 +443,8 @@
       
         
       
+        
+      
     
     
     
@@ -615,6 +617,34 @@
     
   
     First Chat
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/family-multi-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Family Multi-User Mode
   
 
     
@@ -1603,7 +1633,7 @@
 <tr>
 <td><code>/hypotheses</code></td>
 <td>GET</td>
-<td>Get all hypotheses</td>
+<td>Get suspected profile facts (backward-compat view over <code>user_profile</code>)</td>
 </tr>
 <tr>
 <td><code>/sessions</code></td>
@@ -1746,7 +1776,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>http://localhost:8400/profile
 </code></pre></div>
 <h2 id="get-hypotheses">GET /hypotheses</h2>
-<p>List all hypotheses the system has formed about the user.</p>
+<p>List all <em>suspected</em> profile facts the system has formed about the user — i.e. claims it has seen evidence for but not yet confirmed.</p>
+<p>Internally, suspected vs confirmed facts both live in <code>user_profile</code> distinguished by the <code>layer</code> column (<code>'suspected'</code> / <code>'confirmed'</code>); this endpoint returns the suspected ones in the legacy "hypothesis" response shape for backwards compatibility with older clients. The <code>hypotheses</code> table itself was dropped in migration <code>008_drop_hypotheses.sql</code>.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>http://localhost:8400/hypotheses
 </code></pre></div>
 <h2 id="get-sessions">GET /sessions</h2>

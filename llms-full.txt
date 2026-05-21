@@ -18,11 +18,11 @@ The River Algorithm is a personal digital profile weighting algorithm for local 
 
 2. **Sediment (Profile)**: Observations are matched against the existing user profile. New facts start as "suspected" and progress to "confirmed" through repeated mention or cross-verification. Contradicting facts trigger a dispute mechanism (superseded_by/supersedes).
 
-3. **Purify (Sleep)**: Offline batch consolidation that runs periodically. It performs:
+3. **Purify (Sleep)**: Offline batch consolidation that runs periodically (per owner in family mode). It performs:
    - Cross-verification of suspected facts
    - Dispute resolution between contradicting facts
    - Expiration of outdated facts
-   - Hypothesis generation for under-explored areas
+   - Promotion of stable suspected facts to confirmed
    - Knowledge network clustering
 
 ### Fact Lifecycle
@@ -88,13 +88,26 @@ Riverse exists in three editions:
 - Vector memory clustering for pattern recognition
 
 ### Offline Cognition (Sleep Pipeline)
-The Sleep pipeline runs as a batch process and performs:
+The Sleep pipeline runs as a batch process (per owner in family mode) and performs:
 - **Cross-verification**: Validates suspected facts against conversation history
 - **Dispute resolution**: Resolves contradictions between competing facts
 - **Fact expiration**: Closes outdated facts based on decay_days
-- **Hypothesis generation**: Identifies gaps in the profile and creates verification strategies
+- **Promotion**: Stable suspected facts get promoted to confirmed when enough evidence accumulates
 - **Memory clustering**: Groups related facts using vector embeddings
 - **Proactive question planning**: Generates questions to ask the user to fill profile gaps
+
+### Family Multi-User (optional)
+One deployment supports multiple family members with isolated profiles:
+- Every business table carries an `owner_id` column
+- Admin (id=1) seeded automatically on first `setup_db.py` run
+- Add family members via System UI → 家庭成员
+- Invite flow: admin generates a one-time URL (with optional QR), family member opens it on their device, optionally admin-approves before login
+- Per-device tokens stored as SHA-256 hashes; cookies last 1 year
+- IM mappings (`channel_identities`) route Telegram/Discord messages to the right account
+- Per-owner LLM token usage accounting
+- Sleep pipeline loops over each owner with unprocessed data, so memories never cross-pollute
+- RiverHistory's `run.py --owner-name <name>` writes batch imports under one specific account
+- Configurable via `settings.yaml`: `admin_name`, `family.require_admin_approval`
 
 ### Tools & Skills
 - Custom tool system for extending agent capabilities

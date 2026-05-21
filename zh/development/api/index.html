@@ -443,6 +443,8 @@
       
         
       
+        
+      
     
     
     
@@ -615,6 +617,34 @@
     
   
     第一次对话
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/family-multi-user/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    家庭多账号模式
   
 
     
@@ -1603,7 +1633,7 @@
 <tr>
 <td><code>/hypotheses</code></td>
 <td>GET</td>
-<td>获取所有假设</td>
+<td>获取所有 suspected 画像事实（在 <code>user_profile</code> 上的向后兼容视图）</td>
 </tr>
 <tr>
 <td><code>/sessions</code></td>
@@ -1746,7 +1776,8 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>curl<span class="w"> </span>http://localhost:8400/profile
 </code></pre></div>
 <h2 id="get-hypotheses">GET /hypotheses</h2>
-<p>列出系统对用户形成的所有假设。</p>
+<p>列出系统对用户<strong>尚未确认</strong>的画像事实——即看到证据但还没升级为确认事实的那些。</p>
+<p>内部实现上，"已确认"和"尚未确认"的事实都存在同一张 <code>user_profile</code> 表里，靠 <code>layer</code> 列区分（<code>'suspected'</code> / <code>'confirmed'</code>）；这个端点把 <code>layer='suspected'</code> 的那些以旧版 hypothesis 响应格式返回，<strong>保留是为了向后兼容老客户端</strong>。<code>hypotheses</code> 这张独立表已经在 migration <code>008_drop_hypotheses.sql</code> 删除。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>curl<span class="w"> </span>http://localhost:8400/hypotheses
 </code></pre></div>
 <h2 id="get-sessions">GET /sessions</h2>

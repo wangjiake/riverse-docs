@@ -22,6 +22,7 @@ Riverse is an open-source personal AI agent built on the River Algorithm. Unlike
 - MCP (Model Context Protocol) integration
 - Runs with any OpenAI-compatible LLM or local Ollama models
 - All data stored locally — never sent to cloud
+- **Family multi-user**: one deployment, multiple isolated profiles. Each family member gets their own memory, profile, and per-owner LLM token accounting; invite-link onboarding with optional admin approval; Telegram/Discord identity mapping per member.
 
 ## Use Cases
 
